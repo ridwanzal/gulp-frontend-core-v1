@@ -15,28 +15,34 @@ $('#lookfor').on('change', function(){
     }
 })
 
-var numItems = $('.product_list_resort').length
-// alert(numItems);
-
-// let i = 0;
-// for(i; i <= numItems; i++){
-//     $('#resort_detail_' + i).on('click', function(){
-//         alert(i);
-//         $('#resort_child_' + i).show();
-//     });
-// } 
-
 function passme(param){
-    $('#resort_child_' + param).toggle("faster", function(){
+    $('#resort_child_' + param).toggle(5, function(){
         let thiselem =  $('#resort_child_' + param)
         if((thiselem).is(":visible")){
             console.log('nampil')
             $('#resort_' + param).css({
-                'border': '2px solid #37637B'
+                'border': '1px solid #37637B'
             });
         }else{
             console.log('ngga')
             $('#resort_' + param).css({
+                'border': 'none'
+            });
+        }
+    });
+}
+
+function passme_tripdata(param){
+    $('#trip_child_' + param).toggle(5, function(){
+        let thiselem =  $('#trip_child_' + param)
+        if((thiselem).is(":visible")){
+            console.log('nampil')
+            $('#trip_list_' + param).css({
+                'border': '1px solid #37637B'
+            });
+        }else{
+            console.log('ngga')
+            $('#trip_list_' + param).css({
                 'border': 'none'
             });
         }

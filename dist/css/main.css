@@ -165,12 +165,27 @@ body {
     cursor: pointer;
 }
 
+.label_small_widget_big{
+    font-size: 12px;
+    color: #6B7A9C;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
 .label_small_widget_underline {
     font-size: 14px;
     color: #6B7A9C;
     cursor: pointer;
     text-decoration: underline; 
 }
+
+.text_packages{
+    position: relative;
+    top: -9px;
+    right: 14px;
+    
+}
+
 
 .pushright{
     float: right;
@@ -912,7 +927,7 @@ body {
 
 .seepackages{
     position: relative;
-    right: 20px;
+    right: 0px;
     top: -7px;
 }
 
@@ -941,4 +956,9 @@ body {
     color: #45516D;
     margin-top:1px !important;
     margin-bottom: 1px !important;
+}
+
+.price_tables{
+    font-size: 14.5px;
+    font-weight: bold;
 }
