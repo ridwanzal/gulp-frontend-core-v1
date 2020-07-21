@@ -48,22 +48,22 @@ function browserSyncReload(done) {
 }
 
 // css
-// function css() {
-//   return gulp
-//     .src(paths.root.css + "style.scss")
-//     .pipe(sourcemaps.init()) // initialize sourcemaps first
-//     .pipe(sass()) // compile SCSS to CSS
-//     .pipe(plumber(function(error) {}))
-//     .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
-//     .pipe(
-//       rename({
-//         suffix: ".min"
-//       })
-//     )
-//     .pipe(sourcemaps.write("./")) // write sourcemaps file in current directory
-//     .pipe(gulp.dest(paths.root.distCss)) // put final CSS in  folder
-//     .pipe(browsersync.stream());
-// }
+function css() {
+  return gulp
+    .src(paths.root.distCss + "main.css")
+    .pipe(sourcemaps.init()) // initialize sourcemaps first
+    // .pipe(sass()) // compile SCSS to CSS
+    // .pipe(plumber(function(error) {}))
+    // .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
+    // .pipe(
+    //   rename({
+    //     suffix: ".min"
+    //   })
+    // )
+    .pipe(sourcemaps.write("./")) // write sourcemaps file in current directory
+    .pipe(gulp.dest(paths.root.distCss)) // put final CSS in  folder
+    .pipe(browsersync.stream());
+}
 
 // Entry JS
 function js() {
@@ -117,7 +117,7 @@ function watchFiles() {
     [
       "**/*.html",
       paths.root.template + "**/*.twig",
-      // paths.root.css + "**/*.sass",
+      paths.root.distCss + "**/*.css",
       // paths.root.css + "**/*.scss",
       // paths.root.css + "**/*.css",
       paths.root.js + "**/*.js"
@@ -128,7 +128,7 @@ function watchFiles() {
 
 const watch = gulp.series(gulp.parallel(watchFiles, twigBuild, browserSync));
 // export tasks
-// exports.css = css;
+exports.css = css;
 exports.js = js;
 exports.watch = watch;
 exports.default = watch;

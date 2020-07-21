@@ -165,8 +165,15 @@ body {
     cursor: pointer;
 }
 
-.label_small_widget:hover{
-    
+.label_small_widget_underline {
+    font-size: 14px;
+    color: #6B7A9C;
+    cursor: pointer;
+    text-decoration: underline; 
+}
+
+.pushright{
+    float: right;
 }
 
 .label_small_widget {
@@ -897,4 +904,41 @@ body {
 .topsmall {
     position: relative;
     top: 8px;
+}
+
+.table_spec{
+    font-size: 13px !important;
+}
+
+.seepackages{
+    position: relative;
+    right: 20px;
+    top: -7px;
+}
+
+
+.spec_odd{
+    background: #E2F5FF;
+    border-radius: 4px;
+    font-size:14px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #E2F5FF !important;
+    border : none !important;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #F7FAFC !important;
+    border : none !important;
+}
+
+.table td, .table th{
+    border : none !important;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    color: #45516D;
+    margin-top:1px !important;
+    margin-bottom: 1px !important;
 }

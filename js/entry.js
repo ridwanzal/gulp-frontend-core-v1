@@ -27,13 +27,18 @@ var numItems = $('.product_list_resort').length
 // } 
 
 function passme(param){
-    $('#resort_child_' + param).toggle("fast", function(){
+    $('#resort_child_' + param).toggle("faster", function(){
         let thiselem =  $('#resort_child_' + param)
         if((thiselem).is(":visible")){
             console.log('nampil')
-            alert('nampil');
+            $('#resort_' + param).css({
+                'border': '2px solid #37637B'
+            });
         }else{
             console.log('ngga')
+            $('#resort_' + param).css({
+                'border': 'none'
+            });
         }
     });
 }
