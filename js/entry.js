@@ -96,11 +96,3 @@ $('#start_date, #end_date').on('change', function () {
     }
 });
 
-$('.nav-item.dropdown').each(function(){
-    let thisclick = $(this);
-    thisclick.on('click', function(){
-        if($('.megasize').is(':visible') == true){
-            console.log('visible')
-        }
-    })
-})

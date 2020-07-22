@@ -457,7 +457,8 @@ body {
 .label_reset {
     justify-content: flex-end;
     margin-left: auto;
-    color: #37637B
+    color: #37637B;
+    cursor : pointer;
 }
 
 .label_card_subheader {
@@ -810,6 +811,7 @@ body {
     border: 1px solid #E1E7F1 !important;
     border-radius: 8px !important;
     padding: 20px !important;
+    z-index : 200;
 }
 
 .dropdown-toggle::after {
@@ -962,3 +964,27 @@ body {
     font-weight: bold;
 }
 
+/*
+Dropdown overlay
+*/
+
+.dropdown:after{
+    content: ''; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .10s ease-in-out;
+    opacity: 0;
+    visibility:hidden;
+    background-color: rgba(0,0,0,.2);
+}
+.dropdown.show .nav-link{
+  position:relative;
+  z-index:12;
+}
+.dropdown.show:after{
+  z-index:10; opacity:1; 
+  visibility:visible;
+  position: fixed;
+}
