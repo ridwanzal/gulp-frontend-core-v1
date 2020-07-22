@@ -2,7 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-4">
-                <div class="card_content_wrapper">
+                <!-- filter dive resort -->
+                <div class="card_content_wrapper" id="filter_diveresort">
                     <div class="label_card_wrapper">
                          <label class="label_card">Sort By</label>
                          <p class="label_card_subheader">Sort your result search by :</p>
@@ -19,21 +20,27 @@
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck1">
+                                    <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck2">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Highest Price
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck1">
+                                    <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck3">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Highest Rating
                                     </label>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
+                            <div class="form-check">
+                                    <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck4">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Hotel Category
+                                    </label>
+                                </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck1">
+                                    <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck5">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Lowest Price
                                     </label>
@@ -42,6 +49,49 @@
                         </div>
                     </div>
                 </div>
+
+                 <!-- filter liveboard -->
+                 <div class="card_content_wrapper" id="filter_liveboard" style="display:none;">
+                    <div class="label_card_wrapper">
+                         <label class="label_card">Sort By</label>
+                         <p class="label_card_subheader">Sort your result search by :</p>
+                    </div>
+                    <div class="card_lines">
+                    </div>
+                    <div class="label_card_wrapper2">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx1" checked>
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Featured
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx2">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Highest Price
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx3">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Lowest Price
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx4">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Highest Rating
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card_content_wrapper_top">
                     <div class="label_card_wrapper">
                         <div style="display:flex;">
@@ -1154,15 +1204,6 @@
                                                     </div>
                                                 </div>
                                             <div class="space_inside_product2">
-                                                <div class="row">
-                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
-                                                        <div class="scores">4,2</div>
-                                                    </div>
-                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
-                                                        <label class="label_small_widget_green">Excellent</label>
-                                                        <p class="label_light">196 Review</p>
-                                                    </div>
-                                                </div>  
                                                 <div class="row package_trip_pricingdetails_sm">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <div class="label_light">Starts from &nbsp; </div>
@@ -1204,7 +1245,6 @@
                                 <div class="card_product_wrapper" id="trip_list_2">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
-                                                <div class="offering_badge">SAVE 25%</div>
                                                 <img class="image_products" src="img/resorts/2_2.jpeg">
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
@@ -1225,15 +1265,6 @@
                                                     </div>
                                                 </div>
                                             <div class="space_inside_product2">
-                                                <div class="row">
-                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
-                                                        <div class="scores">4,2</div>
-                                                    </div>
-                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
-                                                        <label class="label_small_widget_green">Excellent</label>
-                                                        <p class="label_light">196 Review</p>
-                                                    </div>
-                                                </div>  
                                                 <div class="row package_trip_pricingdetails_sm">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <div class="label_light">Starts from &nbsp; </div>
@@ -1275,7 +1306,6 @@
                                 <div class="card_product_wrapper" id="trip_list_3">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
-                                                <div class="offering_badge">SAVE 25%</div>
                                                 <img class="image_products" src="img/resorts/2_3.jpeg">
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
@@ -1296,15 +1326,6 @@
                                                     </div>
                                                 </div>
                                             <div class="space_inside_product2">
-                                                <div class="row">
-                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
-                                                        <div class="scores">4,2</div>
-                                                    </div>
-                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
-                                                        <label class="label_small_widget_green">Excellent</label>
-                                                        <p class="label_light">196 Review</p>
-                                                    </div>
-                                                </div>  
                                                 <div class="row package_trip_pricingdetails_sm">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <div class="label_light">Starts from &nbsp; </div>
@@ -1346,7 +1367,6 @@
                                 <div class="card_product_wrapper" id="trip_list_4">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
-                                                <div class="offering_badge">SAVE 25%</div>
                                                 <img class="image_products" src="img/resorts/2_4.jpeg">
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
@@ -1367,15 +1387,6 @@
                                                     </div>
                                                 </div>
                                             <div class="space_inside_product2">
-                                                <div class="row">
-                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
-                                                        <div class="scores">4,2</div>
-                                                    </div>
-                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
-                                                        <label class="label_small_widget_green">Excellent</label>
-                                                        <p class="label_light">196 Review</p>
-                                                    </div>
-                                                </div>  
                                                 <div class="row package_trip_pricingdetails_sm">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <div class="label_light">Starts from &nbsp; </div>
@@ -1417,7 +1428,6 @@
                                 <div class="card_product_wrapper" id="trip_list_5">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
-                                                <div class="offering_badge">SAVE 25%</div>
                                                 <img class="image_products" src="img/resorts/2_5.jpeg">
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
@@ -1438,15 +1448,6 @@
                                                     </div>
                                                 </div>
                                             <div class="space_inside_product2">
-                                                <div class="row">
-                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
-                                                        <div class="scores">4,2</div>
-                                                    </div>
-                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
-                                                        <label class="label_small_widget_green">Excellent</label>
-                                                        <p class="label_light">196 Review</p>
-                                                    </div>
-                                                </div>  
                                                 <div class="row package_trip_pricingdetails_sm">
                                                     <div class="col-lg-12 col-md-12 col-xs-12">
                                                         <div class="label_light">Starts from &nbsp; </div>

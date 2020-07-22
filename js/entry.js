@@ -10,9 +10,13 @@ $('#lookfor').on('change', function(){
     if(vals === 'resort'){
         $('#resort').show();
         $('#liveboard').hide();
+        $('#filter_diveresort').show();
+        $('#filter_liveboard').hide();
     }else{
         $('#liveboard').show();
         $('#resort').hide();
+        $('#filter_diveresort').hide();
+        $('#filter_liveboard').show();
     }
 })
 
