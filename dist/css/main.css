@@ -971,7 +971,7 @@ Dropdown overlay
 */
 .dropdown-menu:after{
     position: absolute;
-    left: 17%;
+    left: 19.5%;
     top: -15px;
     width: 0;
     height: 0;
