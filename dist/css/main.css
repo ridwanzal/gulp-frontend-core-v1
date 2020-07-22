@@ -95,7 +95,6 @@ body {
     line-height: 35px;
 }
 
-
 .megamenu_list>li {
     line-height: 28px;
 }
@@ -104,7 +103,6 @@ body {
     color: #6B7A9C;
     font-weight: 400 !important;
 }
-
 
 .footer_start_list>li>a {
     color: #6B7A9C;
@@ -182,10 +180,9 @@ body {
 .text_packages{
     position: relative;
     top: -9px;
-    right: 14px;
+    right: 84px;
     
 }
-
 
 .pushright{
     float: right;
@@ -350,12 +347,10 @@ body {
     border-radius: 0px 8px 8px 0px;
 }
 
-
 .pushto_right {
     float: right;
     padding-top: 4px;
 }
-
 
 /**
     Main Page Wrapper
@@ -429,7 +424,6 @@ body {
     box-shadow: 0px 1px 2px rgba(0, 23, 68, 0.09);
     border-radius: 4px;
 }
-
 
 .label_card_wrapper {
     display: block;
@@ -861,6 +855,11 @@ body {
 .package_trip_pricingdetails {
     position: relative;
     top: 33px;
+}
+
+.package_trip_pricingdetails_sm {
+    position: relative;
+    top: 0px;
 }
 
 .select-items {

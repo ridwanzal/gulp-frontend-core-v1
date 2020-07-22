@@ -24,7 +24,6 @@ function passme(param){
                 'border': '1px solid #37637B'
             });
             $('#angle_icon_'+param).css({
-                'color' : '#ffcc00',
                 '-webkit-transform':'rotate(180deg)',
                 '-moz-transform':'rotate(180deg)',
                 '-o-transform':'rotate(180deg)',
@@ -35,11 +34,10 @@ function passme(param){
                 'border': 'none'
             });
             $('#angle_icon_'+param).css({
-                'color' : '#ffcc00',
-                '-webkit-transform':'rotate(180deg)',
-                '-moz-transform':'rotate(180deg)',
-                '-o-transform':'rotate(180deg)',
-                'transform': 'rotate(180deg)'
+                '-webkit-transform':'rotate(360deg)',
+                '-moz-transform':'rotate(360deg)',
+                '-o-transform':'rotate(360deg)',
+                'transform': 'rotate(360deg)'
             });
         }
     });
@@ -53,10 +51,22 @@ function passme_tripdata(param){
             $('#trip_list_' + param).css({
                 'border': '1px solid #37637B'
             });
+            $('#angle_icon_trip_'+param).css({
+                '-webkit-transform':'rotate(180deg)',
+                '-moz-transform':'rotate(180deg)',
+                '-o-transform':'rotate(180deg)',
+                'transform': 'rotate(180deg)'
+            });
         }else{
             console.log('ngga')
             $('#trip_list_' + param).css({
                 'border': 'none',
+            });
+            $('#angle_icon_trip_'+param).css({
+                '-webkit-transform':'rotate(360deg)',
+                '-moz-transform':'rotate(360deg)',
+                '-o-transform':'rotate(360deg)',
+                'transform': 'rotate(360deg)'
             });
         }
     });
