@@ -1,3 +1,9 @@
+/**
+ generic gulp modules
+ custom by ridwanzal
+ * 
+ */
+
 // Initialize modules
 const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
@@ -25,7 +31,7 @@ const paths = {
     distJs: "dist/js/"
   },
   lib: {
-    jquery: "node_modules/jquery/dist/jquery.js"
+    jquery: "node_modules/jquery/dist/jquery.min.js",
   }
 };
 
@@ -48,6 +54,7 @@ function browserSyncReload(done) {
 }
 
 // css
+// not using css preprocessor
 function css() {
   return gulp
     .src(paths.root.distCss + "main.css")
@@ -70,7 +77,7 @@ function js() {
   return gulp
     .src([
       // If you want you can remove jquery
-      paths.lib.jquery,
+      paths.lib.jquery,   
       paths.root.js + "entry.js"
     ])
     .pipe(sourcemaps.init()) // initialize sourcemaps first

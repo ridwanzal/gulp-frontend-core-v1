@@ -6,13 +6,15 @@
 </head>
 
 <body>
-  {% include "../components/header.twig" %}
+  <div class="ex_wrapper">
+    {% include "../components/header.twig" %}
 
-  {% include "../components/content.twig" %}
+    {% include "../components/content.twig" %}
 
-  {% include "../components/footer.twig" %}
+    {% include "../components/footer.twig" %}
 
-  <!-- This is very important tag if you wanna use differnt JS after footer in all html check the example in: pages/index.twig -->
-  {{ block('included_content') }}
+    <!-- This is very important tag if you wanna use differnt JS after footer in all html check the example in: pages/index.twig -->
+    {{ block('included_content') }}
+  </div>
 </body>
 </html>

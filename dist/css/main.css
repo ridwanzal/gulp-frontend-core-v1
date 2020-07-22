@@ -837,7 +837,7 @@ body {
 
 .night_counter {
     position: absolute;
-    left: 897px;
+    left: 909px;
     z-index: 3;
     top: 40px;
     font-size: 10px;
@@ -923,6 +923,7 @@ body {
 
 .table_spec{
     font-size: 13px !important;
+    padding : 0 23px 0 23px !important;
 }
 
 .seepackages{
@@ -930,7 +931,6 @@ body {
     right: 0px;
     top: -7px;
 }
-
 
 .spec_odd{
     background: #E2F5FF;
@@ -962,3 +962,4 @@ body {
     font-size: 14.5px;
     font-weight: bold;
 }
+

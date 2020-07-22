@@ -1,3 +1,4 @@
+
 tippy('.mybadge4', {
     content: 'Score Rating',
     animation : 'scale-subtle'
@@ -19,14 +20,26 @@ function passme(param){
     $('#resort_child_' + param).toggle(5, function(){
         let thiselem =  $('#resort_child_' + param)
         if((thiselem).is(":visible")){
-            console.log('nampil')
             $('#resort_' + param).css({
                 'border': '1px solid #37637B'
             });
+            $('#angle_icon_'+param).css({
+                'color' : '#ffcc00',
+                '-webkit-transform':'rotate(180deg)',
+                '-moz-transform':'rotate(180deg)',
+                '-o-transform':'rotate(180deg)',
+                'transform': 'rotate(180deg)'
+            });
         }else{
-            console.log('ngga')
-            $('#resort_' + param).css({
+            $('#resort_'+param).css({
                 'border': 'none'
+            });
+            $('#angle_icon_'+param).css({
+                'color' : '#ffcc00',
+                '-webkit-transform':'rotate(180deg)',
+                '-moz-transform':'rotate(180deg)',
+                '-o-transform':'rotate(180deg)',
+                'transform': 'rotate(180deg)'
             });
         }
     });
@@ -43,8 +56,37 @@ function passme_tripdata(param){
         }else{
             console.log('ngga')
             $('#trip_list_' + param).css({
-                'border': 'none'
+                'border': 'none',
             });
         }
     });
 }
+
+$('#start_date, #end_date').on('change', function () {
+    console.log('checking started');
+    if ( ($("#start_date").val() != "") && ($("#end_date").val() != "")) {
+        var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+        var firstDate = new  Date($("#start_date").val());
+        var secondDate = new Date($("#end_date").val());
+        var diffDays = Math.round(Math.round((secondDate.getTime() - firstDate.getTime()) / (oneDay)));
+        if(diffDays < 0){
+            // alert('Please provide valid date or end date >= start date')
+            bootbox.alert("Please provide valid date or end date >= start date!");
+            diffDays = 0;
+            $('#end_date').val('');
+            $('#end_date').text('');
+            $("#night_counts").text('').text('0');
+        }else{
+            $("#night_counts").text('').text(diffDays);
+        }
+    }
+});
+
+$('.nav-item.dropdown').each(function(){
+    let thisclick = $(this);
+    thisclick.on('click', function(){
+        if($('.megasize').is(':visible') == true){
+            console.log('visible')
+        }
+    })
+})

@@ -162,19 +162,16 @@
                     <div>
                         <select class="chooser_select">
                             <option>Any Region</option>
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <label class="label_small_widget night_counter">0 Nights</label>
+            <label class="label_small_widget night_counter"><span id="night_counts">0</span>&nbsp;Nights</label>
             <div class="widget_corner_between">
                 <div class="widget_corner_content_date">
-                    <label class="label_small_widget">Start Date</label>
+                    <label class="label_small_widget" >Start Date</label>
                     <div>
-                    <input placeholder="Date" value="2020-06-22"  class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                    <input placeholder="yyyy-mm-dd" id="start_date" class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
                     </div>
                 </div>
             </div>
@@ -182,7 +179,7 @@
                 <div class="widget_corner_content_date">
                     <label class="label_small_widget pushto_right">End Date</label>
                     <div>
-                        <input placeholder="Date" value="2020-06-22" class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                        <input placeholder="yyyy-mm-dd" id="end_date"  class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
                     </div>
                 </div>
             </div>
