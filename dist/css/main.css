@@ -152,7 +152,7 @@ body {
     padding-bottom: 22px;
     background: #FFFFFF;
     position: relative;
-    left: 16px;
+    padding-left: 28px;
     border: 1px solid #ECF1F8;
     box-sizing: border-box;
     box-shadow: 0px 2px 4px rgba(0, 23, 68, 0.09);
