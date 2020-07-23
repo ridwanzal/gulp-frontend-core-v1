@@ -55,18 +55,36 @@ function browserSyncReload(done) {
 
 // css
 // not using css preprocessor
+// function css() {
+//   return gulp
+//     .src(paths.root.distCss + "main.css")
+//     .pipe(sourcemaps.init()) // initialize sourcemaps first
+//     // .pipe(sass()) // compile SCSS to CSS
+//     // .pipe(plumber(function(error) {}))
+//     // .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
+//     // .pipe(
+//     //   rename({
+//     //     suffix: ".min"
+//     //   })
+//     // )
+//     .pipe(sourcemaps.write("./")) // write sourcemaps file in current directory
+//     .pipe(gulp.dest(paths.root.distCss)) // put final CSS in  folder
+//     .pipe(browsersync.stream());
+// }
+
+
 function css() {
   return gulp
-    .src(paths.root.distCss + "main.css")
+    .src(paths.root.css + "style.scss")
     .pipe(sourcemaps.init()) // initialize sourcemaps first
-    // .pipe(sass()) // compile SCSS to CSS
-    // .pipe(plumber(function(error) {}))
-    // .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
-    // .pipe(
-    //   rename({
-    //     suffix: ".min"
-    //   })
-    // )
+    .pipe(sass()) // compile SCSS to CSS
+    .pipe(plumber(function(error) {}))
+    .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
+    .pipe(
+      rename({
+        suffix: ".min"
+      })
+    )
     .pipe(sourcemaps.write("./")) // write sourcemaps file in current directory
     .pipe(gulp.dest(paths.root.distCss)) // put final CSS in  folder
     .pipe(browsersync.stream());
@@ -117,16 +135,19 @@ function twigBuild() {
 
 // Watch files
 function watchFiles() {
-  // gulp.watch([paths.root.css + "**/*"], css);
+  gulp.watch([paths.root.css + "**/*"], css);
   gulp.watch([paths.root.js + "**/*"], gulp.series(js));
   gulp.watch([paths.root.template + "**/*"], gulp.series(twigHtml));
   gulp.watch(
     [
       "**/*.html",
       paths.root.template + "**/*.twig",
-      paths.root.distCss + "**/*.css",
+      // paths.root.distCss + "**/*.css",
       // paths.root.css + "**/*.scss",
       // paths.root.css + "**/*.css",
+      paths.root.css + "**/*.sass",
+      paths.root.css + "**/*.scss",
+      paths.root.css + "**/*.css",
       paths.root.js + "**/*.js"
     ],
     gulp.series(browserSyncReload)
