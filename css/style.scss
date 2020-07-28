@@ -1,8 +1,7 @@
-
-// Settings
 @import "node_modules/bootstrap/scss/bootstrap";
-
-// head
+// global styles
+@import "css/global/global.style.scss";
+// heading styles
 @import "css/00-head/head.style.scss";
-// body
+// body styles
 @import "css/01-content/content.style.scss";
