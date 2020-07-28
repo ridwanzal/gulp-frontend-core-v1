@@ -137,16 +137,6 @@
     padding-right: 30px !important;
 }
 
-// .nav-tabs .nav-item.show .nav-link,
-// .nav-tabs .nav-link.active {
-//     border-top: none;
-//     border-left: none;
-//     border-right: none;
-//     color: $button_color !important;
-//     border-bottom: 2px solid $button_color !important;
-//     border-radius: 2px 2px 0px 0px !important;
-// }
-
 .nav-tabs {
     .nav-item.show{
         .nav-link {
@@ -360,7 +350,7 @@
 .label_prices {
     font-weight: 600;
     font-size: 14px;
-    color: #CB3627;
+    color: $color_orange;
     font-weight: 600;
 }
 
@@ -393,7 +383,7 @@
 
 .offering_badge {
     position: absolute;
-    background-color: #CB3627;
+    background-color: $color_orange;
     color: $color_white;
     font-weight: bold;
     z-index: 2;
@@ -641,35 +631,43 @@
     font-weight: bold;
 }
 
-.dropdown-menu:after{
-    position: absolute;
-    left: 19.5%;
-    top: -15px;
-    width: 0;
-    height: 0;
-    content: '';
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid $color_white;
+.dropdown-menu{
+    &:after{
+        position: absolute;
+        left: 19.5%;
+        top: -15px;
+        width: 0;
+        height: 0;
+        content: '';
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid $color_white;
+    }
 }
 
-.dropdown:after{
-    content: ''; 
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: opacity .10s ease-in-out;
-    opacity: 0;
-    visibility:hidden;
-    background-color: rgba(0,0,0,.2);
+.dropdown{
+    &:after{
+        content: ''; 
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: opacity .10s ease-in-out;
+        opacity: 0;
+        visibility:hidden;
+        background-color: rgba(0,0,0,.2);
+    }
 }
-.dropdown.show .nav-link{
-  position:relative;
-  z-index:12;
-}
-.dropdown.show:after{
-  z-index:10; opacity:1; 
-  visibility:visible;
-  position: fixed;
+
+.dropdown.show{
+    .nav-link {
+        position:relative;
+        z-index:12;
+    }
+
+    &:after {
+        z-index:10; opacity:1; 
+        visibility:visible;
+        position: fixed;
+    }
 }
