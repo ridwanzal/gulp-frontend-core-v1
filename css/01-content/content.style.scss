@@ -115,7 +115,7 @@
     border-bottom: $main_border;
 }
 
-.form-check {
+.form-check{
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -127,14 +127,14 @@
     }
 }
 
-.nav-tabs {
-    border-bottom: none !important;
-    font-size: $main_font;
-}
-
 .navbar_megamenu {
     padding-left: 30px !important;
     padding-right: 30px !important;
+}
+
+.nav-tabs {
+    border-bottom: none !important;
+    font-size: $main_font;
 }
 
 .nav-tabs {
@@ -156,9 +156,6 @@
         border-bottom: 2px solid $button_color !important;
         border-radius: 2px 2px 0px 0px !important;
     }
-}
-
-.nav-tabs {
     .nav-link {
         color: #9CAAC4 !important;
     }
@@ -442,10 +439,12 @@
     position: static !important;
 }
 
-.megamenu .dropdown-menu {
-    background: none !important;
-    width: 100% !important;
-    font-size: 12px;
+.megamenu {
+    .dropdown-menu {
+        background: none !important;
+        width: 100% !important;
+        font-size: 12px;
+    }
 }
 
 .megamenu_container {
