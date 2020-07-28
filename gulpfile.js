@@ -12,7 +12,7 @@ const autoprefixer = require("autoprefixer");
 const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
-const imagemin = require('gulp-imagemin');
+// const imagemin = require('gulp-imagemin');
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
 const rename = require("gulp-rename");
@@ -73,12 +73,12 @@ function browserSyncReload(done) {
 //     .pipe(browsersync.stream());
 // }
 
-function images(){
-  return gulp
-    .src("dist/img/**/*.{jpg,jpeg,png,svg}")
-    .pipe(imagemin())
-    .pipe(gulp.dest("dist/img"));
-}
+// function images(){
+//   return gulp
+//     .src("dist/img/**/*.{jpg,jpeg,png,svg}")
+//     .pipe(imagemin())
+//     .pipe(gulp.dest("dist/img"));
+// }
 
 
 function css() {
@@ -102,7 +102,6 @@ function css() {
 function js() {
   return gulp
     .src([
-      // If you want you can remove jquery
       paths.lib.jquery,   
       paths.root.js + "entry.js"
     ])
@@ -162,10 +161,10 @@ function watchFiles() {
   );
 }
 
-const watch = gulp.series(gulp.parallel(images, watchFiles, twigBuild, browserSync));
+const watch = gulp.series(gulp.parallel(watchFiles, twigBuild, browserSync));
 // export tasks
 exports.css = css;
-exports.images = images;
+// exports.images = images;
 exports.js = js;
 exports.watch = watch;
 exports.default = watch;
