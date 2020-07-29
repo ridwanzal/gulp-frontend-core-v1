@@ -115,12 +115,10 @@
     border-bottom: $main_border;
 }
 
-.form-check{
+.form-check {
     padding-top: 5px;
     padding-bottom: 5px;
-}
 
-.form-check {
     label {
         color: $label_bold;
         font-size: $main_font;
@@ -135,9 +133,6 @@
 .nav-tabs {
     border-bottom: none !important;
     font-size: $main_font;
-}
-
-.nav-tabs {
     .nav-item.show{
         .nav-link {
             border-top: none;
@@ -437,9 +432,7 @@
 
 .megamenu {
     position: static !important;
-}
-
-.megamenu {
+    
     .dropdown-menu {
         background: none !important;
         width: 100% !important;
@@ -464,9 +457,11 @@
     border-bottom-right-radius: 4px !important;
 }
 
-.dropdown-toggle::after {
-    position: relative;
-    top: 2px !important;
+.dropdown-toggle {
+    &:after{
+        position: relative;
+        top: 2px !important;
+    }
 }
 
 .megamenu_section {
