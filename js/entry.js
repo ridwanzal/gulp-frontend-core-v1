@@ -4,6 +4,13 @@ tippy('.mybadge4', {
     animation : 'scale-subtle'
 });
 
+if (!Modernizr.inputtypes.date) {
+    $('input[type=date]').datepicker({
+            dateFormat : 'yy-mm-dd'
+        }
+    );
+}
+
 $('#lookfor').on('change', function(){
     let vals = $(this).val();
     console.log(vals);
@@ -84,7 +91,6 @@ $('#start_date, #end_date').on('change', function () {
         var secondDate = new Date($("#end_date").val());
         var diffDays = Math.round(Math.round((secondDate.getTime() - firstDate.getTime()) / (oneDay)));
         if(diffDays < 0){
-            // alert('Please provide valid date or end date >= start date')
             bootbox.alert("Please provide valid date or end date >= start date!");
             diffDays = 0;
             $('#end_date').val('');

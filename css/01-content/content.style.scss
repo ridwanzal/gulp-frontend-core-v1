@@ -360,7 +360,7 @@
 }
 
 .button_packages:hover {
-    background-color: #243e4c;
+    background-color: $button_color_hover;
 }
 
 .reviews_result {
@@ -478,7 +478,7 @@
 
 .night_counter {
     position: absolute;
-    left: 909px;
+    left: 622px;
     z-index: 3;
     top: 40px;
     font-size: 10px;

@@ -61,15 +61,14 @@ body {
     border-radius: 8px;
 }
 
-::-webkit-input-placeholder {
-    color: $color_placeholder;
+@mixin placeholdercolor {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}  
 }
 
-:-ms-input-placeholder {
-    color: $color_placeholder;
-}
-
-::placeholder {
+@include placeholdercolor {
     color: $color_placeholder;
 }
 
@@ -153,7 +152,7 @@ body {
 
 .label_small_widget_green {
     font-size: 14px;
-    color: #2FAC75;
+    color: $badge_green;
     font-weight: 700;
     margin-bottom: 1px;
     font-weight: light !important;
@@ -162,8 +161,8 @@ body {
 .widget_corner_left {
     background: $color_white;
     border-top: $main_border;
-    border-right: 0px dashed #E1E7F1;
-    border-bottom: 1px dotted #E1E7F1;
+    border-right: 0px dashed $main_border;
+    border-bottom: 1px dotted $main_border;
     border-left: $main_border;
     border-radius: 8px 0px 0px 8px;
     padding: 13px 20px 13px 20px;
@@ -173,8 +172,8 @@ body {
 .widget_corner_between {
     background: $color_white;
     border-top: $main_border;
-    border-right: 0px dashed #E1E7F1;
-    border-bottom: 1px dotted #E1E7F1;
+    border-right: 0px dashed $main_border;
+    border-bottom: 1px dotted $main_border;
     border-left: $main_border;
     border-radius: 0px 0px 0px 0px;
     padding: 13px 17px 13px 17px;
@@ -186,8 +185,8 @@ body {
 .widget_corner_right {
     background: $color_white;
     border-top: $main_border;
-    border-right: 0px dashed #E1E7F1;
-    border-bottom: 1px dotted #E1E7F1;
+    border-right: 0px dashed $main_border;
+    border-bottom: 1px dotted $main_border;
     border-left: $main_border;
     border-radius: 0px 8px 8px 0px;
     display: flex;
@@ -296,7 +295,7 @@ body {
 }
 
 .submit_search_text:hover {
-    background-color: #243e4c;
+    background-color: $button_color_hover;
     border-radius: 0px 8px 8px 0px;
 }
 
