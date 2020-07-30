@@ -78,7 +78,7 @@ function passme_tripdata(param){
 $('#start_date, #end_date').on('change', function () {
     console.log('checking started');
     if ( ($("#start_date").val() != "") && ($("#end_date").val() != "")) {
-        var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+        var oneDay = 24*60*60*1000; 
         var firstDate = new  Date($("#start_date").val());
         var secondDate = new Date($("#end_date").val());
         var diffDays = Math.round(Math.round((secondDate.getTime() - firstDate.getTime()) / (oneDay)));
@@ -194,15 +194,16 @@ $('.submit_search_text').on('click', function(){
                                   </div>
                               </div>
                           </div>`;
+                          $('#search_result').show();
                           $('#search_result').append(adapters);
                           $('.loader').fadeOut('slow');
                           arr_check = [];
                     }
                 }else{
+                    $('#search_result').show();
                     $('#search_result').append('<h6 style="margin: 0 auto;">Data Not found <a href=""javascript:history.go(0)"">Refresh Page</a></h6>');
                     $('.loader').fadeOut('slow');
                 }
-                console.log(arr_check);
             },
             error : function(e){
                 console.log(e);
@@ -211,13 +212,15 @@ $('.submit_search_text').on('click', function(){
         console.log(values);
         $('#nav-home').hide();
         $('#pagination').hide();
-        $('#resort').hide();
+        $('#liveboard').hide();
+        $('#resort_child_main').hide();
         $('.loader').show();
     }else{
-        $('#search_result').empty() ;
         $('#nav-home').show();
+        $('#liveboard').hide();
+        $('#search_result').hide();
         $('#pagination').show();
-        $('#resort').show();
+        $('#resort_child_main').show();
         $('.loader').fadeOut('slow');
     }
 });
