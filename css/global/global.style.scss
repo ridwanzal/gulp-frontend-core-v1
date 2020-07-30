@@ -20,3 +20,19 @@ $color_orange : #CB3627;
 
 /*border*/
 $main_border : 1px solid #E1E7F1;
+
+.loader {
+    display: none;
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: 2px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.5s linear infinite;
+    margin : 10px auto;
+  }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
