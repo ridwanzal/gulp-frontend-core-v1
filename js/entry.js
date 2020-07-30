@@ -4,13 +4,6 @@ tippy('.mybadge4', {
     animation : 'scale-subtle'
 });
 
-if (!Modernizr.inputtypes.date) {
-    $('input[type=date]').datepicker({
-            dateFormat : 'yy-mm-dd'
-        }
-    );
-}
-
 $('#lookfor').on('change', function(){
     let vals = $(this).val();
     console.log(vals);
