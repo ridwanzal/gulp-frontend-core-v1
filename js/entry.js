@@ -201,7 +201,7 @@ $('.submit_search_text').on('click', function(){
                     }
                 }else{
                     $('#search_result').show();
-                    $('#search_result').append('<h6 style="margin: 0 auto;">Data Not found <a href=""javascript:history.go(0)"">Refresh Page</a></h6>');
+                    $('#search_result').append('<h6 style="margin: 0 auto;">Data Not found <a href="javascript:history.go(0)">Refresh Page</a></h6>');
                     $('.loader').fadeOut('slow');
                 }
             },
