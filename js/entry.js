@@ -94,10 +94,19 @@ $('#start_date, #end_date').on('change', function () {
     }
 });
 
-$('.submit_search_text').on('click', function(){
+
+$('.submit_global_search').keypress(function(e){
+    console.log('keypress');
+    if (e.which == 13) {
+        console.log('you hit enter');
+        searchModule();
+    }
+});
+
+function searchModule(){
     $('#search_result').empty();
     let arr_check = [];
-    let values = $('.chooser_search').val();
+    let values = $('.submit_global_search').val();
     if(values !== ''){  
         let url = '../data/search.json';   
         $.ajax({
@@ -223,4 +232,5 @@ $('.submit_search_text').on('click', function(){
         $('#resort_child_main').show();
         $('.loader').fadeOut('slow');
     }
-});
+
+}
