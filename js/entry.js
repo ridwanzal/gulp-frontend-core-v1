@@ -1,17 +1,18 @@
 tippy('.mybadge4', {
     content: 'Score Rating',
-    animation : 'scale-subtle'
+    animation: 'scale-subtle'
 });
 
-$('#lookfor').on('change', function(){
+
+$('#lookfor').on('change', function() {
     let vals = $(this).val();
     console.log(vals);
-    if(vals === 'resort'){
+    if (vals === 'resort') {
         $('#resort').show();
         $('#liveboard').hide();
         $('#filter_diveresort').show();
         $('#filter_liveboard').hide();
-    }else{
+    } else {
         $('#liveboard').show();
         $('#resort').hide();
         $('#filter_diveresort').hide();
@@ -19,83 +20,83 @@ $('#lookfor').on('change', function(){
     }
 })
 
-function passme(param){
-    $('#resort_child_' + param).toggle(5, function(){
-        let thiselem =  $('#resort_child_' + param)
-        if((thiselem).is(":visible")){
+function passme(param) {
+    $('#resort_child_' + param).toggle(5, function() {
+        let thiselem = $('#resort_child_' + param)
+        if ((thiselem).is(":visible")) {
             $('#resort_' + param).css({
                 'border': '1px solid #37637B'
             });
-            $('#angle_icon_'+param).css({
-                '-webkit-transform':'rotate(180deg)',
-                '-moz-transform':'rotate(180deg)',
-                '-o-transform':'rotate(180deg)',
+            $('#angle_icon_' + param).css({
+                '-webkit-transform': 'rotate(180deg)',
+                '-moz-transform': 'rotate(180deg)',
+                '-o-transform': 'rotate(180deg)',
                 'transform': 'rotate(180deg)'
             });
-        }else{
-            $('#resort_'+param).css({
+        } else {
+            $('#resort_' + param).css({
                 'border': 'none'
             });
-            $('#angle_icon_'+param).css({
-                '-webkit-transform':'rotate(360deg)',
-                '-moz-transform':'rotate(360deg)',
-                '-o-transform':'rotate(360deg)',
+            $('#angle_icon_' + param).css({
+                '-webkit-transform': 'rotate(360deg)',
+                '-moz-transform': 'rotate(360deg)',
+                '-o-transform': 'rotate(360deg)',
                 'transform': 'rotate(360deg)'
             });
         }
     });
 }
 
-function passme_tripdata(param){
-    $('#trip_child_' + param).toggle(5, function(){
-        let thiselem =  $('#trip_child_' + param)
-        if((thiselem).is(":visible")){
+function passme_tripdata(param) {
+    $('#trip_child_' + param).toggle(5, function() {
+        let thiselem = $('#trip_child_' + param)
+        if ((thiselem).is(":visible")) {
             console.log('nampil')
             $('#trip_list_' + param).css({
                 'border': '1px solid #37637B'
             });
-            $('#angle_icon_trip_'+param).css({
-                '-webkit-transform':'rotate(180deg)',
-                '-moz-transform':'rotate(180deg)',
-                '-o-transform':'rotate(180deg)',
+            $('#angle_icon_trip_' + param).css({
+                '-webkit-transform': 'rotate(180deg)',
+                '-moz-transform': 'rotate(180deg)',
+                '-o-transform': 'rotate(180deg)',
                 'transform': 'rotate(180deg)'
             });
-        }else{
+        } else {
             console.log('ngga')
             $('#trip_list_' + param).css({
                 'border': 'none',
             });
-            $('#angle_icon_trip_'+param).css({
-                '-webkit-transform':'rotate(360deg)',
-                '-moz-transform':'rotate(360deg)',
-                '-o-transform':'rotate(360deg)',
+            $('#angle_icon_trip_' + param).css({
+                '-webkit-transform': 'rotate(360deg)',
+                '-moz-transform': 'rotate(360deg)',
+                '-o-transform': 'rotate(360deg)',
                 'transform': 'rotate(360deg)'
             });
         }
     });
 }
 
-$('#start_date, #end_date').on('change', function () {
+$('#start_date, #end_date').on('change', function() {
     console.log('checking started');
-    if ( ($("#start_date").val() != "") && ($("#end_date").val() != "")) {
-        var oneDay = 24*60*60*1000; 
-        var firstDate = new  Date($("#start_date").val());
+    if (($("#start_date").val() != "") && ($("#end_date").val() != "")) {
+        var oneDay = 24 * 60 * 60 * 1000;
+        var firstDate = new Date($("#start_date").val());
         var secondDate = new Date($("#end_date").val());
         var diffDays = Math.round(Math.round((secondDate.getTime() - firstDate.getTime()) / (oneDay)));
-        if(diffDays < 0){
+        if (diffDays < 0) {
             bootbox.alert("Please provide valid date or end date >= start date!");
             diffDays = 0;
             $('#end_date').val('');
             $('#end_date').text('');
             $("#night_counts").text('').text('0');
-        }else{
+        } else {
             $("#night_counts").text('').text(diffDays);
         }
     }
 });
 
 
-$('.submit_global_search').keypress(function(e){
+$('.submit_global_search').keypress(function(e) {
     console.log('keypress');
     if (e.which == 13) {
         console.log('you hit enter');
@@ -103,38 +104,38 @@ $('.submit_global_search').keypress(function(e){
     }
 });
 
-function searchModule(){
+function searchModule() {
     $('#search_result').empty();
     let arr_check = [];
     let values = $('.submit_global_search').val();
-    if(values !== ''){  
-        let url = '../data/search.json';   
+    if (values !== '') {
+        let url = '../data/search.json';
         $.ajax({
-            url : url,
-            type : 'GET',
-            success : function(res){
-              console.log(res);
-              let i = 0;
-              let check;
-              for(i; i < res.length; i++){
-                  check = res[i].name.toLowerCase().includes(values);
-                  if(check){
-                      arr_check.push(res[i]);
-                  }
+            url: url,
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+                let i = 0;
+                let check;
+                for (i; i < res.length; i++) {
+                    check = res[i].name.toLowerCase().includes(values);
+                    if (check) {
+                        arr_check.push(res[i]);
+                    }
                 }
                 let j = 0;
                 console.log(arr_check);
-                if(arr_check.length > 0){
-                    for(j; j < arr_check.length; j++){
-                        let adapters = 
-                              `<div class="card_product_wrapper product_list_resort" id="resort_1">
+                if (arr_check.length > 0) {
+                    for (j; j < arr_check.length; j++) {
+                        let adapters =
+                            `<div class="card_product_wrapper product_list_resort" id="resort_1">
                               <div class="row">
                                   <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
                                       <img class="image_products" src="img/resorts/1.jpeg">
                                   </div>
                                   <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
                                       <div class="wrapper_product_info">
-                                          <label class="label_card" >`+arr_check[j].name+`</label>
+                                          <label class="label_card" >` + arr_check[j].name + `</label>
                                               <div class="review_wrapper spacer_bottom" >
                                                   <span class="fa fa-star checked_star star_list"></span>
                                                   <span class="fa fa-star checked_star star_list"></span>
@@ -203,18 +204,18 @@ function searchModule(){
                                   </div>
                               </div>
                           </div>`;
-                          $('#search_result').show();
-                          $('#search_result').append(adapters);
-                          $('.loader').fadeOut('slow');
-                          arr_check = [];
+                        $('#search_result').show();
+                        $('#search_result').append(adapters);
+                        $('.loader').fadeOut('slow');
+                        arr_check = [];
                     }
-                }else{
+                } else {
                     $('#search_result').show();
                     $('#search_result').append('<h6 style="margin: 0 auto;">Data Not found <a href="javascript:history.go(0)">Refresh Page</a></h6>');
                     $('.loader').fadeOut('slow');
                 }
             },
-            error : function(e){
+            error: function(e) {
                 console.log(e);
             }
         });
@@ -224,7 +225,7 @@ function searchModule(){
         $('#liveboard').hide();
         $('#resort_child_main').hide();
         $('.loader').show();
-    }else{
+    } else {
         $('#nav-home').show();
         $('#liveboard').hide();
         $('#search_result').hide();
@@ -234,3 +235,40 @@ function searchModule(){
     }
 
 }
+
+
+// mapbox maps conta
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoicmlkd2FuemFsIiwiYSI6ImNrNm40eWI0eTA3MG8zcHFiODZsdDV1aHMifQ.HBLx-EceW5xn0z5XhR-5PQ';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+});
+
+$('#imageGallery').lightSlider({
+    item: 3,
+    loop: false,
+    slideMove: 2,
+    auto: false,
+    pauseOnHover: true,
+    slideMargin: 0,
+    enableDrag: false,
+    pager: true,
+});
+
+$('#boatsGallery').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: false,
+    thumbItem: 9,
+    slideMargin: 0,
+    enableDrag: false,
+    currentPagerPosition: 'left',
+    onSliderLoad: function(el) {
+        el.lightGallery({
+            selector: '#boatGallery .lslide'
+        });
+    }
+});

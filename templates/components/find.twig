@@ -1,0 +1,67 @@
+
+<section class="chooser_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="widget_corner_left">
+                <div class="widget_corner_icon">
+                    <img src="img/widget1.svg">
+                </div>
+                <div class="widget_corner_content">
+                    <label class="label_small_widget">I'm looking for</label>
+                    <div>
+                        <select class="chooser_select" id="lookfor">
+                            <option value="resort">Dive Resort</option>
+                            <option value="liveboard">Live Board</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="widget_corner_between">
+                <div class="widget_corner_icon">
+                    <img src="img/widget2.svg">
+                </div>
+                <div class="widget_corner_content">
+                    <label class="label_small_widget">Dive Region</label>
+                    <div>
+                        <select class="chooser_select">
+                            <option>Any Region</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <label class="label_small_widget night_counter"><span id="night_counts">0</span>&nbsp;Nights</label>
+            <div class="widget_corner_between">
+                <div class="widget_corner_content_date">
+                    <label class="label_small_widget" >Start Date</label>
+                    <div>
+                    <input placeholder="yyyy-mm-dd" id="start_date" class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                    </div>
+                </div>
+            </div>
+            <div class="widget_corner_between">
+                <div class="widget_corner_content_date">
+                    <label class="label_small_widget pushto_right">End Date</label>
+                    <div>
+                        <input placeholder="yyyy-mm-dd" id="end_date"  class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                    </div>
+                </div>
+            </div>
+            <div class="widget_corner_right">
+                <div class="widget_corner_content_search">
+                    <div class="widget_corner_icon_search">
+                        <img src="img/search.svg">
+                    </div>
+                    <div class="widget_corner_inside">
+                        <label class="label_small_widget">Keyword (Optional)</label>
+                        <div>
+                            <input type="text" class="chooser_search" placeholder="Resort Name, Dive Region, etc">
+                        </div>
+                    </div>
+                    <div class="submit_search">
+                        <div class="submit_search_text">Search</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
