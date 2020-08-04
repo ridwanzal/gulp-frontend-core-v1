@@ -26,7 +26,7 @@ silahkan remark / unremark layout yg akan dilihat.
 compile ulang dengan :
 
 ```
-#gulp
+$ gulp
 ```
 
 
