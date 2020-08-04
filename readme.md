@@ -1,4 +1,4 @@
-# Frontend Modul (Gulp, Twig, HTML and CSS (preprocessors))
+# Frontend Dev with Gulp, Twig, HTML and SASS
 
 Modul ini merupakan modul sederhana yang dapat digunakan untuk keperluan frontend development
 
