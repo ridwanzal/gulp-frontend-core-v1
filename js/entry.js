@@ -272,3 +272,49 @@ $('#boatsGallery').lightSlider({
         });
     }
 });
+
+$('#cabinGallery1').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: false,
+    thumbItem: 9,
+    slideMargin: 0,
+    enableDrag: false,
+    currentPagerPosition: 'left',
+    onSliderLoad: function(el) {
+        el.lightGallery({
+            selector: '#boatGallery .lslide'
+        });
+    }
+});
+
+
+$('#cabinGallery2, #cabinGallery3, #cabinGallery4').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: false,
+    thumbItem: 9,
+    slideMargin: 0,
+    enableDrag: false,
+    currentPagerPosition: 'left',
+    onSliderLoad: function(el) {
+        el.lightGallery({
+            selector: '#boatGallery .lslide'
+        });
+    }
+});
+
+
+$('.gallery_list').magnificPopup({
+    delegate: 'a', // the selector for gallery item
+    type: 'image',
+    gallery: {
+        enabled: true
+    }
+});
+
+
+$('.gallery_banner').magnificPopup({
+    delegate: 'a', // the selector for gallery item
+    type: 'image'
+});
