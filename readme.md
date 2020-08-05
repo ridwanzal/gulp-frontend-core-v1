@@ -21,7 +21,7 @@ $ gulp
 
 ## Change index page
 Untuk saat ini page hanya bisa dilihat satu persatu, untuk mengubah, edit file
-index.twig yang berada di paht '/templates/pages/index.twig'
+index.twig yang berada di path '/templates/pages/index.twig'
 silahkan remark / unremark layout yg akan dilihat.
 compile ulang dengan :
 
@@ -29,6 +29,8 @@ compile ulang dengan :
 $ gulp
 ```
 
+## homework
+perlu penjelasan mengenai strukur project
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
