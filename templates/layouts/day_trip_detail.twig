@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+  {% include "../components/head.twig" %}
+</head>
+
+<body>
+  <div class="ex_wrapper">
+    {% include "../components/navbar.twig" %}
+    {% include "../components/detail_day_trip.twig" %}
+    {# {% include "../components/content.twig" %} #}
+    {% include "../components/footer.twig" %}
+    <!-- This is very important tag if you wanna use differnt JS after footer in all html check the example in: pages/index.twig -->
+    {{ block('included_content') }}
+  </div>
+</body>
+</html> 

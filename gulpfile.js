@@ -21,6 +21,7 @@ const plumber = require("gulp-plumber");
 const twig = require("gulp-twig");
 const cache = require("gulp-cache");
 const prettyHtml = require("gulp-pretty-html");
+const port = 8000;
 
 // paths
 const paths = {
@@ -43,7 +44,8 @@ function browserSync(done) {
             baseDir: "./dist",
             proxy: "localhost:3001"
         },
-        notify: false
+        port,
+        notify: false,
     });
     done();
 }

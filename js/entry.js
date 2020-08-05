@@ -1,23 +1,167 @@
-tippy('.mybadge4', {
-    content: 'Score Rating',
-    animation: 'scale-subtle'
-});
+$(function() {
+    $('#lookfor').on('change', function() {
+        let vals = $(this).val();
+        console.log(vals);
+        if (vals === 'resort') {
+            $('#resort').show();
+            $('#liveboard').hide();
+            $('#filter_diveresort').show();
+            $('#filter_liveboard').hide();
+        } else {
+            $('#liveboard').show();
+            $('#resort').hide();
+            $('#filter_diveresort').hide();
+            $('#filter_liveboard').show();
+        }
+    });
+
+    $('#start_date, #end_date').on('change', function() {
+        console.log('checking started');
+        if (($("#start_date").val() != "") && ($("#end_date").val() != "")) {
+            var oneDay = 24 * 60 * 60 * 1000;
+            var firstDate = new Date($("#start_date").val());
+            var secondDate = new Date($("#end_date").val());
+            var diffDays = Math.round(Math.round((secondDate.getTime() - firstDate.getTime()) / (oneDay)));
+            if (diffDays < 0) {
+                bootbox.alert("Please provide valid date or end date >= start date!");
+                diffDays = 0;
+                $('#end_date').val('');
+                $('#end_date').text('');
+                $("#night_counts").text('').text('0');
+            } else {
+                $("#night_counts").text('').text(diffDays);
+            }
+        }
+    });
+
+    // owl carousel
+    $('.owl-carousel').owlCarousel({
+        margin: 15
+    });
+
+    // modal gallery for package details
+    $('#imageGallery_modal').lightSlider({
+        item: 3,
+        loop: false,
+        slideMove: 2,
+        auto: false,
+        pauseOnHover: true,
+        slideMargin: 8,
+        enableDrag: false,
+    });
 
 
-$('#lookfor').on('change', function() {
-    let vals = $(this).val();
-    console.log(vals);
-    if (vals === 'resort') {
-        $('#resort').show();
-        $('#liveboard').hide();
-        $('#filter_diveresort').show();
-        $('#filter_liveboard').hide();
-    } else {
-        $('#liveboard').show();
-        $('#resort').hide();
-        $('#filter_diveresort').hide();
-        $('#filter_liveboard').show();
+    $('#imageGallery_modal').lightSlider({
+        item: 3,
+        loop: false,
+        slideMove: 2,
+        auto: false,
+        pauseOnHover: true,
+        slideMargin: 8,
+        enableDrag: false,
+    });
+
+    $('#imageGallery').lightSlider({
+        item: 3,
+        loop: false,
+        slideMove: 2,
+        auto: false,
+        pauseOnHover: true,
+        slideMargin: 8,
+        enableDrag: false,
+    });
+
+    $('#boatsGallery').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: false,
+        thumbItem: 9,
+        slideMargin: 8,
+        enableDrag: false,
+        currentPagerPosition: 'left',
+        onSliderLoad: function(el) {
+            el.lightGallery({
+                selector: '#boatGallery .lslide'
+            });
+        }
+    });
+
+    $('#cabinGallery1').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: false,
+        thumbItem: 9,
+        slideMargin: 8,
+        enableDrag: false,
+        currentPagerPosition: 'left',
+        onSliderLoad: function(el) {
+            el.lightGallery({
+                selector: '#boatGallery .lslide'
+            });
+        }
+    });
+
+    let check_modal_diving = $('#diving_image').is(':visible');
+    if (check_modal_diving) {
+        console.log('modal is open');
+        $('#cabinGallery5').lightSlider({
+            gallery: true,
+            item: 1,
+            loop: false,
+            thumbItem: 9,
+            slideMargin: 8,
+            enableDrag: false,
+            currentPagerPosition: 'left'
+        });
     }
+
+
+    $('#cabinGallery2, #cabinGallery3, #cabinGallery4').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: false,
+        thumbItem: 9,
+        slideMargin: 8,
+        enableDrag: false,
+        currentPagerPosition: 'left'
+    });
+
+    $('.gallery_list').magnificPopup({
+        delegate: 'a', // the selector for gallery item
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+
+    $('.gallery_banner').magnificPopup({
+        delegate: 'a', // the selector for gallery item
+        type: 'image'
+    });
+
+    $('.gallery_list_daytrip').magnificPopup({
+        delegate: 'a', // the selector for gallery item
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
+    });
+
+    // mapbox maps conta
+
+    mapboxgl.accessToken = 'pk.eyJ1Ijoicmlkd2FuemFsIiwiYSI6ImNrNm40eWI0eTA3MG8zcHFiODZsdDV1aHMifQ.HBLx-EceW5xn0z5XhR-5PQ';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    tippy('.mybadge4', {
+        content: 'Score Rating',
+        animation: 'scale-subtle'
+    });
+
 })
 
 function passme(param) {
@@ -43,6 +187,14 @@ function passme(param) {
                 '-o-transform': 'rotate(360deg)',
                 'transform': 'rotate(360deg)'
             });
+        }
+    });
+
+    $('.submit_global_search').keypress(function(e) {
+        console.log('keypress');
+        if (e.which == 13) {
+            console.log('you hit enter');
+            searchModule();
         }
     });
 }
@@ -75,34 +227,6 @@ function passme_tripdata(param) {
         }
     });
 }
-
-$('#start_date, #end_date').on('change', function() {
-    console.log('checking started');
-    if (($("#start_date").val() != "") && ($("#end_date").val() != "")) {
-        var oneDay = 24 * 60 * 60 * 1000;
-        var firstDate = new Date($("#start_date").val());
-        var secondDate = new Date($("#end_date").val());
-        var diffDays = Math.round(Math.round((secondDate.getTime() - firstDate.getTime()) / (oneDay)));
-        if (diffDays < 0) {
-            bootbox.alert("Please provide valid date or end date >= start date!");
-            diffDays = 0;
-            $('#end_date').val('');
-            $('#end_date').text('');
-            $("#night_counts").text('').text('0');
-        } else {
-            $("#night_counts").text('').text(diffDays);
-        }
-    }
-});
-
-
-$('.submit_global_search').keypress(function(e) {
-    console.log('keypress');
-    if (e.which == 13) {
-        console.log('you hit enter');
-        searchModule();
-    }
-});
 
 function searchModule() {
     $('#search_result').empty();
@@ -235,86 +359,3 @@ function searchModule() {
     }
 
 }
-
-
-// mapbox maps conta
-
-mapboxgl.accessToken = 'pk.eyJ1Ijoicmlkd2FuemFsIiwiYSI6ImNrNm40eWI0eTA3MG8zcHFiODZsdDV1aHMifQ.HBLx-EceW5xn0z5XhR-5PQ';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    center: [-74.5, 40], // starting position [lng, lat]
-    zoom: 9 // starting zoom
-});
-
-$('#imageGallery').lightSlider({
-    item: 3,
-    loop: false,
-    slideMove: 2,
-    auto: false,
-    pauseOnHover: true,
-    slideMargin: 0,
-    enableDrag: false,
-    pager: true,
-});
-
-$('#boatsGallery').lightSlider({
-    gallery: true,
-    item: 1,
-    loop: false,
-    thumbItem: 9,
-    slideMargin: 0,
-    enableDrag: false,
-    currentPagerPosition: 'left',
-    onSliderLoad: function(el) {
-        el.lightGallery({
-            selector: '#boatGallery .lslide'
-        });
-    }
-});
-
-$('#cabinGallery1').lightSlider({
-    gallery: true,
-    item: 1,
-    loop: false,
-    thumbItem: 9,
-    slideMargin: 0,
-    enableDrag: false,
-    currentPagerPosition: 'left',
-    onSliderLoad: function(el) {
-        el.lightGallery({
-            selector: '#boatGallery .lslide'
-        });
-    }
-});
-
-
-$('#cabinGallery2, #cabinGallery3, #cabinGallery4').lightSlider({
-    gallery: true,
-    item: 1,
-    loop: false,
-    thumbItem: 9,
-    slideMargin: 0,
-    enableDrag: false,
-    currentPagerPosition: 'left',
-    onSliderLoad: function(el) {
-        el.lightGallery({
-            selector: '#boatGallery .lslide'
-        });
-    }
-});
-
-
-$('.gallery_list').magnificPopup({
-    delegate: 'a', // the selector for gallery item
-    type: 'image',
-    gallery: {
-        enabled: true
-    }
-});
-
-
-$('.gallery_banner').magnificPopup({
-    delegate: 'a', // the selector for gallery item
-    type: 'image'
-});

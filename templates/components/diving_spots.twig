@@ -17,16 +17,16 @@
                     <h5 class="style_header">Dive List</h5>
                      <div class="demo hasActive">
                             <ul id="imageGallery" class="img">
-                                <li data-src="img/liveboard_detail/1.jpeg">
+                                <li data-src="img/liveboard_detail/1.jpeg" data-toggle="modal" data-target="#diving_image"> 
                                     <img src="img/liveboard_detail/1.jpeg"  width="100%" />
                                 </li>
-                                <li data-src="img/liveboard_detail/2.jpeg">
+                                <li data-src="img/liveboard_detail/2.jpeg" data-toggle="modal" data-target="#diving_image">
                                     <img src="img/liveboard_detail/2.jpeg"  width="100%" />
                                 </li>
-                                <li data-src="img/liveboard_detail/1.jpeg">
+                                <li data-src="img/liveboard_detail/1.jpeg" data-toggle="modal" data-target="#diving_image">
                                     <img src="img/liveboard_detail/1.jpeg"  width="100%" />
                                 </li>
-                                <li data-src="img/liveboard_detail/2.jpeg">
+                                <li data-src="img/liveboard_detail/2.jpeg" data-toggle="modal" data-target="#diving_image">
                                     <img src="img/liveboard_detail/2.jpeg"  width="100%" />
                                 </li>
                             </ul>
@@ -36,4 +36,51 @@
         </div>
     </div>
 </div>
-    
+
+                        <!-- Modal -->
+<div class="modal fade" id="diving_image" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="nocard_content_wrapper_modal">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                    <div class="label_light">Package Details
+                                    </div>
+                                    <label class="label_card_24">Package Details
+                                    </label>
+                                    <div class="divider_big"></div>
+                                    <div class="owl-carousel owl-theme">
+                                            <div>
+                                                <img src="img/liveboard_detail/cabin1.jpeg"/>
+                                            </div>
+                                            <div>
+                                                <img src="img/liveboard_detail/cabin2.jpeg"/>
+                                            </div>
+                                            <div>
+                                                <img src="img/liveboard_detail/cabin3.jpeg"   />
+                                            </div>
+                                            <div>
+                                                <img src="img/liveboard_detail/cabin4.jpeg"  />
+                                            </div>
+                                            <div class="divider_big"></div>
+                                    </div>
+                                    <p class="text_content">
+                                        USAT Liberty – Bali’s most famous dive site offers a chance to 
+                                        see schools of bumphead parrotfish, black sand muck diving,
+                                        and a coral encrusted wreck. The USAT (United States Army Transport) 
+                                        Liberty was awaiting repairs on the shore when lava flow from an erupting 
+                                        Mount Agung pushed her back into the water where she now lays on her side. 
+                                        Starting at just over five meters and extending down to 30 meters, this wreck is
+                                        a marine life hotspot. Look out for barracuda, turtles, pygmy seahorses on fans, numerous species of nudibranch, sting rays and a wealth of critters.
+                                    </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
