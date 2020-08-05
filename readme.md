@@ -29,7 +29,7 @@ compile ulang dengan :
 $ gulp
 ```
 
-## homework
+## Homework
 perlu penjelasan mengenai strukur project
 
 ## Contributing
