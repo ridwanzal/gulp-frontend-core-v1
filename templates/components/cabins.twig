@@ -1,5 +1,5 @@
- <div class="card_custom_top">
-                            <div class="card-header-noborder card_custom_header_noborder" id="cabins">
+ <div class="card_custom_bordered">
+                            <div class="card-header-bordered" id="cabins">
                             <h5 class="mb-0 label_card">
                                 <div class="btn btn-link btn_link_title_big collapsed" data-toggle="collapse" data-target="#collapseCabin" aria-expanded="true" aria-controls="collapseCabin">
                                      <div class="label_card_24">Cabins</div>
@@ -65,7 +65,7 @@
                                                         </li>
                                                     </ul>
                                                     <div class="divider_big"></div>
-                                                    <button class="button_packages_alt">Show Cabin Info</button>
+                                                    <button class="button_packages_alt" data-toggle="modal" data-target="#cabin_info">Show Cabin Info</button>
                                             </div>
                                         </div>
                                     </div>
@@ -128,8 +128,88 @@
                                                         </li>
                                                     </ul>
                                                     <div class="divider_big"></div>
-                                                    <button class="button_packages_alt">Show Cabin Info</button>
+                                                    <button class="button_packages_alt" data-toggle="modal" data-target="#cabin_info">Show Cabin Info</button>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cabin_info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-xl" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <div class="nocard_content_wrapper_modal">
+                                                <div class="row">
+                                                    <div class="col-lg-8 col-md-8">
+                                                            <div class="owl-carousel owl-theme">
+                                                                    <div>
+                                                                        <img src="img/liveboard_detail/cabin1.jpeg"/>
+                                                                    </div>
+                                                                    <div>
+                                                                        <img src="img/liveboard_detail/cabin2.jpeg"/>
+                                                                    </div>
+                                                                    <div>
+                                                                        <img src="img/liveboard_detail/cabin3.jpeg"   />
+                                                                    </div>
+                                                                    <div>
+                                                                        <img src="img/liveboard_detail/cabin4.jpeg"  />
+                                                                    </div>
+                                                                    <div class="divider_big"></div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="card_lines"></div>
+                                                    <div class="col-md-4">
+                                                            <h5 class="style_header">Cabin Information Details</h5>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="label_light">Size</label>
+                                                                    <div class="style_header">10 m<sup>2</sup></div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="label_light">Beds</label>
+                                                                    <div class="style_header">1 Twin</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="divider_big"></div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="label_light">Max Occupancy</label>
+                                                                    <div class="text_color_bolder">2 guests</div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="label_light">Sharable</label>
+                                                                    <div class="text_color_bolder">1 Twin</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="divider_big"></div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="label_light">Private Bathroom</label>
+                                                                    <div class="text_color_bolder">Yes</div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="label_light">Air Conditioning</label>
+                                                                    <div class="text_color_bolder">Yes</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="divider_big"></div>
+                                                            <div class="card_lines"></div>
+                                                            <div class="divider_big"></div>
+                                                            <h5 class="style_header">About this room</h5>
+                                                            <p class="text_content">
+                                                                Our cabins with bunk beds (1m x 2m) are all located on deck 
+                                                                and through the windows very bright and well ventilated. 
+                                                                All cabins with private air conditioner, bathroom with hot 
+                                                                and cold water (however two bathrooms are smaller) 220V 24 hours
+                                                            </p>
+                                                    </div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>

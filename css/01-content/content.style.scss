@@ -13,6 +13,14 @@
         font-size: 14px;
     }
     
+    .card_custom_bordered {
+        background: $color_white !important;
+        font-size: 14px;
+        border-radius: 8px;
+        border-left: $main_border;
+        border-right: $main_border;
+    }
+    
     .card_custom_top {
         background: $color_white !important;
         font-size: 14px;
@@ -107,7 +115,7 @@
     
     .card_outline {
         background: $color_white;
-        border: 1px solid #ECF1F8;
+        border: 1px solid $base_color;
         box-sizing: border-box;
         border-radius: 8px;
         padding: 15px;
@@ -131,7 +139,7 @@
         font-size: 44px;
         line-height: 52px;
         text-align: center;
-        color: #37637B;
+        color: $button_color;
     }
     
     .label_card_wrapper {
@@ -334,13 +342,18 @@
         color: $label_small_color;
     }
     
+    .left_30 {
+        position: relative;
+        left: -30px
+    }
+    
     .text_desc {
         font-family: Inter;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
         line-height: 20px;
-        color: #45516d;
+        color: $label_bold;
     }
     
     .card_product_wrapper {
@@ -451,31 +464,40 @@
         font-weight: 600;
         font-size: 14px;
         color: $color_orange;
-        font-weight: 600;
+    }
+    
+    .label_prices_light {
+        font-size: 14px;
+        color: $color_orange;
+        font-weight: 400;
+    }
+    
+    .label_prices_medium {
+        font-weight: 700;
+        font-size: 16px;
+        color: $color_orange;
     }
     
     .label_prices_big {
-        font-weight: 600;
+        font-weight: 700;
         font-size: 25px;
         color: $color_orange;
-        font-weight: 600;
     }
     
     .button_packages {
         width: 100%;
-        background: #37637b;
+        background: $button_color;
         border-radius: 4px;
-        border: 1px solid #37637b;
+        border: 1px solid $button_color;
         color: $color_white;
         font-size: 14px;
         font-weight: 700;
         /* margin-top: 4px; */
         padding: 7px;
         cursor: pointer;
-    }
-    
-    .button_packages:hover {
-        background-color: $button_color_hover;
+        &:hover {
+            background-color: $button_color_hover;
+        }
     }
     
     .button_packages_alt {
@@ -487,12 +509,11 @@
         font-size: 14px;
         font-weight: 700;
         margin-top: 4px;
-        padding: 4px;
+        padding: 7px;
         cursor: pointer;
-    }
-    
-    .button_packages_alt:hover {
-        background-color: $button_color_alt_hover;
+        &:hover {
+            background-color: $button_color_alt_hover;
+        }
     }
     
     .button_packages_outline {
@@ -500,16 +521,15 @@
         background: $color_white;
         border-radius: 4px;
         border: 1px solid #E1E7F1;
-        color: #37637B;
+        color: $button_color;
         font-size: 14px;
         font-weight: 700;
         margin-top: 4px;
-        padding: 4px;
+        padding: 7px;
         cursor: pointer;
-    }
-    
-    .button_packages_outline:hover {
-        background-color: $button_color_alt;
+        &:hover {
+            background-color: $button_color_alt;
+        }
     }
     
     .reviews_result {
@@ -524,6 +544,15 @@
     
     .card-header-noborder {
         padding: .25rem 0.5rem !important;
+    }
+    
+    .card-header-noborder {
+        padding: .25rem 0.5rem !important;
+    }
+    
+    .card-header-bordered {
+        padding: .25rem 0.5rem !important;
+        border: $main_border !important;
     }
     
     .card_alt {
@@ -566,10 +595,9 @@
         opacity: 0.7;
         -webkit-transition: .2s;
         transition: opacity .2s;
-    }
-    
-    .slider:hover {
-        opacity: 1;
+        &:hover {
+            opacity: 1;
+        }
     }
     
     .range_slider_form {
@@ -685,15 +713,14 @@
     
     .btn_link_title {
         position: relative;
-    }
-    
-    .btn_link_title::after {
-        content: "\f107";
-        color: #333;
-        left: 312px;
-        top: 6px;
-        position: absolute;
-        font-family: "FontAwesome";
+        &:after {
+            content: "\f107";
+            color: #333;
+            left: 312px;
+            top: 6px;
+            position: absolute;
+            font-family: "FontAwesome";
+        }
     }
     
     .btn_link_title[aria-expanded="true"]::after {
@@ -704,13 +731,15 @@
         position: relative;
     }
     
-    .btn_link_title_big::after {
-        content: "\f107";
-        color: #333;
-        left: 786px;
-        top: 6px;
-        position: absolute;
-        font-family: "FontAwesome";
+    .btn_link_title_big {
+        &:after {
+            content: "\f107";
+            color: #333;
+            left: 786px;
+            top: 6px;
+            position: absolute;
+            font-family: "FontAwesome";
+        }
     }
     
     .btn_link_title_big[aria-expanded="true"]::after {
@@ -751,10 +780,12 @@
     }
     
     .page-item.active .page-link {
-        background: #e2ebe8ff !important;
-        border: none !important;
-        color: $button_color !important;
-        border: none !important;
+        .page-link {
+            background: rgb(105, 122, 117) !important;
+            border: none !important;
+            color: $button_color !important;
+            border: none !important;
+        }
     }
     
     .spacer_medium {
@@ -907,7 +938,7 @@
             font-weight: normal;
             font-size: 14px;
             line-height: 24px;
-            color: #45516D;
+            color: $label_bold;
         }
     }
     
@@ -1041,7 +1072,7 @@
     }
     
     .overlay_after {
-        background: #000;
+        background: $color_black;
         opacity: .6;
         border-radius: 8px;
         height: 106.41px;
@@ -1088,4 +1119,18 @@
         background-image: url('https://img.techpowerup.org/200805/group-208.png') !important;
     }
     
-    .owl-carousel .owl-item img {}
+    .bottom_text {
+        position: relative;
+        left: 25px;
+    }
+    
+    .room_details_scrollable {
+        height: 603px !important;
+        overflow-y: scroll !important;
+    }
+    
+    .owl-carousel .owl-item img {
+        display: block;
+        height: 154px !important;
+        width: 100%;
+    }

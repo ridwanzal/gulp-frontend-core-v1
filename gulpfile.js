@@ -31,9 +31,6 @@ const paths = {
         template: "templates/",
         distCss: "dist/css/",
         distJs: "dist/js/"
-    },
-    lib: {
-        jquery: "node_modules/jquery/dist/jquery.min.js",
     }
 };
 
@@ -45,6 +42,7 @@ function browserSync(done) {
             proxy: "localhost:3001"
         },
         port,
+        open: false,
         notify: false,
     });
     done();
@@ -135,7 +133,7 @@ function twigBuild() {
     gulp.task(
         "reloadHtml",
         gulp.series([twigHtml], function() {
-            gulp.watch(pathss.root.templatePages + "**/*.twig", browserSync.reload);
+            gulp.watch(paths.root.template + "**/*.twig", browserSync.reload);
             gulp.watch("**/*.html", browserSync.reload);
         })
     );
@@ -161,7 +159,6 @@ function watchFiles() {
         gulp.series(browserSyncReload)
     );
 }
-
 const watch = gulp.series(gulp.parallel(watchFiles, twigBuild, browserSync));
 // export tasks
 exports.css = css;

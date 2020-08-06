@@ -66,7 +66,7 @@
                                 <img src="img/check2.svg"/>
                             </div>
                             <div class="col-lg-11 col-md-11 col-xs-12">
-                                <p class="text_content">
+                                <p class="text_content left_30">
                                 Relaxed, professional dive resort offering beachside bungalows
                                 </p>
                             </div>
@@ -76,7 +76,7 @@
                                 <img src="img/check2.svg"/>
                             </div>
                             <div class="col-lg-11 col-md-11 col-xs-12">
-                                <p class="text_content">
+                                <p class="text_content left_30">
                                     Tune up your dive skills or simply relax in the salt water pool, made from local stone
                                 </p>
                             </div>
@@ -86,7 +86,7 @@
                                 <img src="img/check2.svg"/>
                             </div>
                             <div class="col-lg-11 col-md-11 col-xs-12">
-                                <p class="text_content">
+                                <p class="text_content left_30">
                                     Pull up a bean bag and admire the orange, pink and purple hues of the sunset
                                 </p>
                             </div>
@@ -96,7 +96,7 @@
                                 <img src="img/check2.svg"/>
                             </div>
                             <div class="col-lg-11 col-md-11 col-xs-12">
-                                <p class="text_content">
+                                <p class="text_content left_30">
                                     Grab a freshly-squeezed juice or tropical cocktail from the beach bar
                                 </p>
                             </div>
@@ -106,7 +106,7 @@
                                 <img src="img/check2.svg"/>
                             </div>
                             <div class="col-lg-11 col-md-11 col-xs-12">
-                                <p class="text_content">
+                                <p class="text_content left_30">
                                     Dive straight from the beach - maximum convenience and chill time
                                 </p>
                             </div>
@@ -126,8 +126,9 @@
                             <div class="col-lg-12 col-md-3 col-xs-12">
                                 <div class="label_card_subheader">Price starts from</div>
                                 <div class="label_prices">IDR<span class="label_prices_big">12.593.583</span></div>
-                                <button class="button_packages">Select Date & Package</button>
                                 <div class="divider_small"></div>
+                                <button class="button_packages">Select Date & Package</button>
+                                <div class="divider_big"></div>
                                 <button class="button_packages_alt">Share</button>
                             </div>
                         </div>
@@ -148,29 +149,20 @@
         <div class="margin_card"></div>
          <div class="row">
             <div class="col-lg-9 col-md-9 col-xs-9">
-                        <!-- Dates and Prices -->
                         {% include "../components/dates_price_resort.twig" %}
                         <div class="margin_card"></div>
-                        <!-- Diving Services -->
-                        {% include "../components/list_two_column.twig" %}
-                        <div class="margin_card"></div>
-                        <!-- Boat amenities -->
-                        {% include "../components/list_three_column_resort.twig" %}
-                        <div class="margin_card"></div>
-                        <!-- Trip Policy -->
-                        {% include "../components/list_mix_column_resort.twig" %}
-                        <div class="margin_card"></div>
-                        <!-- How to  -->
-                        {% include "../components/how_to_resort.twig" %}
-                        <div class="margin_card"></div>
-                        <div class="margin_card"></div>
-                        <!-- How to  -->
-                        {% include "../components/about_resort.twig" %}
-                        <div class="margin_card"></div>
-                        <!-- Maps -->
                         {% include "../components/diving_spots.twig" %}
                         <div class="margin_card"></div>
-                        <!-- Review -->
+                        {% include "../components/list_three_column_resort.twig" %}
+                        <div class="margin_card"></div>
+                        {% include "../components/how_to_resort.twig" %}
+                        <div class="margin_card"></div>
+                        {% include "../components/about_resort.twig" %}
+                        <div class="margin_card"></div>
+                        {% include "../components/list_two_column.twig" %}
+                        <div class="margin_card"></div>
+                        {% include "../components/list_mix_column_resort.twig" %}
+                        <div class="margin_card"></div>
                         {% include "../components/review.twig" %}
 
                     </div>
