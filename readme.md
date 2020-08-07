@@ -29,6 +29,12 @@ compile ulang dengan :
 $ gulp
 ```
 
+atau dapat juga menggunakan command options berikit 
+
+```
+$ gulp serve
+```
+
 ## Homework
 perlu penjelasan mengenai strukur project
 
