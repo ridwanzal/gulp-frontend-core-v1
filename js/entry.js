@@ -1,4 +1,13 @@
 $(function() {
+    let xmodal_state = $('.xmodal_container').is(':visible');
+    if (xmodal_state) {
+        $('.ex_wrapper').addClass('modal_wrapper');
+    }
+    // xmodal
+    $('.xmodal_close').on('click', function() {
+        $('.xmodal_container').hide();
+    });
+
     $('#lookfor').on('change', function() {
         let vals = $(this).val();
         console.log(vals);

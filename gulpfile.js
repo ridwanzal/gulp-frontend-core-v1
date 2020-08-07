@@ -54,33 +54,6 @@ function browserSyncReload(done) {
     done();
 }
 
-// css
-// not using css preprocessor
-// function css() {
-//   return gulp
-//     .src(paths.root.distCss + "main.css")
-//     .pipe(sourcemaps.init()) // initialize sourcemaps first
-//     // .pipe(sass()) // compile SCSS to CSS
-//     // .pipe(plumber(function(error) {}))
-//     // .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
-//     // .pipe(
-//     //   rename({
-//     //     suffix: ".min"
-//     //   })
-//     // )
-//     .pipe(sourcemaps.write("./")) // write sourcemaps file in current directory
-//     .pipe(gulp.dest(paths.root.distCss)) // put final CSS in  folder
-//     .pipe(browsersync.stream());
-// }
-
-// function images(){
-//   return gulp
-//     .src("dist/img/**/*.{jpg,jpeg,png,svg}")
-//     .pipe(imagemin())
-//     .pipe(gulp.dest("dist/img"));
-// }
-
-
 function css() {
     return gulp
         .src(paths.root.css + "style.scss")
@@ -102,7 +75,7 @@ function css() {
 function js() {
     return gulp
         .src([
-            paths.root.js + "entry.js",
+            paths.root.js + "entry.js"
         ])
         .pipe(sourcemaps.init()) // initialize sourcemaps first
         .pipe(concat("index.js"))
@@ -166,3 +139,4 @@ exports.css = css;
 exports.js = js;
 exports.watch = watch;
 exports.default = watch;
+exports.serve = watch;
