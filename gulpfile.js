@@ -102,7 +102,7 @@ function css() {
 function js() {
     return gulp
         .src([
-            paths.root.js + "entry.js"
+            paths.root.js + "entry.js",
         ])
         .pipe(sourcemaps.init()) // initialize sourcemaps first
         .pipe(concat("index.js"))

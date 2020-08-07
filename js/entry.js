@@ -50,7 +50,6 @@ $(function() {
         enableDrag: false,
     });
 
-
     $('#imageGallery_modal').lightSlider({
         item: 3,
         loop: false,
@@ -148,14 +147,6 @@ $(function() {
         }
     });
 
-    // mapbox maps conta
-    // mapboxgl.accessToken = 'pk.eyJ1Ijoicmlkd2FuemFsIiwiYSI6ImNrNm40eWI0eTA3MG8zcHFiODZsdDV1aHMifQ.HBLx-EceW5xn0z5XhR-5PQ';
-    // var map = new mapboxgl.Map({
-    //     container: 'map',
-    //     style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    //     center: [-74.5, 40], // starting position [lng, lat]
-    //     zoom: 9 // starting zoom
-    // });
 })
 
 function passme(param) {
@@ -212,6 +203,23 @@ function passme_tripdata(param) {
             });
         }
     });
+}
+
+function readMore() {
+    dots = $('.dots')
+    more = $('.mores');
+    rd_icon = $('.readmore-icon');
+    if (more.is(':hidden')) {
+        rd_icon.find('i').addClass('rotateme');
+        more.show();
+        dots.hide();
+        console.log('more show');
+    } else {
+        console.log('more hide');
+        rd_icon.find('i').removeClass('rotateme');
+        more.hide();
+        dots.show();
+    }
 }
 
 function searchModule() {

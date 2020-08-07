@@ -29,6 +29,14 @@
         border-right: $main_border;
     }
     
+    .card_custom_dark {
+        background: #fff !important;
+        border-radius: 8px 8px 0px 0px;
+        font-size: 14px;
+        border-left: 1px solid #e1e7f1;
+        border-right: 1px solid #e1e7f1;
+    }
+    
     .card_custom {
         background: $color_white !important;
         font-size: 14px;
@@ -126,7 +134,7 @@
         border: 1px solid #E1E7F1;
         box-sizing: border-box;
         border-radius: 8px;
-        padding: 10px;
+        padding: 20px;
     }
     
     .card_container_width_big {
@@ -181,7 +189,7 @@
     .label_card_small {
         color: $link_color;
         font-weight: 600;
-        font-size: $main_font;
+        font-size: $main_font_size;
         line-height: 24px;
     }
     
@@ -213,6 +221,13 @@
         color: $link_color;
     }
     
+    .style_header_light {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: $label_bold;
+    }
+    
     .card_lines {
         border-bottom: $main_border;
     }
@@ -222,7 +237,7 @@
         padding-bottom: 5px;
         label {
             color: $label_bold;
-            font-size: $main_font;
+            font-size: $main_font_size;
         }
     }
     
@@ -233,7 +248,7 @@
     
     .nav-tabs {
         border-bottom: none !important;
-        font-size: $main_font;
+        font-size: $main_font_size;
         .nav-item.show {
             .nav-link {
                 border-top: none;
@@ -404,7 +419,7 @@
     
     .product_separator_noborder {
         position: relative;
-        margin-top: 13px;
+        margin-top: 9px;
         left: -25px;
     }
     
@@ -623,6 +638,11 @@
         float: right !important;
     }
     
+    .goright_top {
+        position: relative;
+        top: -33px;
+    }
+    
     .megamenu {
         position: static !important;
         .dropdown-menu {
@@ -670,7 +690,7 @@
     
     .night_counter {
         position: absolute;
-        left: 748px;
+        left: 918px;
         z-index: 3;
         top: 40px;
         font-size: 10px;
@@ -721,6 +741,14 @@
             position: absolute;
             font-family: "FontAwesome";
         }
+    }
+    
+    .rotateme {
+        transform: rotate(180deg);
+    }
+    
+    .rotateme_rev {
+        transform: rotate(360deg);
     }
     
     .btn_link_title[aria-expanded="true"]::after {
@@ -850,7 +878,7 @@
     }
     
     .price_tables {
-        font-size: $main_font;
+        font-size: $main_font_size;
         font-weight: bold;
     }
     
@@ -1133,4 +1161,8 @@
         display: block;
         height: 154px !important;
         width: 100%;
+    }
+    
+    .mores {
+        display: none;
     }
