@@ -21,6 +21,11 @@ const plumber = require("gulp-plumber");
 const twig = require("gulp-twig");
 const cache = require("gulp-cache");
 const prettyHtml = require("gulp-pretty-html");
+const eslint = require("gulp-eslint");
+const htmlmin = require("gulp-htmlmin");
+const removelogs = require("gulp-removelogs");
+const stripdebug = require("gulp-strip-debug");
+
 const port = 8000;
 
 // paths
@@ -83,6 +88,7 @@ function js() {
         ])
         .pipe(sourcemaps.init()) // initialize sourcemaps first
         .pipe(concat("index.js"))
+        .pipe(stripdebug())
         .pipe(plumber(function(error) {}))
         .pipe(uglify())
         .pipe(
@@ -100,7 +106,8 @@ function twigHtml() {
     return gulp
         .src(paths.root.template + "pages/**/*.twig")
         .pipe(twig())
-        .pipe(prettyHtml()) // prettyHtml function added for make pretty html after compiling
+        .pipe(prettyHtml()) //
+        // .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("./dist"))
         .pipe(browsersync.stream());
 }

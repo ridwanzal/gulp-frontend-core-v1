@@ -37,6 +37,9 @@
   "dependencies": {
     "bootbox": "^5.4.0",
     "bootstrap": "^4.4.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-removelogs": "^0.1.0",
+    "gulp-strip-debug": "^3.0.0",
     "jquery": "^3.4.1",
     "lightslider": "^1.1.6",
     "magnific-popup": "^1.1.0",
