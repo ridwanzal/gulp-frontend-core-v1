@@ -1,4 +1,7 @@
 $(function() {
+    // run lazyload images
+    var lazyLoadInstance = new LazyLoad({});
+
     let xmodal_state = $('.xmodal_container').is(':visible');
     if (xmodal_state) {
         $('.ex_wrapper').addClass('modal_wrapper');
