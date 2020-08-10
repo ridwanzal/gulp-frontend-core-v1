@@ -4,7 +4,6 @@
  * 
  */
 
-// Initialize modules
 const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
 const browsersync = require("browser-sync").create();
@@ -12,11 +11,9 @@ const autoprefixer = require("autoprefixer");
 const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
-// const imagemin = require('gulp-imagemin');
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify-es").default;
 const rename = require("gulp-rename");
-// const replace = require("gulp-replace");
 const plumber = require("gulp-plumber");
 const twig = require("gulp-twig");
 const cache = require("gulp-cache");
@@ -25,10 +22,11 @@ const eslint = require("gulp-eslint");
 const htmlmin = require("gulp-htmlmin");
 const removelogs = require("gulp-removelogs");
 const stripdebug = require("gulp-strip-debug");
+// const imagemin = require('gulp-imagemin');
+// const replace = require("gulp-replace");
 
 const port = 8000;
 
-// paths
 const paths = {
     root: {
         css: "css/",
@@ -41,13 +39,11 @@ const paths = {
     }
 };
 
-
-// BrowserSync
 function browserSync(done) {
     browsersync.init({
         server: {
             baseDir: "./.tmp",
-            directory: true,
+            directory: true, //show sebagai directory listing
             proxy: "localhost:3001"
         },
         port,
@@ -56,7 +52,7 @@ function browserSync(done) {
     });
     done();
 }
-// BrowserSync Reload
+
 function browserSyncReload(done) {
     cache.clearAll();
     browsersync.reload();
@@ -80,7 +76,6 @@ function css() {
         .pipe(browsersync.stream());
 }
 
-// All JS modules
 function js() {
     return gulp
         .src([
@@ -105,7 +100,6 @@ function js() {
         .pipe(browsersync.stream());
 }
 
-// html templating
 function twigHtml() {
     return gulp
         .src(paths.root.template + "pages/**/*.twig")
@@ -116,8 +110,7 @@ function twigHtml() {
         .pipe(gulp.dest("./tmp"))
         .pipe(browsersync.stream());
 }
-// twigBuild function is very important for compiling all twig files included components, pages, layouts,
-// If you will delete this function then only pages will be compile not othe folders
+
 function twigBuild() {
     gulp.task(
         "reloadHtml",
@@ -128,7 +121,6 @@ function twigBuild() {
     );
 }
 
-// Watch files
 function watchFiles() {
     gulp.watch([paths.root.css + "**/*"], css);
     gulp.watch([paths.root.js + "**/*"], gulp.series(js));
@@ -149,8 +141,7 @@ function watchFiles() {
     );
 }
 
-
-// page builder
+// export sebagai *.html di .tmp folder 
 function to_html() {
     return gulp
         .src(paths.root.template + "layouts/**/*.twig")
@@ -166,10 +157,11 @@ function to_html() {
 
 
 const watch = gulp.series(gulp.parallel(watchFiles, twigBuild, browserSync, to_html));
-// export tasks
-exports.css = css;
-// exports.images = images;
-exports.js = js;
+
 exports.watch = watch;
-exports.default = watch;
-exports.serve = watch;
+/*
+    run on dev
+*/
+
+exports.default = watch; // jalankan tanpa command options $gulp 
+exports.serve = watch; // jalankan dengan command options $gul serve
