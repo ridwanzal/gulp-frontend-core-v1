@@ -1,0 +1,2315 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>IDD Web</title>
+
+    <!-- css dependencies -->
+    <link rel="shortcut icon" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sl-1.3.1/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="lib/css/lightslider.min.css" />
+    <link rel="stylesheet" href="lib/magnific-popup/dist/magnific-popup.css" />
+    <link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+
+    <!-- javascript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sl-1.3.1/datatables.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable@3.2.11/dist/jspdf.plugin.autotable.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <script src="lib/js/lightslider.min.js"></script>
+    <script src="lib/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        // lightslider
+        $('#imageGallery').lightSlider({
+            item: 1,
+            loop: true,
+            slideMove: 2,
+            auto: true,
+            pauseOnHover: true,
+            slideMargin: 0,
+            enableDrag: false,
+            pager: false,
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div class="ex_wrapper">
+        <section class="navbar_wrapper">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light navbar_custom">
+                    <a class="navbar-brand" href="javascript:history.go(0)"><img id="logo" src="img/logo.svg"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <!-- <li class="nav-item active">
+                <a class="nav-link" href="#">Discover <span class="sr-only">(current)</span></a>
+            </li> -->
+                            <li class="nav-item dropdown megamenu active"><a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle font-weight-bold ">Discover</a>
+                                <div aria-labelledby="megamneu" class="dropdown-menu border-0 p-0 m-0">
+                                    <div class="container megasize">
+                                        <div class="row megamenu_container">
+                                            <div class="nav nav-tabs nav_tabs_custom" id="nav-tab" role="tablist">
+                                                <a class="nav-item nav-link active navbar_megamenu" id="nav-home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">Resorts</a>
+                                                <a class="nav-item nav-link navbar_megamenu" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">Live Board</a>
+                                            </div>
+                                        </div>
+                                        <div class="row megamenu_container2">
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 megasection_size">
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Sumatera</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Aceh</a></li>
+                                                                        <li><a class="" href="#">Padang</a></li>
+                                                                        <li><a class="" href="#">Krakatoa</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Java</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Thousand Island</a></li>
+                                                                        <li><a class="" href="#">Pelabuhan Ratu</a></li>
+                                                                        <li><a class="" href="#">Karimun Jaya</a></li>
+                                                                        <li><a class="" href="#">Pasir Putih</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Bali & Nusa Tenggara</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Bali</a></li>
+                                                                        <li><a class="" href="#">Gili Lombok</a></li>
+                                                                        <li><a class="" href="#">Komodo</a></li>
+                                                                        <li><a class="" href="#">Maumere</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 megasection_size">
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Kalimantan</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Derawan</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Sulawesi</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Sangihe</a></li>
+                                                                        <li><a class="" href="#">Bunaken</a></li>
+                                                                        <li><a class="" href="#">Lembeh</a></li>
+                                                                        <li><a class="" href="#">Buyat</a></li>
+
+                                                                        <li><a class="" href="#">Gorontalo</a></li>
+                                                                        <li><a class="" href="#">Tongean</a></li>
+                                                                        <li><a class="" href="#">Donggala</a></li>
+                                                                        <li><a class="" href="#">Kendari</a></li>
+
+                                                                        <li><a class="" href="#">Makassar</a></li>
+                                                                        <li><a class="" href="#">Walatobi</a></li>
+                                                                        <li><a class="" href="#">Bira</a></li>
+                                                                        <li><a class="" href="#">Selayar</a></li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 megasection_size">
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Maluku</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Morotai</a></li>
+                                                                        <li><a class="" href="#">Halmahera Barat</a></li>
+                                                                        <li><a class="" href="#">Ternate</a></li>
+                                                                        <li><a class="" href="#">Ambon</a></li>
+                                                                        <li><a class="" href="#">Banda</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Papua</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Raja Ampat</a></li>
+                                                                        <li><a class="" href="#">Cendrawasih Bay</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="#">Dive Areas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dive Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Articles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dive Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Book</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About Us</a>
+                            </li>
+                        </ul>
+                        <div class="form-inline my-4 my-lg-0">
+                            <i class="img_iconsearch"><img src="img/search.svg"></i>
+                            <input type="text" class="input_with_icon submit_global_search" placeholder="Search">
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+
+
+        <section class="chooser_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="widget_corner_left">
+                        <div class="widget_corner_icon">
+                            <img class="lazy" src="img/widget1.svg">
+                        </div>
+                        <div class="widget_corner_content">
+                            <label class="label_small_widget">I'm looking for</label>
+                            <div>
+                                <select class="chooser_select" id="lookfor">
+                                    <option value="resort">Dive Resort</option>
+                                    <option value="liveboard">Live Board</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget_corner_between">
+                        <div class="widget_corner_icon">
+                            <img class="lazy" src="img/widget2.svg">
+                        </div>
+                        <div class="widget_corner_content">
+                            <label class="label_small_widget">Dive Region</label>
+                            <div>
+                                <select class="chooser_select">
+                                    <option>Any Region</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="label_small_widget night_counter"><span id="night_counts">0</span>&nbsp;Nights</label>
+                    <div class="widget_corner_between">
+                        <div class="widget_corner_content_date">
+                            <label class="label_small_widget">Start Date</label>
+                            <div>
+                                <input placeholder="yyyy-mm-dd" id="start_date" class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget_corner_between">
+                        <div class="widget_corner_content_date">
+                            <label class="label_small_widget pushto_right">End Date</label>
+                            <div>
+                                <input placeholder="yyyy-mm-dd" id="end_date" class="textbox-n chooser_select_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget_corner_right">
+                        <div class="widget_corner_content_search">
+                            <div class="widget_corner_icon_search">
+                                <img class="lazy" src="img/search.svg">
+                            </div>
+                            <div class="widget_corner_inside">
+                                <label class="label_small_widget">Keyword (Optional)</label>
+                                <div>
+                                    <input type="text" class="chooser_search" placeholder="Resort Name, Dive Region, etc">
+                                </div>
+                            </div>
+                            <div class="submit_search">
+                                <div class="submit_search_text">Search</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main_wrapper" style="min-height:600px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-4">
+                        <!-- filter dive resort -->
+                        <div class="card_content_wrapper" id="filter_diveresort">
+                            <div class="label_card_wrapper">
+                                <label class="label_card">Sort By</label>
+                                <p class="label_card_subheader">Sort your result search by :</p>
+                            </div>
+                            <div class="card_lines">
+                            </div>
+                            <div class="label_card_wrapper2">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck1" checked>
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Featured
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck2">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Highest Price
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck3">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Highest Rating
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck4">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Hotel Category
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadios" type="radio" value="" id="defaultCheck5">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Lowest Price
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- filter liveboard -->
+                        <div class="card_content_wrapper" id="filter_liveboard" style="display:none;">
+                            <div class="label_card_wrapper">
+                                <label class="label_card">Sort By</label>
+                                <p class="label_card_subheader">Sort your result search by :</p>
+                            </div>
+                            <div class="card_lines">
+                            </div>
+                            <div class="label_card_wrapper2">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx1" checked>
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Featured
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx2">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Highest Price
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx3">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Lowest Price
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="exampleRadiosx" type="radio" value="" id="defaultCheckx4">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                Highest Rating
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card_content_wrapper_top">
+                            <div class="label_card_wrapper">
+                                <div class="flex">
+                                    <div class="label_card">Filter By</div>
+                                    <div class="label_card_small label_reset" title="Reset Filter">Reset Filter</div>
+                                </div>
+                                <p class="label_card_subheader">Showing results based on categories</p>
+                            </div>
+                            <div class="card_lines">
+                            </div>
+                        </div>
+                        <div id="accordion">
+                            <div class="card_custom">
+                                <div class="card-header card_custom_header" id="headingOne">
+                                    <h5 class="mb-0 label_card">
+                                        <div class="btn btn-link btn_link_title collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            Price Range (per person/trip)
+                                        </div>
+                                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                                    </h5>
+                                </div>
+
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="review_wrapper">
+                                            <input class="myform" type="text" placeholder="Rp 0">
+                                            <span>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;</span>
+                                            <input class="myform" type="text" placeholder="Rp 12.000.000">
+                                        </div>
+                                        <div class="review_wrapper">
+                                            <input class="range_slider_form" type="range" min="1" max="100" value="80" class="slider" id="myRange">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_custom">
+                                <div class="card-header card_custom_header" id="headingTwo">
+                                    <h5 class="mb-0 label_card">
+                                        <div class="btn btn-link btn_link_title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Resort Category
+                                        </div>
+                                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="fa fa-star checked_star star_list"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                                <span class="fa fa-star unchecked_star"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_custom">
+                                <div class="card-header card_custom_header" id="headingThree">
+                                    <h5 class="mb-0 label_card">
+                                        <div class="btn btn-link btn_link_title collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Guest Rating
+                                        </div>
+                                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="form-check-label">+5 Perfect</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="form-check-label">+4 Excellent</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                <span class="form-check-label">+3 Good</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_custom">
+                                <div class="card-header card_custom_header" id="headingfour">
+                                    <h5 class="mb-0 label_card">
+                                        <div class="btn btn-link btn_link_title collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+                                            Dive Center Location
+                                        </div>
+                                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                                    </h5>
+                                </div>
+                                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+                                    <div class="card-body">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_custom">
+                                <div class="card-header card_custom_header" id="headingfive">
+                                    <h5 class="mb-0 label_card">
+                                        <div class="btn btn-link btn_link_title collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapseThree">
+                                            PADI Courses
+                                        </div>
+                                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                                    </h5>
+                                </div>
+                                <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
+                                    <div class="card-body">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_custom_bordered">
+                                <div class="card-header-bordered card_custom_header2" id="headingsix">
+                                    <h5 class="mb-0 label_card">
+                                        <div class="btn btn-link btn_link_title collapsed" data-toggle="collapse" data-target="#collapseseven" aria-expanded="false" aria-controls="collapseThree">
+                                            Resort Amenities
+                                        </div>
+                                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                                    </h5>
+                                </div>
+                                <div id="collapseseven" class="collapse" aria-labelledby="headingsix" data-parent="#accordion">
+                                    <div class="card-body">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nocard_content_wrapper">
+                            <label class="label_card">Why Book with Indonesia Dive Directory?</label>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-xs-2">
+                                    <img class="lazy" src="img/check.svg" />
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-xs-12">
+                                    <label class="label_card_small">24/7 Customer Support</label>
+                                    <p class="text_content">We’re here to help whenever you need us</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-xs-2">
+                                    <img class="lazy" src="img/check.svg" />
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-xs-12">
+                                    <label class="label_card_small">Book Worry-free</label>
+                                    <p class="text_content">Thousand of resort and liveaboard can be
+                                        cancelled for free with our GuaranteeLearn More
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-xs-2">
+                                    <img class="lazy" src="img/check.svg" />
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-xs-12">
+                                    <label class="label_card_small">Secure Payment</label>
+                                    <p class="text_content">Payments are secured using the latest industry standards</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loader"></div>
+                    <div class="col-lg-8 col-md-8 col-xs-8" id="search_result" style="display:none;">
+
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-xs-8" id="resort">
+                        <div id="resort_child_main">
+                            <div class="card_content_wrapper_right">
+                                <div class="label_card_wrapper">
+                                    <label class="label_card">102 Result of Resort on All Region</label>
+                                </div>
+                                <div class="card_lines">
+                                </div>
+                                <div class="label_card_wrapper_tabs">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Resorts&nbsp;&nbsp;<span class="mybadge">89</span></a>
+                                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Package Trip&nbsp;&nbsp;<span class="mybadge">2</span></a>
+                                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Day trip&nbsp;&nbsp;<span class="mybadge">16</span></a>
+                                                </div>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="tab-content" id="nav-tabContent">
+                                    <!-- tab 1 -->
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="card_product_wrapper product_list_resort" id="resort_1">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <img class="image_products" src="img/resorts/1.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Purwi Wirata Dive Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom">
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <span class="mybadge3 img_services"><img class="lazy"  src="img/clock.svg">&nbsp;Free Cancelation</span>
+                                                            <span class="mybadge3 img_services"><img class="lazy"  src="img/menu.svg">&nbsp;Full Board</span>
+                                                            <span class="mybadge4">+1</span>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <img class="facilities lazy" src="img/facilities.svg">
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme('1')" id="label_excol_1">Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_1"></i></span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="display:none;" id="resort_child_1">
+                                                <div class="col-lg-4 col-md-4">
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="review_wrapper">
+                                                        <ul class="list-unstyled list-package-trip">
+                                                            <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                            <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                            <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                            <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                            <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5">
+                                                    <span class="label_small_widget_big">Language Spoken</span>
+                                                    <p class="label_light">English, French, German, Portuguese</p>
+                                                    <span class="label_small_widget_big">Equipment Rental</span>
+                                                    <p class="label_light">Fins, BCD, mask, weights, regulator, snorkel, tank, wet suit and more</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="resort_2">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products lazy" src="img/resorts/2.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Meridian Adventure</label>
+                                                        <div class="review_wrapper spacer_bottom">
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <span class="mybadge3 img_services lazy"><img src="img/clock.svg">&nbsp;Free Cancelation</span>
+                                                            <span class="mybadge3 img_services lazy"><img src="img/menu.svg">&nbsp;Full Board</span>
+                                                            <span class="mybadge4">+1</span>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <img class="facilities" src="img/facilities.svg">
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme('2')" >Meridian Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_2"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="display:none;" id="resort_child_2">
+                                                <div class="col-lg-4 col-md-4">
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="review_wrapper">
+                                                        <ul class="list-unstyled list-package-trip">
+                                                            <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                            <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                            <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                            <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                            <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5">
+                                                    <span class="label_small_widget_big">Language Spoken</span>
+                                                    <p class="label_light">English, French, German, Portuguese</p>
+                                                    <span class="label_small_widget_big">Equipment Rental</span>
+                                                    <p class="label_light">Fins, BCD, mask, weights, regulator, snorkel, tank, wet suit and more</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="resort_3">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+
+                                                    <img class="image_products" src="img/resorts/3.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Dragon Dive Komodo</label>
+                                                        <div class="review_wrapper spacer_bottom">
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <span class="mybadge3 img_services"><img class="lazy" src="img/clock.svg">&nbsp;Free Cancelation</span>
+                                                            <span class="mybadge3 img_services"><img class="lazy" src="img/menu.svg">&nbsp;Full Board</span>
+                                                            <span class="mybadge4">+1</span>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <img class="facilities lazy" src="img/facilities.svg">
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget"  onclick="passme('3')">Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_3"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="display:none;" id="resort_child_3">
+                                                <div class="col-lg-4 col-md-4">
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="review_wrapper">
+                                                        <ul class="list-unstyled list-package-trip">
+                                                            <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                            <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                            <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                            <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                            <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5">
+                                                    <span class="label_small_widget_big">Language Spoken</span>
+                                                    <p class="label_light">English, French, German, Portuguese</p>
+                                                    <span class="label_small_widget_big">Equipment Rental</span>
+                                                    <p class="label_light">Fins, BCD, mask, weights, regulator, snorkel, tank, wet suit and more</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="resort_4">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products" src="img/resorts/4.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Luwata Dive Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom">
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <span class="mybadge3 img_services lazy"><img src="img/clock.svg">&nbsp;Free Cancelation</span>
+                                                            <span class="mybadge3 img_services lazy"><img src="img/menu.svg">&nbsp;Full Board</span>
+                                                            <span class="mybadge4">+1</span>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <img class="facilities lazy" src="img/facilities.svg">
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme('4')" >Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_4"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="display:none;" id="resort_child_4">
+                                                <div class="col-lg-4 col-md-4">
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="review_wrapper">
+                                                        <ul class="list-unstyled list-package-trip">
+                                                            <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                            <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                            <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                            <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                            <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5">
+                                                    <span class="label_small_widget_big">Language Spoken</span>
+                                                    <p class="label_light">English, French, German, Portuguese</p>
+                                                    <span class="label_small_widget_big">Equipment Rental</span>
+                                                    <p class="label_light">Fins, BCD, mask, weights, regulator, snorkel, tank, wet suit and more</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="resort_5">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products lazy" src="img/resorts/5.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Gangga Island Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom">
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <span class="mybadge3 img_services"><img class="src" src="img/clock.svg">&nbsp;Free Cancelation</span>
+                                                            <span class="mybadge3 img_services"><img class="src" src="img/menu.svg">&nbsp;Full Board</span>
+                                                            <span class="mybadge4">+1</span>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <img class="facilities" src="img/facilities.svg">
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme('5')" >Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_5"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="display:none;" id="resort_child_5">
+                                                <div class="col-lg-4 col-md-4">
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="review_wrapper">
+                                                        <ul class="list-unstyled list-package-trip">
+                                                            <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                            <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                            <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                            <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                            <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5">
+                                                    <span class="label_small_widget_big">Language Spoken</span>
+                                                    <p class="label_light">English, French, German, Portuguese</p>
+                                                    <span class="label_small_widget_big">Equipment Rental</span>
+                                                    <p class="label_light">Fins, BCD, mask, weights, regulator, snorkel, tank, wet suit and more</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="resort_6">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products" src="img/resorts/6.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Purwi Wirata Dive Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom">
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <span class="fa fa-star checked_star star_list"></span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <span class="mybadge3 img_services"><img class="src" src="img/clock.svg">&nbsp;Free Cancelation</span>
+                                                            <span class="mybadge3 img_services"><img class="src" src="img/menu.svg">&nbsp;Full Board</span>
+                                                            <span class="mybadge4">+1</span>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <img class="facilities lazy" src="img/facilities.svg">
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme('6')" >Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_6"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="display:none;" id="resort_child_6">
+                                                <div class="col-lg-4 col-md-4">
+                                                </div>
+                                                <div class="col-lg-3 col-md-3">
+                                                    <div class="review_wrapper">
+                                                        <ul class="list-unstyled list-package-trip">
+                                                            <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                            <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                            <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                            <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                            <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5">
+                                                    <span class="label_small_widget_big">Language Spoken</span>
+                                                    <p class="label_light">English, French, German, Portuguese</p>
+                                                    <span class="label_small_widget_big">Equipment Rental</span>
+                                                    <p class="label_light">Fins, BCD, mask, weights, regulator, snorkel, tank, wet suit and more</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- tab 2 -->
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_1">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <img class="image_products lazy" src="img/resorts/2_1.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Meridian Dive Center</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme_tripdata('1')" >Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_trip_1"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row package_trip_pricingdetails">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_1" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_2">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products lazy" src="img/resorts/2_2.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Purwi Wirata Dive Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip lazy" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip lazy" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip lazy" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip lazy" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip lazy" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme_tripdata('2')" >Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_trip_2"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row package_trip_pricingdetails">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_2" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_3">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products" src="img/resorts/2_3.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Dragon Dive Komodo</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme_tripdata('3')">Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_trip_3"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row package_trip_pricingdetails">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_3" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_4">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products" src="img/resorts/2_4.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Gangga Island Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme_tripdata('4')">Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_trip_4"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row package_trip_pricingdetails">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_4" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_5">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <div class="offering_badge">SAVE 25%</div>
+                                                    <img class="image_products" src="img/resorts/2_5.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Luwata Dive Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <span class="mybadge2">Featured</span>
+                                                            <div>&nbsp; &centerdot; &nbsp;</div>
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <label class="label_light">Dive with &nbsp;
+                                                            </label>
+                                                            <span class="label_small_widget" onclick="passme_tripdata('5')">Purwi Wirata Dive Center&nbsp;<i class="fa fa-angle-down" id="angle_icon_trip_5"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                            <div class="scores">4,2</div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                            <label class="label_small_widget_green">Excellent</label>
+                                                            <p class="label_light">196 Review</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row package_trip_pricingdetails">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_5" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- tab 3 -->
+                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_1">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <img class="image_products" src="img/resorts/2_1.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Meridian Dive Center</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row package_trip_pricingdetails_sm">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_1" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_2">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <img class="image_products" src="img/resorts/2_2.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Purwi Wirata Dive Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row package_trip_pricingdetails_sm">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_2" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_3">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <img class="image_products" src="img/resorts/2_3.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Dragon Dive Komodo</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row package_trip_pricingdetails_sm">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_3" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_4">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <img class="image_products" src="img/resorts/2_4.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Gangga Island Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row package_trip_pricingdetails_sm">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_4" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- separator -->
+                                        <div class="card_product_wrapper" id="trip_list_5">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                    <img class="image_products" src="img/resorts/2_5.jpeg">
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                    <div class="wrapper_product_info">
+                                                        <label class="label_card">Luwata Dive Resort & Spa</label>
+                                                        <div class="review_wrapper spacer_bottom2">
+                                                            <label class="label_small_widget">Raja Ampat</label>
+                                                        </div>
+                                                        <div class="review_wrapper">
+                                                            <ul class="list-unstyled list-package-trip">
+                                                                <li><img class="img-package-trip" src="img/pin.svg">&nbsp;Onsite</li>
+                                                                <li><img class="img-package-trip" src="img/rate.svg">&nbsp;5 Star Padi Dive Center</li>
+                                                                <li><img class="img-package-trip" src="img/tracking.svg">&nbsp;12 dive instructors</li>
+                                                                <li><img class="img-package-trip" src="img/divers.svg">&nbsp;Max 8 divers per guide</li>
+                                                                <li><img class="img-package-trip" src="img/boat.svg">&nbsp;6 Boats Available</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="space_inside_product2">
+                                                    <div class="row package_trip_pricingdetails_sm">
+                                                        <div class="col-lg-12 col-md-12 col-xs-12">
+                                                            <div class="label_light">Starts from &nbsp; </div>
+                                                            <div class="label_prices">IDR 12.593.583</div>
+                                                            <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                            <button class="button_packages">View Packages</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="trip_child_5" style="display:none;">
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>4 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>27 September</td>
+                                                                <td>Dive Bali: 8D + 7N + 15 dives</td>
+                                                                <td>IDR <span class="price_tables">12.593.583</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 table_spec">
+                                                    <div class="label_small_widget_underline pushright text_packages">See all packages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="pagination">
+                                        <div class="col-lg-2 col-md-2">
+                                            <select class="chooser_select_nobackground_small">
+                                                <option>10 Items</option>
+                                                <option>20 Items</option>
+                                                <option>30 Items</option>
+                                                <option>40 Items</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-5 col-md-5">
+                                            <label class="label_pagination">Showing 11 to 20 of 95 entries.</label>
+                                        </div>
+                                        <div class="col-lg-5 col-lg-5">
+                                            <nav aria-label="...">
+                                                <ul class="pagination justify-content-end">
+                                                    <li class="page-item disabled">
+                                                        <span class="page-link"><i class="fa fa-angle-left"></i></span>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item active">
+                                                        <span class="page-link">
+                                            2
+                                            <span class="sr-only">(current)</span>
+                                                        </span>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- separator liveboard -->
+
+                    <div class="col-lg-8 col-md-8 col-xs-8" id="liveboard" style="display:none;">
+                        <div class="label_card_wrapper">
+                            <label class="label_card">453 Result of Liveaboard on All Region</label>
+                        </div>
+                        <div class="">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <!-- separator -->
+                                    <div class="card_product_wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                <!-- <div class="offering_badge">SAVE 25%</div> -->
+                                                <img class="image_products lazy" src="img/resorts/l_1.jpeg">
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                <div class="wrapper_product_info">
+                                                    <span class="label_light">Phinisi Cruises Sea Safari</span>
+                                                    <label class="label_card">Sea Safari 6 Liveaboard</label>
+                                                    <div class="review_wrapper">
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <div>&nbsp; &centerdot; &nbsp;</div>
+                                                        <label class="label_small_widget">Raja Ampat</label>
+                                                    </div>
+                                                    <div class="review_wrapper">
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/clock.svg">&nbsp;Nitrox Surcharge</span>
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/menu.svg">&nbsp;Equipment Rental</span>
+                                                        <span class="mybadge6">+1</span>
+                                                    </div>
+                                                    <div class="spacer_medium">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-xs-3">
+                                                            <label class="label_light topsmall">Cabins</label>
+                                                            <p class="label_small_widget">20</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Length/Width</label>
+                                                            <p class="label_small_widget">35m / 9.5m</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Material</label>
+                                                            <p class="label_small_widget">Iron Wood</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="space_inside_product2">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                        <div class="scores">4,2</div>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                        <label class="label_small_widget_green">Excellent</label>
+                                                        <p class="label_light">196 Review</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                        <div class="label_light">Starts from &nbsp; </div>
+                                                        <div class="label_prices">IDR 12.593.583</div>
+                                                        <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                        <button class="button_packages">View Packages</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- separator -->
+                                    <div class="card_product_wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                <!-- <div class="offering_badge">SAVE 25%</div> -->
+                                                <img class="image_products lazy" src="img/resorts/l_2.jpeg">
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                <div class="wrapper_product_info">
+                                                    <span class="label_light">Phinisi Cruises Sea Safari</span>
+                                                    <label class="label_card">Sea Safari 6 Liveaboard</label>
+                                                    <div class="review_wrapper">
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <div>&nbsp; &centerdot; &nbsp;</div>
+                                                        <label class="label_small_widget">Raja Ampat</label>
+                                                    </div>
+                                                    <div class="review_wrapper">
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/clock.svg">&nbsp;Nitrox Surcharge</span>
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/menu.svg">&nbsp;Equipment Rental</span>
+                                                        <span class="mybadge6">+1</span>
+                                                    </div>
+                                                    <div class="spacer_medium">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-xs-3">
+                                                            <label class="label_light topsmall">Cabins</label>
+                                                            <p class="label_small_widget">20</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Length/Width</label>
+                                                            <p class="label_small_widget">35m / 9.5m</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Material</label>
+                                                            <p class="label_small_widget">Iron Wood</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="space_inside_product2">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                        <div class="scores">4,2</div>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                        <label class="label_small_widget_green">Excellent</label>
+                                                        <p class="label_light">196 Review</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                        <div class="label_light">Starts from &nbsp; </div>
+                                                        <div class="label_prices">IDR 12.593.583</div>
+                                                        <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                        <button class="button_packages">View Packages</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- separator -->
+                                    <div class="card_product_wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                <!-- <div class="offering_badge">SAVE 25%</div> -->
+                                                <img class="image_products lazy" src="img/resorts/l_3.jpeg">
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                <div class="wrapper_product_info">
+                                                    <span class="label_light">Phinisi Cruises Sea Safari</span>
+                                                    <label class="label_card">Sea Safari 6 Liveaboard</label>
+                                                    <div class="review_wrapper">
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <div>&nbsp; &centerdot; &nbsp;</div>
+                                                        <label class="label_small_widget">Raja Ampat</label>
+                                                    </div>
+                                                    <div class="review_wrapper">
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/clock.svg">&nbsp;Nitrox Surcharge</span>
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/menu.svg">&nbsp;Equipment Rental</span>
+                                                        <span class="mybadge6">+1</span>
+                                                    </div>
+                                                    <div class="spacer_medium">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-xs-3">
+                                                            <label class="label_light topsmall">Cabins</label>
+                                                            <p class="label_small_widget">20</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Length/Width</label>
+                                                            <p class="label_small_widget">35m / 9.5m</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Material</label>
+                                                            <p class="label_small_widget">Iron Wood</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="space_inside_product2">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                        <div class="scores">4,2</div>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                        <label class="label_small_widget_green">Excellent</label>
+                                                        <p class="label_light">196 Review</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                        <div class="label_light">Starts from &nbsp; </div>
+                                                        <div class="label_prices">IDR 12.593.583</div>
+                                                        <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                        <button class="button_packages">View Packages</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- separator -->
+                                    <div class="card_product_wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                <!-- <div class="offering_badge">SAVE 25%</div> -->
+                                                <img class="image_products lazy" src="img/resorts/l_4.jpeg">
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                <div class="wrapper_product_info">
+                                                    <span class="label_light">Phinisi Cruises Sea Safari</span>
+                                                    <label class="label_card">Sea Safari 6 Liveaboard</label>
+                                                    <div class="review_wrapper">
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <div>&nbsp; &centerdot; &nbsp;</div>
+                                                        <label class="label_small_widget">Raja Ampat</label>
+                                                    </div>
+                                                    <div class="review_wrapper">
+                                                        <span class="mybadge3 img_services2"><img src="img/clock.svg">&nbsp;Nitrox Surcharge</span>
+                                                        <span class="mybadge3 img_services2"><img src="img/menu.svg">&nbsp;Equipment Rental</span>
+                                                        <span class="mybadge6">+1</span>
+                                                    </div>
+                                                    <div class="spacer_medium">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-xs-3">
+                                                            <label class="label_light topsmall">Cabins</label>
+                                                            <p class="label_small_widget">20</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Length/Width</label>
+                                                            <p class="label_small_widget">35m / 9.5m</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Material</label>
+                                                            <p class="label_small_widget">Iron Wood</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="space_inside_product2">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                        <div class="scores">4,2</div>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                        <label class="label_small_widget_green">Excellent</label>
+                                                        <p class="label_light">196 Review</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                        <div class="label_light">Starts from &nbsp; </div>
+                                                        <div class="label_prices">IDR 12.593.583</div>
+                                                        <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                        <button class="button_packages">View Packages</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- separator -->
+                                    <div class="card_product_wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                <!-- <div class="offering_badge">SAVE 25%</div> -->
+                                                <img class="image_products" src="img/resorts/l_5.jpeg">
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                <div class="wrapper_product_info">
+                                                    <span class="label_light">Phinisi Cruises Sea Safari</span>
+                                                    <label class="label_card">Sea Safari 6 Liveaboard</label>
+                                                    <div class="review_wrapper">
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <div>&nbsp; &centerdot; &nbsp;</div>
+                                                        <label class="label_small_widget">Raja Ampat</label>
+                                                    </div>
+                                                    <div class="review_wrapper">
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/clock.svg">&nbsp;Nitrox Surcharge</span>
+                                                        <span class="mybadge3 img_services2"><img class="lazy" src="img/menu.svg">&nbsp;Equipment Rental</span>
+                                                        <span class="mybadge6">+1</span>
+                                                    </div>
+                                                    <div class="spacer_medium">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-xs-3">
+                                                            <label class="label_light topsmall">Cabins</label>
+                                                            <p class="label_small_widget">20</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Length/Width</label>
+                                                            <p class="label_small_widget">35m / 9.5m</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Material</label>
+                                                            <p class="label_small_widget">Iron Wood</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="space_inside_product2">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                        <div class="scores">4,2</div>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                        <label class="label_small_widget_green">Excellent</label>
+                                                        <p class="label_light">196 Review</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                        <div class="label_light">Starts from &nbsp; </div>
+                                                        <div class="label_prices">IDR 12.593.583</div>
+                                                        <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                        <button class="button_packages">View Packages</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- separator -->
+                                    <div class="card_product_wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-xs-4 space_inside_product">
+                                                <!-- <div class="offering_badge">SAVE 25%</div> -->
+                                                <img class="image_products" src="img/resorts/l_6.jpeg">
+                                            </div>
+                                            <div class="col-lg-5 col-md-5 col-xs-5 product_separator">
+                                                <div class="wrapper_product_info">
+                                                    <span class="label_light">Phinisi Cruises Sea Safari</span>
+                                                    <label class="label_card">Sea Safari 6 Liveaboard</label>
+                                                    <div class="review_wrapper">
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <span class="fa fa-star checked_star star_list"></span>
+                                                        <div>&nbsp; &centerdot; &nbsp;</div>
+                                                        <label class="label_small_widget">Raja Ampat</label>
+                                                    </div>
+                                                    <div class="review_wrapper">
+                                                        <span class="mybadge3 img_services2"><img src="img/clock.svg">&nbsp;Nitrox Surcharge</span>
+                                                        <span class="mybadge3 img_services2"><img src="img/menu.svg">&nbsp;Equipment Rental</span>
+                                                        <span class="mybadge6">+1</span>
+                                                    </div>
+                                                    <div class="spacer_medium">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-xs-3">
+                                                            <label class="label_light topsmall">Cabins</label>
+                                                            <p class="label_small_widget">20</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Length/Width</label>
+                                                            <p class="label_small_widget">35m / 9.5m</p>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-xs-4">
+                                                            <label class="label_light topsmall">Material</label>
+                                                            <p class="label_small_widget">Iron Wood</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="space_inside_product2">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                        <div class="scores">4,2</div>
+                                                    </div>
+                                                    <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                        <label class="label_small_widget_green">Excellent</label>
+                                                        <p class="label_light">196 Review</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12">
+                                                        <div class="label_light">Starts from &nbsp; </div>
+                                                        <div class="label_prices">IDR 12.593.583</div>
+                                                        <div class="label_light">7 nights incl. 12 dives/diver&nbsp; </div>
+                                                        <button class="button_packages">View Packages</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2">
+                                        <select class="chooser_select_nobackground_small">
+                                            <option>10 Items</option>
+                                            <option>20 Items</option>
+                                            <option>30 Items</option>
+                                            <option>40 Items</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5">
+                                        <label class="label_pagination">Showing 11 to 20 of 95 entries.</label>
+                                    </div>
+                                    <div class="col-lg-5 col-lg-5">
+                                        <nav aria-label="...">
+                                            <ul class="pagination justify-content-end">
+                                                <li class="page-item disabled">
+                                                    <span class="page-link"><i class="fa fa-angle-left"></i></span>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active">
+                                                    <span class="page-link">
+                                            2
+                                            <span class="sr-only">(current)</span>
+                                                    </span>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <div class="footer_start">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <a class="navbar-brand" href="#"><img id="logo_footer" src="img/logo.svg"></a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <p class="text_color_bolder text_normal">Company</h5>
+                    <ul class="list-unstyled text-small footer_start_list">
+                        <li><a class="" href="#">About Us</a></li>
+                        <li><a class="" href="#">Service Guarantee</a></li>
+                        <li><a class="" href="#">News</a></li>
+                        <li><a class="" href="#">Term of Service</a></li>
+                        <li><a class="" href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <p class="text_color_bolder text_normal">Dive Directory</p>
+                    <ul class="list-unstyled text-small footer_start_list">
+                        <li><a class="" href="#">Why book with us</a></li>
+                        <li><a class="" href="#">Best price guarantee</a></li>
+                        <li><a class="" href="#">Charters</a></li>
+                        <li><a class="" href="#">FAQ</a></li>
+                        <li><a class="" href="#">Affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <p class="text_color_bolder text_normal">Top Dive Region</p>
+                    <ul class="list-unstyled text-small footer_start_list">
+                        <li><a class="" href="#">Papua</a></li>
+                        <li><a class="" href="#">Bali</a></li>
+                        <li><a class="" href="#">Lombok</a></li>
+                        <li><a class="" href="#">Sulawesi</a></li>
+                        <li><a class="" href="#">Maluku</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <p class="text_color_bolder text_normal">News Letter</p>
+                    <p class="text_color">Sign up to get the latest news and updates on Indonesia Dive Directory.</p>
+                    <button class="btn btn-default btn-block"><span class="btn-caption">Sign Up<span></button>
+                <div class="d-flex justify-content-center footer_socials">
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-youtube"></i>
+                    <i class="fa fa-facebook"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer_last_text text_color">Copyright © 2011-2018 by Indonesia Dive Directory. All rights reserved.</div>
+</footer>    <!-- This is very important tag if you wanna use differnt JS after footer in all html check the example in: pages/index.twig -->
+    
+  </div>
+</body>
+</html>
+<!-- scripts -->
+<script src="js/index.min.js"></script>

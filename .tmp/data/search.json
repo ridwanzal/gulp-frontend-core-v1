@@ -1,0 +1,50 @@
+[
+    {
+       "id":"1001001",
+       "name":"Purwi Wirata Dive Resort & Spa",
+       "rate":"4",
+       "price":"12593.583",
+       "type":"resort",
+       "promo":"0"
+    },
+    {
+       "id":"1001002",
+       "name":"Meridian Adventure",
+       "rate":"4",
+       "price":"12593.583",
+       "type":"resort",
+       "promo":"0"
+    },
+    {
+       "id":"1001002",
+       "name":"Dragon Dive Komodo",
+       "rate":"4",
+       "price":"12593.583",
+       "type":"resort",
+       "promo":"0"
+    },
+    {
+       "id":"1001002",
+       "name":"Luwata Dive Resort & Spa",
+       "rate":"4",
+       "price":"12593.583",
+       "type":"resort",
+       "promo":"0"
+    },  
+    {
+       "id":"1001002",
+       "name":"Gangga Island Resort & Spa",
+       "rate":"4",
+       "price":"12593.583",
+       "type":"resort",
+       "promo":"0"
+    },
+    {
+        "id":"1001001",
+        "name":"Purwi Wirata Dive Resort & Spa",
+        "rate":"4",
+        "price":"12593.583",
+        "type":"resort",
+        "promo":"0"
+     }
+ ]

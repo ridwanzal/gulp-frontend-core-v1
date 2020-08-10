@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>IDD Web</title>
+
+    <!-- css dependencies -->
+    <link rel="shortcut icon" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sl-1.3.1/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="lib/css/lightslider.min.css" />
+    <link rel="stylesheet" href="lib/magnific-popup/dist/magnific-popup.css" />
+    <link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+
+    <!-- javascript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/af-2.3.4/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/cr-1.5.2/fc-3.3.0/fh-3.1.6/kt-2.5.1/r-2.2.3/rg-1.1.1/rr-1.2.6/sc-2.0.1/sl-1.3.1/datatables.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable@3.2.11/dist/jspdf.plugin.autotable.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <script src="lib/js/lightslider.min.js"></script>
+    <script src="lib/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        // lightslider
+        $('#imageGallery').lightSlider({
+            item: 1,
+            loop: true,
+            slideMove: 2,
+            auto: true,
+            pauseOnHover: true,
+            slideMargin: 0,
+            enableDrag: false,
+            pager: false,
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div class="ex_wrapper">
+        <section class="navbar_wrapper">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light navbar_custom">
+                    <a class="navbar-brand" href="javascript:history.go(0)"><img id="logo" src="img/logo.svg"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <!-- <li class="nav-item active">
+                <a class="nav-link" href="#">Discover <span class="sr-only">(current)</span></a>
+            </li> -->
+                            <li class="nav-item dropdown megamenu active"><a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle font-weight-bold ">Discover</a>
+                                <div aria-labelledby="megamneu" class="dropdown-menu border-0 p-0 m-0">
+                                    <div class="container megasize">
+                                        <div class="row megamenu_container">
+                                            <div class="nav nav-tabs nav_tabs_custom" id="nav-tab" role="tablist">
+                                                <a class="nav-item nav-link active navbar_megamenu" id="nav-home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="nav-home" aria-selected="true">Resorts</a>
+                                                <a class="nav-item nav-link navbar_megamenu" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">Live Board</a>
+                                            </div>
+                                        </div>
+                                        <div class="row megamenu_container2">
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 megasection_size">
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Sumatera</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Aceh</a></li>
+                                                                        <li><a class="" href="#">Padang</a></li>
+                                                                        <li><a class="" href="#">Krakatoa</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Java</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Thousand Island</a></li>
+                                                                        <li><a class="" href="#">Pelabuhan Ratu</a></li>
+                                                                        <li><a class="" href="#">Karimun Jaya</a></li>
+                                                                        <li><a class="" href="#">Pasir Putih</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Bali & Nusa Tenggara</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Bali</a></li>
+                                                                        <li><a class="" href="#">Gili Lombok</a></li>
+                                                                        <li><a class="" href="#">Komodo</a></li>
+                                                                        <li><a class="" href="#">Maumere</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 megasection_size">
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Kalimantan</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Derawan</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Sulawesi</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Sangihe</a></li>
+                                                                        <li><a class="" href="#">Bunaken</a></li>
+                                                                        <li><a class="" href="#">Lembeh</a></li>
+                                                                        <li><a class="" href="#">Buyat</a></li>
+
+                                                                        <li><a class="" href="#">Gorontalo</a></li>
+                                                                        <li><a class="" href="#">Tongean</a></li>
+                                                                        <li><a class="" href="#">Donggala</a></li>
+                                                                        <li><a class="" href="#">Kendari</a></li>
+
+                                                                        <li><a class="" href="#">Makassar</a></li>
+                                                                        <li><a class="" href="#">Walatobi</a></li>
+                                                                        <li><a class="" href="#">Bira</a></li>
+                                                                        <li><a class="" href="#">Selayar</a></li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 megasection_size">
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Maluku</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Morotai</a></li>
+                                                                        <li><a class="" href="#">Halmahera Barat</a></li>
+                                                                        <li><a class="" href="#">Ternate</a></li>
+                                                                        <li><a class="" href="#">Ambon</a></li>
+                                                                        <li><a class="" href="#">Banda</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="megamenu_section">
+                                                                    <p class="text_color_bolder text_normal">Papua</p>
+                                                                    <ul class="list-unstyled text-small megamenu_list">
+                                                                        <li><a class="" href="#">Raja Ampat</a></li>
+                                                                        <li><a class="" href="#">Cendrawasih Bay</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="#">Dive Areas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dive Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Articles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dive Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Book</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About Us</a>
+                            </li>
+                        </ul>
+                        <div class="form-inline my-4 my-lg-0">
+                            <i class="img_iconsearch"><img src="img/search.svg"></i>
+                            <input type="text" class="input_with_icon submit_global_search" placeholder="Search">
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+
+        <section class="main_wrapper" style="min-height:600px;">
+            <div class="container">
+                <div class="breadcrumb_wrappers">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <ul class="breadcrumbs">
+                                <li><a href="<?php echo base_url()?>">Home</a></li>
+                                <li><a href="<?php echo base_url('legitimate')?>">Resort</a></li>
+                                <li><a href="<?php echo base_url('legitimate')?>">Bali</a></li>
+                                <li>Blue Corner Dive Resort</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin_card"></div>
+                <!-- Diving Services -->
+                <div class="row">
+                    <div class="col-md-10 gallery_banner">
+                        <a href="img/resort_detail/gallery_1.jpeg"><img class="lazy image_gallery" src="img/resort_detail/gallery_1.jpeg"><a />
+                            <div class="divider_big"></div>
+                            <div class="divider_big"></div>
+                    </div>
+                    <div class="col-md-2 gallery_list">
+                        <a href="img/resort_detail/gallery_1.jpeg"><img class="image_gallery_small divider_big_bottom lazy" src="img/resort_detail/gallery_1.jpeg"></a>
+                        <a href="img/resort_detail/gallery_2.jpeg"><img class="image_gallery_small divider_big lazy lazy" src="img/resort_detail/gallery_2.jpeg"></a>
+                        <a href="img/resort_detail/gallery_3.jpeg"><img class="image_gallery_small divider_big lazy" src="img/resort_detail/gallery_3.jpeg"></a>
+                        <a href="img/resort_detail/gallery_3.jpeg"><img class="image_gallery_small divider_big lazy" src="img/resort_detail/gallery_3.jpeg"></a>
+                        <a href="img/resort_detail/gallery_1.jpeg">
+                            <div class="overlay_after">
+                                <div class="text_overlay">11+</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-xs-9">
+                        <div class="card_content_wrapper" id="filter_diveresort">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-9">
+                                    <div class="label_card_wrapper">
+                                        <label class="label_card_24">Blue Corner Dive Resort
+                                            <span class="fa fa-star checked_star star_list"></span>
+                                            <span class="fa fa-star checked_star star_list"></span>
+                                            <span class="fa fa-star checked_star star_list"></span>
+                                            <span class="fa fa-star checked_star star_list"></span>
+
+                                        </label>
+                                        <div class="label_card_subheader">
+                                            <span class="pre_icon">
+                                                <img class="lazy" src="img/icon/pin.svg">
+                                        </span>
+                                            Jalan Raya, Jungutbatu, Nusa Lembongan Island, Bali 80771, Indonesia
+                                        </div>
+                                        <div class="divider_big"></div>
+                                        <div class="style_header text_underline">Show on map</div>
+                                    </div>
+                                    <div class="label_card_wrapper2">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <div class="space_inside_product2">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-xs-4 scores_container">
+                                                <div class="scores">4,2</div>
+                                            </div>
+                                            <div class="col-lg-8 col-md-8 col-xs-8 reviews_result">
+                                                <label class="label_small_widget_green">Excellent</label>
+                                                <p class="label_light">From 412 Review</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_lines"></div>
+                            <div class="label_card_wrapper">
+                                <h5 class="style_header">Resort Description</h5>
+                                <p class="style_content">
+                                    Blue Corner Dive Resort is a beachfront eco-resort on Nusa Lembongan,
+                                    offering easy access to giant mantas and mola-mola (oceanic sunfish).
+                                    Guests staying at this friendly dive resort have access to a long, private beach
+                                    and a selection of water sports<span class="dots">...</span><span class="mores"> like kayaking, paddle boarding and snorkelling. 
+                            The resort boasts a restaurant and beach-style bar serving cocktails and fresh fruit juices. 
+                            The team host weekly BBQ nights on a Friday
+                        </p>
+                        <p class="label_reset label_light readmore-icon"  onclick="window.readMore()">Read more <i class="fa fa-angle-down"></i> </p>
+                        <h5 class="style_header">Package Highlights</h5>
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-1">
+                                <img class="lazy" src="img/check2.svg"/>
+                            </div>
+                            <div class="col-lg-11 col-md-11 col-xs-12">
+                                <p class="text_content left_30">
+                                Relaxed, professional dive resort offering beachside bungalows
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-1">
+                                <img class="lazy" src="img/check2.svg"/>
+                            </div>
+                            <div class="col-lg-11 col-md-11 col-xs-12">
+                                <p class="text_content left_30">
+                                    Tune up your dive skills or simply relax in the salt water pool, made from local stone
+                                </p>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-1">
+                                <img class="lazy" src="img/check2.svg"/>
+                            </div>
+                            <div class="col-lg-11 col-md-11 col-xs-12">
+                                <p class="text_content left_30">
+                                    Pull up a bean bag and admire the orange, pink and purple hues of the sunset
+                                </p>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-1">
+                                <img class="lazy" src="img/check2.svg"/>
+                            </div>
+                            <div class="col-lg-11 col-md-11 col-xs-12">
+                                <p class="text_content left_30">
+                                    Grab a freshly-squeezed juice or tropical cocktail from the beach bar
+                                </p>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-1">
+                                <img class="lazy" src="img/check2.svg"/>
+                            </div>
+                            <div class="col-lg-11 col-md-11 col-xs-12">
+                                <p class="text_content left_30">
+                                    Dive straight from the beach - maximum convenience and chill time
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-3">
+                <div class="card_content_wrapper" id="filter_diveresort">
+                    <div class="label_card_wrapper">
+                        <label class="label_card">Book your trip</label>
+                    </div>
+                    <div class="card_lines">
+                    </div>
+                    <div class="label_card_wrapper2">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-3 col-xs-12">
+                                <div class="label_card_subheader">Price starts from</div>
+                                <div class="label_prices">IDR<span class="label_prices_big">12.593.583</span>
+                            </div>
+                            <div class="divider_small"></div>
+                            <button class="button_packages">Select Date & Package</button>
+                            <div class="divider_big"></div>
+                            <button class="button_packages_alt">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card_content_wrapper_alt margin_card" id="filter_diveresort">
+                <div class="label_card_wrapper">
+                    <div class="pushto_right">
+                        <img class="lazy" alt="contact" src="img/phone.png">
+                    </div>
+                    <div class="label_card_subheader">Look for another options</div>
+                    <label class="label_card">Contact Us</label>
+                </div>
+            </div>
+    </div>
+    </div>
+    <!-- divider-->
+    <div class="margin_card"></div>
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-xs-9">
+            <div class="margin_card"></div>
+            <div class="card_content_wrapper" id="filter_diveresort">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <div class="label_card_wrapper">
+                            <label class="label_card_24">Dates and prices
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="label_card_wrapper">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <input type="date" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="date" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control">
+                                <option value="1">1 Guest</option>
+                                <option value="1">2 Guest</option>
+                                <option value="1">3 Guest</option>
+                                <option value="1">4 Guest</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <button class="button_packages">Check Availability</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card_product_wrapper product_list_resort" id="resort_1">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-xs-2 vertical_align">
+                                        <div class="jumbotext">4</div>
+                                        <div class="label_light">September</div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-xs-4 product_separator">
+                                        <div class="wrapper_product_info">
+                                            <label class="label_bold_alt">Raja Ampat - Misool & Central (Sorong - Sorong)</label>
+                                            <div class="review_wrapper">
+                                                <label class="label_light">11 Night &nbsp;
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-3 product_separator">
+                                        <div class="wrapper_product_info">
+                                            <div class="label_light">Starts from &nbsp; </div>
+                                            <div class="label_prices">IDR <span class="label_prices_medium">12.593.583</span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-3 product_separator_noborder">
+                                        <button class="button_packages">Book now</button>
+                                        <div class="divider_small"></div>
+                                        <button class="button_packages_alt" data-toggle="modal" data-target="#dialog_liveboard">See Itinerary</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card inside 2 -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card_product_wrapper product_list_resort" id="resort_1">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-xs-2 vertical_align">
+                                        <div class="jumbotext">16</div>
+                                        <div class="label_light">September</div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-xs-4 product_separator">
+                                        <div class="wrapper_product_info">
+                                            <label class="label_bold_alt">Raja Ampat - Misool & Central (Sorong - Sorong)</label>
+                                            <div class="review_wrapper">
+                                                <label class="label_light">11 Night &nbsp;
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-3 product_separator">
+                                        <div class="wrapper_product_info">
+                                            <div class="label_light">Starts from &nbsp; </div>
+                                            <div class="label_prices">IDR <span class="label_prices_medium">12.593.583</span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-3 product_separator_noborder">
+                                        <button class="button_packages">Book now</button>
+                                        <div class="divider_small"></div>
+                                        <button class="button_packages_alt" data-toggle="modal" data-target="#dialog_liveboard">See Itinerary</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card inside 3 -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card_product_wrapper product_list_resort" id="resort_1">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-xs-2 vertical_align">
+                                        <div class="jumbotext">28</div>
+                                        <div class="label_light">September</div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-xs-4 product_separator">
+                                        <div class="wrapper_product_info">
+                                            <label class="label_bold_alt">Raja Ampat - Misool & Central (Sorong - Sorong)</label>
+                                            <div class="review_wrapper">
+                                                <label class="label_light">11 Night &nbsp;
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-3 product_separator">
+                                        <div class="wrapper_product_info">
+                                            <div class="label_light">Starts from &nbsp; </div>
+                                            <div class="label_prices">IDR <span class="label_prices_medium">12.593.583</span> </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-3 product_separator_noborder">
+                                        <button class="button_packages">Book now</button>
+                                        <div class="divider_small"></div>
+                                        <button class="button_packages_alt" data-toggle="modal" data-target="#dialog_liveboard">See Itinerary</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal goes here -->
+            <div class="modal fade" id="dialog_liveboard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body" style="height:100%;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="nocard_content_wrapper_modal">
+                                <div class="row">
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="label_light">Phinisi Cruises Sea Safari</div>
+                                        <div class="divider_big"></div>
+                                        <label class="label_card_24">Raja Ampat - Misool & Central (Sorong - Sorong)
+                                        </label>
+                                        <div class="divider_big"></div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="space_inside_product2">
+                                            <div class="col-lg-12 col-md-412 col-xs-12 scores_container">
+                                                <div class="wrapper_product_info">
+                                                    <div class="label_light">Starts from</div>
+                                                    <div class="label_prices">IDR 12.593.583</div>
+                                                    <div class="label_light">per trip per person</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_container_alt divider_big">
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <div class="label_light">
+                                                        <span class="pre_icon">
+                                                    <img class="lazy" src="img/icon/pin.svg">
+                                                </span>
+                                                        Duration
+                                                        <span class="pre_icon">
+                                                </span>
+                                                        <div class="bottom_text style_header_light">11 Nights</div>
+                                                    </div>
+                                                    <div class="divider_small"></div>
+                                                    <div class="label_light">
+                                                        <span class="pre_icon">
+                                                    <img class="lazy" src="img/icon/padi.svg">
+                                                </span>
+                                                        Number of dives
+                                                        <span class="pre_icon">
+                                                </span>
+                                                        <div class="bottom_text style_header_light">Approx. 33 - 35 dives</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div class="label_light">
+                                                        <span class="pre_icon">
+                                                    <img class="lazy" src="img/icon/padi.svg">
+                                                </span>
+                                                        <label class="style_header_light">50+ dives recommended</label>
+                                                        <span class="pre_icon">
+                                                </span>
+                                                        <div class="bottom_text">Some dives are in strong currents and a minimum experience of every single diver is key for the safety of the group.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 1-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="label_card">Departure</div>
+                                                </h5>
+                                            </div>
+                                            <ul class="list_controller">
+                                                <li>
+                                                    22 June 2020
+                                                </li>
+                                                <li>
+                                                    08:00 - 12:00
+                                                </li>
+                                                <li>
+                                                    Sorong
+                                                </li>
+                                                <li>
+                                                    Sorong/Dominique Edward Osok (SOQ)
+                                                </li>
+                                                <ul>
+                                        </div>
+                                    </div>
+                                    <!-- col 2 -->
+                                    <div class="col-md-6">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="label_card">Return</div>
+                                                </h5>
+                                            </div>
+                                            <ul class="list_controller">
+                                                <li>
+                                                    1 August 2020
+                                                </li>
+                                                <li>
+                                                    08:00 - 12:00
+                                                </li>
+                                                <li>
+                                                    Sorong
+                                                </li>
+                                                <li>
+                                                    Sorong/Dominique Edward Osok (SOQ)
+                                                </li>
+                                                <ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="label_card_wrapper">
+                                            <h5 class="style_header">Highlighted Packages</h5>
+                                            <div class="row">
+                                                <div class="col-lg-1 col-md-1 col-xs-1">
+                                                    <img class="lazy" src="img/check2.svg" />
+                                                </div>
+                                                <div class="col-lg-11 col-md-11 col-xs-12">
+                                                    <p class="text_content">
+                                                        Relaxed, professional dive resort offering beachside bungalows
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-1 col-md-1 col-xs-1">
+                                                    <img class="lazy" src="img/check2.svg" />
+                                                </div>
+                                                <div class="col-lg-11 col-md-11 col-xs-12">
+                                                    <p class="text_content">
+                                                        Tune up your dive skills or simply relax in the salt water pool, made from local stone
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-1 col-md-1 col-xs-1">
+                                                    <img class="lazy" src="img/check2.svg" />
+                                                </div>
+                                                <div class="col-lg-11 col-md-11 col-xs-12">
+                                                    <p class="text_content">
+                                                        Pull up a bean bag and admire the orange, pink and purple hues of the sunset
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-1 col-md-1 col-xs-1">
+                                                    <img class="lazy" src="img/check2.svg" />
+                                                </div>
+                                                <div class="col-lg-11 col-md-11 col-xs-12">
+                                                    <p class="text_content">
+                                                        Grab a freshly-squeezed juice or tropical cocktail from the beach bar
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-1 col-md-1 col-xs-1">
+                                                    <img class="lazy" src="img/check2.svg" />
+                                                </div>
+                                                <div class="col-lg-11 col-md-11 col-xs-12">
+                                                    <p class="text_content">
+                                                        Dive straight from the beach - maximum convenience and chill time
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="label_card_wrapper">
+                                            <div class="label_card">Iconinc Marine Life you could Encounter</div>
+                                            <div class="divider_big"></div>
+                                            <div class="owl-carousel owl-theme">
+                                                <div>
+                                                    <img class="lazy" src="img/modal/1.jpeg" height:100px; />
+                                                </div>
+                                                <div>
+                                                    <img class="lazy" src="img/modal/2.jpeg" height:100px; />
+                                                </div>
+                                                <div>
+                                                    <img class="lazy" src="img/modal/3.jpeg" height:100px; />
+                                                </div>
+                                                <div class="divider_big"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card dropddow -->
+                                <!-- dropdown 4-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="label_card_wrapper">
+                                            <h5>Itinerary Details</h5>
+                                            <div class="goright goright_top text_desc text_underline">Show All</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_top">
+                                            <div class="card-header" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseCard2" aria-expanded="true" aria-controls="collapseSpots">
+                                                        <div class="label_card">Day 1</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseCard2" class="collapse show" aria-labelledby="diving_spots" data-parent="#accordion">
+                                                <div class="divider_big"></div>
+                                                <ul class="list_controller">
+                                                    <li>
+                                                        Safety Briefing, Crew Introduction, Necessary Dive Paperwork, Cabin allocation and ship orientation will take place before departing the Harbour.
+                                                    </li>
+                                                    <li>
+                                                        During the journey to our first dive site for a check dive, please take this opportunity to familiarize yourselves with the vessel and make yourself comfortable.
+                                                    </li>
+                                                    <li>
+                                                        Afternoon and night dive outside Sorong on a reef patch named “Green Light”
+                                                    </li>
+                                                    <li>
+                                                        Please Note: This is a sample itinerary and nº of dives, dive sites, etc. may be subject to change due to weather conditions and other unforseeable factors #}
+                                                    </li>
+                                                    <ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider_big"></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_dark">
+                                            <div class="card-header" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseCard1" aria-expanded="true" aria-controls="collapseSpots">
+                                                        <div class="label_card">Day 2</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseCard1" class="collapse show" aria-labelledby="diving_spots" data-parent="#accordion">
+                                                <div class="divider_big"></div>
+                                                <ul class="list_controller">
+                                                    <li>Cenderawasih bay is a marine park located in the north coast of Irian Jaya, east of Birds Head peninsula.</li>
+                                                    <li>This marine park covers an area of approximately 80 square kilometres, which has become the largest National Marine Park throughout Southeast Asia.</li>
+                                                    <li>Because of its isolated location this bay is protected from the Pacific currents which promote the gathering of certain endemic species.</li>
+                                                    <li>In Cenderawasih Bay we can encounter in the shallows species that normally live in deeper waters. We will also find a wide variety of corals.</li>
+                                                    <li>The good muck diving will keep the lovers of the tiny and strange Critters busy, they will enjoy searching for Pigmy Seahorses, Tiger Prawns and Frog fish among other species.</li>
+                                                    <li>The whale-sharks are not the only attraction in Cenderawasih Bay, it is also popular for the WW2 wrecks in Manokwari and Mansinam, for the beautiful coral gardens in Biak, and for the atolls and rich drop-offs covered in black coral, sponges, sea fans and rich marine biodiversity.</li>
+                                                    <li>It is also a critter's heaven and pygmy sea horses, frog fish, nudibranches, ghost pipe fish, mimic octopus and large varieties of crab and shrimp are often spotted.</li>
+                                                    <li>Cenderawasih Bay is since 2002 protected by the National Park Status and new species are still discovered. The number of species listed has now risen to 1,596. </li>
+                                                    <li>Dive the wrecks around Pulau Amsterdam. If conditions are favorable, visit to the leatherback turtle rookeries at night. Sail to Biak.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider_big"></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_dark">
+                                            <div class="card-header" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseCard3" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Day 3</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseCard3" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider_big"></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_dark">
+                                            <div class="card-header" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseCard3" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Day ...</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseCard3" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider_big"></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_dark">
+                                            <div class="card-header" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseCard3" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Day 10</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseCard3" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider_big"></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_dark">
+                                            <div class="card-header" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseCard3" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Day 11</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseCard3" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider_big"></div>
+                                <!-- dropdown 2-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">What's not include</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSpots" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 3-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Optional Extras</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSpots" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 4-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Good to Know</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSpots" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin_card"></div>
+            <div class="card_custom_bordered">
+                <div class="card-header-noborder" id="diving_spots">
+                    <h5 class="mb-0 label_card">
+                        <div class="btn btn-link btn_link_title_big collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="true" aria-controls="collapseSpots">
+                            <div class="label_card_24">Diving Spots</div>
+                        </div>
+                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                    </h5>
+                </div>
+                <div id="collapseSpots" class="collapse show" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id='mapid' style='width: 100%; height: 300px; border-radius:8px;'></div>
+                                <div class="divider_big"></div>
+                                <h5 class="style_header">Dive List</h5>
+                                <div class="demo hasActive">
+                                    <ul id="imageGallery" class="img">
+                                        <li data-src="img/liveboard_detail/1.jpeg" data-toggle="modal" data-target="#diving_image">
+                                            <img class="lazy" src="img/liveboard_detail/1.jpeg" width="100%" />
+                                        </li>
+                                        <li data-src="img/liveboard_detail/2.jpeg" data-toggle="modal" data-target="#diving_image">
+                                            <img class="lazy" src="img/liveboard_detail/2.jpeg" width="100%" />
+                                        </li>
+                                        <li data-src="img/liveboard_detail/1.jpeg" data-toggle="modal" data-target="#diving_image">
+                                            <img class="lazy" src="img/liveboard_detail/1.jpeg" width="100%" />
+                                        </li>
+                                        <li data-src="img/liveboard_detail/2.jpeg" data-toggle="modal" data-target="#diving_image">
+                                            <img class="lazy" src="img/liveboard_detail/2.jpeg" width="100%" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="diving_image" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="nocard_content_wrapper_modal">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="label_light">USAT Liberty
+                                        </div>
+                                        <div class="divider_small"></div>
+                                        <label class="label_card_24">USAT Liberty
+                                        </label>
+                                        <div class="divider_big"></div>
+                                        <div class="owl-carousel owl-theme">
+                                            <div>
+                                                <img class="lazy" src="img/liveboard_detail/cabin1.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img class="lazy" src="img/liveboard_detail/cabin2.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img class="lazy" src="img/liveboard_detail/cabin3.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img class="lazy" src="img/liveboard_detail/cabin4.jpeg" />
+                                            </div>
+                                            <div class="divider_big"></div>
+                                        </div>
+                                        <p class="text_content">
+                                            USAT Liberty – Bali’s most famous dive site offers a chance to
+                                            see schools of bumphead parrotfish, black sand muck diving,
+                                            and a coral encrusted wreck. The USAT (United States Army Transport)
+                                            Liberty was awaiting repairs on the shore when lava flow from an erupting
+                                            Mount Agung pushed her back into the water where she now lays on her side.
+                                            Starting at just over five meters and extending down to 30 meters, this wreck is
+                                            a marine life hotspot. Look out for barracuda, turtles, pygmy seahorses on fans, numerous species of nudibranch, sting rays and a wealth of critters.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin_card"></div>
+            <div class="card_content_wrapper" id="filter_diveresort">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9">
+                        <div class="label_card_wrapper">
+                            <label class="label_card_24">Room Information
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="label_card_wrapper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="nocard_content_wrapper product_list_resort" id="resort_1">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-xs-4">
+                                        <div class="demox1 hasActive">
+                                            <ul id="cabinGallery3" class="img">
+                                                <li data-src="img/resort_detail/1.jpeg" data-thumb="img/resort_detail/1.jpeg">
+                                                    <img class="lazy" src="img/resort_detail/1.jpeg" width="100%" />
+                                                </li>
+                                                <li data-src="img/resort_detail/2.jpeg" data-thumb="img/resort_detail/2.jpeg">
+                                                    <img class="lazy" src="img/resort_detail/2.jpeg" width="100%" />
+                                                </li>
+                                                <li data-src="img/resort_detail/3.jpeg" data-thumb="img/resort_detail/3.jpeg">
+                                                    <img class="lazy" src="img/resort_detail/3.jpeg" width="100%" />
+                                                </li>
+                                                <li data-src="img/resort_detail/4.jpeg" data-thumb="img/resort_detail/4.jpeg">
+                                                    <img class="lazy" src="img/resort_detail/4.jpeg" width="100%" />
+                                                </li>
+                                            </ul>
+                                            <div class="divider_big"></div>
+                                        </div>
+                                        <div class="label_light">
+                                            <span class="pre_icon">
+                                                                <img class="lazy" src="img/icon/resize.svg">
+                                                            </span>
+                                            110.0 sqm
+                                        </div>
+                                        <div class="divider_small"></div>
+                                        <div class="label_light">
+                                            <span class="pre_icon">
+                                                                <img class="lazy" src="img/icon/bed.svg">
+                                                            </span>
+                                            1 King Bed
+                                        </div>
+                                        <div class="divider_small"></div>
+                                        <div class="label_light">
+                                            <span class="pre_icon">
+                                                                <img class="lazy" src="img/icon/hopme.svg">
+                                                            </span>
+                                            4 Guest
+                                        </div>
+                                        <div class="divider_big"></div>
+                                        <button class="button_packages_outline" data-toggle="modal" data-target="#dialog_room_info">Show Room Info</button>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-xs-6 ">
+                                        <div class="wrapper_product_info">
+                                            <div class="wrapper_product_info">
+                                                <div class="card_content_wrapper" id="filter_liveboard">
+                                                    <div class="label_card_wrapper">
+                                                        <label class="style_header">Diver package x 1</label>
+                                                    </div>
+                                                    <div class="card_lines">
+                                                    </div>
+                                                    <div class="label_card_wrapper2">
+                                                        <div class="row">
+                                                            <ul class="list_controller">
+                                                                <li>
+                                                                    12 boat dives per diver
+                                                                </li>
+                                                                <li>
+                                                                    Meals as per chosen meal plan
+                                                                </li>
+                                                                <li>
+                                                                    Free DAN dive accident insurance
+                                                                </li>
+                                                                <li>
+                                                                    Free WiFi (public areas)
+                                                                </li>
+                                                                <li>
+                                                                    Welcome drink
+                                                                </li>
+                                                                <li>
+                                                                    Complimentary toiletries
+                                                                </li>
+                                                                <ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="dialog_package_detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body" style="height:100%;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="nocard_content_wrapper_modal">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7">
+                                        <label class="label_card_24">Package Details
+                                        </label>
+                                        <div class="label_card_subheader">
+                                            <div class="label_prices">IDR 12.593.583</div>
+                                        </div>
+                                        <div class="divider_big"></div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5">
+                                        <div class="space_inside_product2">
+                                            <div class="col-lg-12 col-md-412 col-xs-12 scores_container">
+                                                <span class="mybadge3 img_services"><img class="lazy" src="img/person.svg">&nbsp;Single Occupancy Availability</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 1-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                            <h5 class="mb-0 label_card">
+                                                <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="true" aria-controls="collapseSpots">
+                                                    <div class="label_card">What's include</div>
+                                                </div>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseSpots" class="collapse show" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <ul class="list_controller">
+                                                            <li>
+                                                                Free DAN dive accident insurance (if trip value > USD 1500 per person)
+                                                            </li>
+                                                            <li>
+                                                                Full board, including(see more)
+                                                            </li>
+                                                            <li>
+                                                                Weight Belt/Weights/Tank(s)
+                                                            </li>
+                                                            <li>
+                                                                Transfer from/to the airport (round-trip, only on boat arrival & departure days)
+                                                            </li>
+                                                            <li>
+                                                                Transfer from/to local hotels (round-trip, scheduled times only)
+                                                            </li>
+                                                            <li>
+                                                                Dive guides
+                                                            </li>
+                                                            <li>
+                                                                Fins, mask, snorkel (ABC)
+                                                            </li>
+                                                            <ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="label_card_wrapper">
+                                            <div class="label_card">Iconinc Marine Life you could Encounter</div>
+                                            <div class="divider_big"></div>
+                                            <div class="owl-carousel owl-theme">
+                                                <div>
+                                                    <img class="lazy" src="img/modal/1.jpeg" height:100px; />
+                                                </div>
+                                                <div>
+                                                    <img class="lazy" src="img/modal/2.jpeg" height:100px; />
+                                                </div>
+                                                <div>
+                                                    <img class="lazy" src="img/modal/3.jpeg" height:100px; />
+                                                </div>
+                                                <div class="divider_big"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 2-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">What's not include</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSpots" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 3-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Optional Extras</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSpots" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 4-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Good to Know</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSpots" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- dropdown 5-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card_custom_noborder">
+                                            <div class="card-header-noborder card_custom_header_noborder" id="diving_spots">
+                                                <h5 class="mb-0 label_card">
+                                                    <div class="btn btn-link btn_link_title_big_modal collapsed" data-toggle="collapse" data-target="#collapseSpots" aria-expanded="false" aria-controls="collapseSpots">
+                                                        <div class="label_card">Payment Cancellation Fees</div>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseSpots" class="collapse" aria-labelledby="diving_spots" data-parent="#accordion">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal room info -->
+            <div class="modal fade" id="dialog_room_info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="nocard_content_wrapper_modal">
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="owl-carousel owl-theme">
+                                            <div>
+                                                <img class="lazy" src="img/resort_detail/1.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img class="lazy" src="img/resort_detail/2.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img class="lazy" src="img/resort_detail/3.jpeg" />
+                                            </div>
+                                            <div>
+                                                <img class="lazy" src="img/resort_detail/4.jpeg" />
+                                            </div>
+                                            <div class="divider_big"></div>
+                                        </div>
+                                    </div>
+                                    <div class="card_lines"></div>
+                                    <div class="col-md-4">
+                                        <div class="room_details_scrollable" style="height:603px; overflow-y:scroll;">
+                                            <h5 class="style_header">Room Information Details</h5>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="label_light">
+                                                        <span class="pre_icon">
+                                                                <img class="lazy" src="img/icon/resize.svg">
+                                                            </span>
+                                                        110.0 sqm
+                                                    </div>
+                                                    <div class="divider_small"></div>
+                                                    <div class="label_light">
+                                                        <span class="pre_icon">
+                                                                <img class="lazy" src="img/icon/bed.svg">
+                                                            </span>
+                                                        1 King Bed
+                                                    </div>
+                                                    <div class="divider_small"></div>
+                                                    <div class="label_light">
+                                                        <span class="pre_icon">
+                                                                <img class="lazy" src="img/icon/hopme.svg">
+                                                            </span>
+                                                        4 Guest
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="divider_big">
+                                                <div class="card_lines"></div>
+                                            </div>
+                                            <h5 class="style_header">About this room</h5>
+                                            <ul class="list_controller">
+                                                <li>Air conditioning</li>
+                                                <li>Fan</li>
+                                                <li>Complimentary bottled water</li>
+                                                <li>Coffee / tea maker</li>
+                                                <li>Minibar</li>
+                                                <li>Refrigerator</li>
+                                                <li>Television</li>
+                                                <li>Private pool</li>
+                                                <li>Desk</li>
+                                                <li>In-room safe</li>
+                                                <li>Ironing facility</li>
+                                                <li>Dishwasher</li>
+                                            </ul>
+                                            <div class="divider_big">
+                                                <h5 class="style_header">Bathroom Amenities</h5>
+                                                <ul class="list_controller">
+                                                    <li>Hot water</li>
+                                                    <li>Private bathroom</li>
+                                                    <li>Shower</li>
+                                                    <li>Toiletries</li>
+                                                </ul>
+                                                <h5 class="style_header">About this room</h5>
+                                                <p class="text_content">
+                                                    Guest enjoy FREE benefit: Free One Time Floating Breakfast for 6 persons. Valid for minimum stay o
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin_card"></div>
+            <div class="card_custom_bordered">
+                <div class="card-header-bordered card_custom_header_noborder" id="resort_amenities">
+                    <h5 class="mb-0 label_card">
+                        <div class="btn btn-link btn_link_title_big collapsed" data-toggle="collapse" data-target="#collapseBoat" aria-expanded="true" aria-controls="collapseBoat">
+                            <div class="label_card_24">Resort amenities</div>
+                        </div>
+                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                    </h5>
+                </div>
+                <div id="collapseBoat" class="collapse show" aria-labelledby="resort_amenities" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5 class="style_header">
+                                    <span class="pre_icon">
+                        <img class="lazy" src="img/icon/room_service.svg">
+                    </span>
+                                    In-Room Facilities
+                                </h5>
+                            </div>
+                            <div class="col-md-4">
+                                <h5 class="style_header">
+                                    <span class="pre_icon">
+                        <img  class="lazy"src="img/icon/restaurant.svg">
+                    </span>
+                                    Food and Drinks</h5>
+                            </div>
+                            <div class="col-md-4">
+                                <h5 class="style_header">
+                                    <span class="pre_icon">
+                        <img class="lazy" src="img/icon/hotel.svg">
+                    </span>
+                                    Public Facilities
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <ul class="list_controller">
+                                    <li>Bathrobe</li>
+                                    <li>Bathtub</li>
+                                    <li>Cable TV</li>
+                                    <li>Desk</li>
+                                    <li>Hairdryer</li>
+                                    <li>In-room safe</li>
+                                    <li>Kitchenette</li>
+                                    <li>Minibar</li>
+                                    <li>Refrigerator</li>
+                                    <li>Separate shower and tub</li>
+                                    <li>Shower</li>
+                                    <li>TV</li>
+                                    <ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list_controller">
+                                    <li>A la carte breakfast</li>
+                                    <li>A la carte dinner</li>
+                                    <li>A la carte lunch</li>
+                                    <li>Breakfast</li>
+                                    <li>Breakfast and dinner</li>
+                                    <li>Breakfast served to the table</li>
+                                    <li>Gluten-free meals</li>
+                                    <li>Set menu dinner</li>
+                                    <li>Dietary menu</li>
+                                    <li>Vegetarian meal</li>
+                                    <ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list_controller">
+                                    <li>Parking</li>
+                                    <li>Coffee/tea in lobby</li>
+                                    <li>Early check-in</li>
+                                    <li>Late check-out</li>
+                                    <li>Restaurant</li>
+                                    <li>Breakfast restaurant</li>
+                                    <li>Dinner restaurant</li>
+                                    <li>Lunch restaurant</li>
+                                    <li>Room service</li>
+                                    <li>Safety deposit box</li>
+                                    <li>WiFi in public area</li>
+                                    <ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin_card"></div>
+            <div class="card_custom_bordered">
+                <div class="card-header-noborder" id="howto_resort">
+                    <h5 class="mb-0 label_card">
+                        <div class="btn btn-link btn_link_title_big collapsed" data-toggle="collapse" data-target="#collapseHowtos" aria-expanded="true" aria-controls="collapseHowtos">
+                            <div class="label_card_24">How to get there</div>
+                        </div>
+                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                    </h5>
+                </div>
+                <div id="collapseHowtos" class="collapse show" aria-labelledby="howto_resort" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="style_header">
+                                    <span class="pre_icon">
+                        <img class="lazy" src="img/icon/login.svg">
+                    </span>
+                                    Arrival
+                                </h5>
+                                <ul class="list_controller">
+                                    <li>
+                                        The closet International airport Ngurah Rai Despensar in Bali
+                                    </li>
+                                    <li>
+                                        Airport/local hotel and harbour transfer can be organized for an addional charge
+                                    </li>
+                                    <li>
+                                        The distance from the airport is around 80 km
+                                    </li>
+                                    <ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="style_header">
+                                    <span class="pre_icon">
+                        <img class="lazy" src="img/icon/logoout.svg">
+                    </span>
+                                    Departure</h5>
+                                <ul class="list_controller">
+                                    <li>
+                                        Once you have checked out at reception you can
+                                        make your own to your next destination or join
+                                        the resort transfer back to the airport for an additional charge
+                                    </li>
+                                    <ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text_underline cursor_pointer button_color">
+                                    Show map
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin_card"></div>
+            <div class="card_custom_bordered">
+                <div class="card-header-bordered " id="trip_policy">
+                    <h5 class="mb-0 label_card">
+                        <div class="btn btn-link btn_link_title_big collapsed" data-toggle="collapse" data-target="#collapseTrip" aria-expanded="true" aria-controls="collapseTrip">
+                            <div class="label_card_24">Resort Policy</div>
+                        </div>
+                        <!-- <div class="fa fa-angle-down rotate-icon gorights"></div> -->
+                    </h5>
+                </div>
+                <div id="collapseTrip" class="collapse show" aria-labelledby="trip_policy" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="style_header">Booking Process</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="list_controller">
+                                    <li>
+                                        Tortor accumsan quis arcu elementum amet, euismod. Euismod proin viverra elit morbi porttitor. Pretium non rhoncus mauris lacus. Enim egestas in cras urna etiam pellentesque egestas. Gravida diam consequat tincidunt venenatis. Venenatis et ornare nisi mauris mattis ac. Diam amet, ut diam id sed vulputate. Pellentesque enim nec aliquam lectus enim.
+                                        Sapien in tincidunt nulla orci. Faucibus viverra mi urna egestas gravida iaculis cursus. Nibh scelerisque enim, vulputate nunc ut amet, lacus fermentum sit. Ipsum leo metus, lorem molestie. Lobortis nec in nisi, nunc tempus, nunc. Scelerisque est a risus diam.
+                                    </li>
+                                    <ul>
+                            </div>
+                        </div>
+                        <!-- row 2 -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="style_header">Payment Terms</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="style_header">Cancellation Fee</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list_controller">
+                                    <li>Now: 0%</li>
+                                    <li>48 hours after booking confirmation: 50%</li>
+                                    <li>60 days before trip start: 100%</li>
+                                    <!--
+                                                    Free cancellation for 48h after confirmation
+                                                    5% of the total booking amount will be charged if you cancel more than 67 days prior to arrival
+                                                    35% will be charged if you cancel between 67 and 37 days prior to arrival
+                                                    100% will be charged if you cancel less than 37 days prior to arrival
+                                                -->
+                                    <ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list_controller">
+                                    <li>Free cancellation for 48h after confirmation</li>
+                                    <li>5% of the total booking amount will be charged if you cancel more than 67 days prior to arrival</li>
+                                    <li>35% will be charged if you cancel between 67 and 37 days prior to arrival</li>
+                                    <li>100% will be charged if you cancel less than 37 days prior to arrival</li>
+                                    <ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin_card"></div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12  col-xs-12">
+                    <div class="card_content_wrapper" id="filter_diveresort">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8">
+                                <div class="label_card_wrapper">
+                                    <label class="label_card_24">Review&nbsp;
+                                        <span class="label_light">from</span>
+                                        <img class="image_review lazy" src="img/tripadvisor.svg">
+                                    </label>
+                                </div>
+                                <div class="label_card_wrapper2">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="label_card_wrapper">
+                                    <div class="review_wrapper style_content">
+                                        <div>Read all reviews</div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div>Write a review</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="label_card_wrapper review_point_position">
+                                    <div class="rating_review_tripadvisor">
+                                        <span class="rating_review_scores">4,2</span>
+                                        <span class="rating_review_total">/5</span>
+                                    </div>
+                                    <div class="rating_bar">
+                                        <div>
+                                            <img class="lazy" src="img/tripadvisor_logoonly.svg" />
+                                        </div>
+                                        <div class="rating_point_with_image">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <div class="label_light">From 437 Reviewer</div>
+                                </div>
+                            </div>
+                            <div class="col-md-9 padding_bottom_medium">
+                                <div class="label_card_wrapper">
+                                    <div class="card_outline">
+                                        <div class="rating_point_with_noimage">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                        <div class="style_header divider_medium">
+                                            Bittersweet experience
+                                        </div>
+                                        <p class="text_content divider_medium">
+                                            My wife and I did a few specialities at Blue Corner and Lauren
+                                            the in house marine biologist was fabulous! You could not
+                                            fault the course at all. The diving was ( as it is in Nusa Lembongan area...
+                                        </p>
+                                        <div class="flex">
+                                            <div class="label_light divider_biggest_top">
+                                                Review by rory0408 a TripAdvisor traveler
+                                            </div>
+                                            <div class="label_light divider_biggest_top flex_right text_underline">
+                                                Read full review
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="label_card_wrapper">
+                                    <div class="card_outline">
+                                        <div class="rating_point_with_noimage">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                        <div class="style_header divider_medium">
+                                            Bittersweet experience
+                                        </div>
+                                        <p class="text_content divider_medium">
+                                            My wife and I did a few specialities at Blue Corner and Lauren
+                                            the in house marine biologist was fabulous! You could not
+                                            fault the course at all. The diving was ( as it is in Nusa Lembongan area...
+                                        </p>
+                                        <div class="flex">
+                                            <div class="label_light divider_biggest_top">
+                                                Review by rory0408 a TripAdvisor traveler
+                                            </div>
+                                            <div class="label_light divider_biggest_top flex_right text_underline">
+                                                Read full review
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="label_card_wrapper">
+                                    <div class="card_outline">
+                                        <div class="rating_point_with_noimage">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                        <div class="style_header divider_medium">
+                                            Bittersweet experience
+                                        </div>
+                                        <p class="text_content divider_medium">
+                                            My wife and I did a few specialities at Blue Corner and Lauren
+                                            the in house marine biologist was fabulous! You could not
+                                            fault the course at all. The diving was ( as it is in Nusa Lembongan area...
+                                        </p>
+                                        <div class="flex">
+                                            <div class="label_light divider_biggest_top">
+                                                Review by rory0408 a TripAdvisor traveler
+                                            </div>
+                                            <div class="label_light divider_biggest_top flex_right text_underline">
+                                                Read full review
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <div class="footer_start">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <a class="navbar-brand" href="#"><img id="logo_footer" src="img/logo.svg"></a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <p class="text_color_bolder text_normal">Company</h5>
+                    <ul class="list-unstyled text-small footer_start_list">
+                        <li><a class="" href="#">About Us</a></li>
+                        <li><a class="" href="#">Service Guarantee</a></li>
+                        <li><a class="" href="#">News</a></li>
+                        <li><a class="" href="#">Term of Service</a></li>
+                        <li><a class="" href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <p class="text_color_bolder text_normal">Dive Directory</p>
+                    <ul class="list-unstyled text-small footer_start_list">
+                        <li><a class="" href="#">Why book with us</a></li>
+                        <li><a class="" href="#">Best price guarantee</a></li>
+                        <li><a class="" href="#">Charters</a></li>
+                        <li><a class="" href="#">FAQ</a></li>
+                        <li><a class="" href="#">Affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <p class="text_color_bolder text_normal">Top Dive Region</p>
+                    <ul class="list-unstyled text-small footer_start_list">
+                        <li><a class="" href="#">Papua</a></li>
+                        <li><a class="" href="#">Bali</a></li>
+                        <li><a class="" href="#">Lombok</a></li>
+                        <li><a class="" href="#">Sulawesi</a></li>
+                        <li><a class="" href="#">Maluku</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12">
+                    <p class="text_color_bolder text_normal">News Letter</p>
+                    <p class="text_color">Sign up to get the latest news and updates on Indonesia Dive Directory.</p>
+                    <button class="btn btn-default btn-block"><span class="btn-caption">Sign Up<span></button>
+                <div class="d-flex justify-content-center footer_socials">
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-youtube"></i>
+                    <i class="fa fa-facebook"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer_last_text text_color">Copyright © 2011-2018 by Indonesia Dive Directory. All rights reserved.</div>
+</footer>    <!-- This is very important tag if you wanna use differnt JS after footer in all html check the example in: pages/index.twig -->
+    
+  </div>
+</body>
+</html> 
+<!-- scripts -->
+<script src="js/index.min.js"></script>

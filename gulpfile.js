@@ -35,15 +35,19 @@ const paths = {
         js: "js/",
         template: "templates/",
         distCss: "dist/css/",
-        distJs: "dist/js/"
+        distJs: "dist/js/",
+        tempCss: ".temp/css/",
+        tempJS: ".temp/js/"
     }
 };
+
 
 // BrowserSync
 function browserSync(done) {
     browsersync.init({
         server: {
-            baseDir: "./dist",
+            baseDir: "./.tmp",
+            directory: true,
             proxy: "localhost:3001"
         },
         port,
@@ -72,11 +76,11 @@ function css() {
             })
         )
         .pipe(sourcemaps.write("./")) // write sourcemaps file in current directory
-        .pipe(gulp.dest(paths.root.distCss)) // put final CSS in  folder
+        .pipe(gulp.dest(paths.root.tempCss)) // put final CSS in  folder
         .pipe(browsersync.stream());
 }
 
-// Entry JS
+// All JS modules
 function js() {
     return gulp
         .src([
@@ -97,7 +101,7 @@ function js() {
             })
         )
         .pipe(sourcemaps.write("./")) // write sourcemaps file in current directory
-        .pipe(gulp.dest(paths.root.distJs)) // put final js in folder
+        .pipe(gulp.dest(paths.root.tempJs)) // put final js in folder
         .pipe(browsersync.stream());
 }
 
@@ -108,7 +112,8 @@ function twigHtml() {
         .pipe(twig())
         .pipe(prettyHtml()) //
         // .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest("./dist"))
+        // .pipe(gulp.dest("./dist"))
+        .pipe(gulp.dest("./tmp"))
         .pipe(browsersync.stream());
 }
 // twigBuild function is very important for compiling all twig files included components, pages, layouts,
@@ -143,7 +148,24 @@ function watchFiles() {
         gulp.series(browserSyncReload)
     );
 }
-const watch = gulp.series(gulp.parallel(watchFiles, twigBuild, browserSync));
+
+
+// page builder
+function to_html() {
+    return gulp
+        .src(paths.root.template + "layouts/**/*.twig")
+        .pipe(plumber(function(error) {}))
+        .pipe(twig({
+            pretty: true
+        }))
+        .pipe(prettyHtml()) //
+        // .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest(".tmp"))
+        .pipe(browsersync.stream());
+}
+
+
+const watch = gulp.series(gulp.parallel(watchFiles, twigBuild, browserSync, to_html));
 // export tasks
 exports.css = css;
 // exports.images = images;
