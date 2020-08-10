@@ -49,7 +49,9 @@ function browserSync(done) {
         port,
         open: false,
         notify: false,
-        logLevel: "debug"
+        logLevel: "debug",
+        logFileChanges: true,
+
     });
     done();
 }
