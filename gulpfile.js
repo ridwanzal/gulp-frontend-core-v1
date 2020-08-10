@@ -34,21 +34,22 @@ const paths = {
         template: "templates/",
         distCss: "dist/css/",
         distJs: "dist/js/",
-        tempCss: ".temp/css/",
-        tempJS: ".temp/js/"
+        tempCss: ".tmp/css/",
+        tempJs: ".tmp/js/",
     }
 };
 
 function browserSync(done) {
     browsersync.init({
         server: {
-            baseDir: "./.tmp",
+            baseDir: ".tmp",
             directory: true, //show sebagai directory listing
             proxy: "localhost:3001"
         },
         port,
         open: false,
         notify: false,
+        logLevel: "debug"
     });
     done();
 }
@@ -107,7 +108,7 @@ function twigHtml() {
         .pipe(prettyHtml()) //
         // .pipe(htmlmin({ collapseWhitespace: true }))
         // .pipe(gulp.dest("./dist"))
-        .pipe(gulp.dest("./tmp"))
+        .pipe(gulp.dest(".tmp"))
         .pipe(browsersync.stream());
 }
 
@@ -124,15 +125,17 @@ function twigBuild() {
 function watchFiles() {
     gulp.watch([paths.root.css + "**/*"], css);
     gulp.watch([paths.root.js + "**/*"], gulp.series(js));
+
     gulp.watch([paths.root.template + "**/*"], gulp.series(twigHtml));
     gulp.watch(
         [
             "**/*.html",
             paths.root.template + "**/*.twig",
-            // paths.root.distCss + "**/*.css",
+            // paths.root.tempCss + "**/*.css",
+            // paths.root.tempJs + "**/*.js",
             // paths.root.css + "**/*.scss",
             // paths.root.css + "**/*.css",
-            paths.root.css + "**/*.sass",
+            // paths.root.css + "**/*.sass",
             paths.root.css + "**/*.scss",
             paths.root.css + "**/*.css",
             paths.root.js + "**/*.js"
@@ -156,7 +159,7 @@ function to_html() {
 }
 
 
-const watch = gulp.series(gulp.parallel(watchFiles, twigBuild, browserSync, to_html));
+const watch = gulp.series(gulp.parallel(to_html, watchFiles, twigBuild, browserSync));
 
 exports.watch = watch;
 /*
