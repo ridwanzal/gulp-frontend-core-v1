@@ -19,6 +19,12 @@ $ gulp
 
 ```
 
+atau dapat juga menggunakan command options berikit 
+
+```
+$ gulp serve
+```
+
 ## Change index page
 Untuk saat ini page hanya bisa dilihat satu persatu, untuk mengubah, edit file
 index.twig yang berada di path '/templates/pages/index.twig'
