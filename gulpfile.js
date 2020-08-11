@@ -29,7 +29,7 @@ const port = 8000;
 
 const paths = {
     root: {
-        css: "css/",
+        css: "sass/",
         js: "js/",
         template: "templates/",
         distCss: "dist/css/",
@@ -43,7 +43,7 @@ function serveList(done) {
     browsersync.init({
         server: {
             baseDir: ".tmp",
-            directory: true, //show sebagai directory listing
+            directory: true, //tampilkan sebagai directory listing
             proxy: "localhost:3001"
         },
         port,
@@ -99,6 +99,8 @@ function css() {
 function js() {
     return gulp
         .src([
+            // paths.root.js + "index.js",
+            // paths.root.js + "ex_export1.js",
             paths.root.js + "entry.js",
             paths.root.js + "map.js",
             paths.root.js + "popup.js",
@@ -126,7 +128,7 @@ function twigHtml() {
         .src(paths.root.template + "layout/**/*.twig")
         .pipe(twig())
         .pipe(prettyHtml()) //
-        // .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         // .pipe(gulp.dest("./dist"))
         .pipe(gulp.dest(".tmp"))
         .pipe(browsersync.stream());
@@ -145,7 +147,6 @@ function twigBuild() {
 function watchFiles() {
     gulp.watch([paths.root.css + "**/*"], css);
     gulp.watch([paths.root.js + "**/*"], gulp.series(js));
-
     gulp.watch([paths.root.template + "**/*"], gulp.series(twigHtml));
     gulp.watch(
         [
@@ -182,5 +183,5 @@ function to_html() {
 const watch = gulp.series(gulp.parallel(to_html, watchFiles, twigBuild, serveList));
 const dev = gulp.series(gulp.parallel(watchFiles, twigBuild, serveDev));
 
-exports.dev = dev;
-exports.serve = watch; // jalankan dengan command options $gul serve
+exports.dev = dev; // jalankan dengan command options $gulp dev
+exports.serve = watch; // jalankan dengan command options $gulp serve
