@@ -21,8 +21,9 @@ Apabila semua dependencies telah terpasang kamu dapat menjalankan task runner. D
 command options berikut
 
 ##Run directory listing
+
 ```bash
 $ gulp serve
 ``
 
-Thankyou
+##Thankyou
