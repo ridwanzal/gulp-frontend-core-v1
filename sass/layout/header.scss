@@ -64,21 +64,6 @@ body {
     border-radius: 8px;
 }
 
-@mixin placeholdercolor {
-     ::-webkit-input-placeholder {
-        @content
-    }
-     :-moz-placeholder {
-        @content
-    }
-     ::-moz-placeholder {
-        @content
-    }
-     :-ms-input-placeholder {
-        @content
-    }
-}
-
 @include placeholdercolor {
     color: $color_placeholder;
 }
