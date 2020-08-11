@@ -7,7 +7,7 @@ Modul ini merupakan modul sederhana yang dapat digunakan untuk keperluan fronten
 Untuk melihat progress pekerjaan yang sudah berjalan dapat checkout ke branch 
 
 ```
-git checkout -b v2.0
+git checkout v2.0
 ```
 
 ## Installation
