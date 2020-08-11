@@ -29,7 +29,7 @@ const port = 8000;
 
 const paths = {
     root: {
-        css: "css/",
+        css: "sass/",
         js: "js/",
         template: "templates/",
         distCss: "dist/css/",

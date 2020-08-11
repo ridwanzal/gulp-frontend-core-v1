@@ -1,0 +1,25 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/*abstract*/
+
+@import "sass/abstract/variable.scss";
+
+/*components*/
+
+@import "sass/components/badge.scss";
+@import "sass/components/breadcrumbs.scss";
+@import "sass/components/button.scss";
+@import "sass/components/cards.scss";
+@import "sass/components/label.scss";
+
+/*layout*/
+
+@import "sass/layout/header.scss";
+@import "sass/layout/navigation.scss";
+@import "sass/layout/content.scss";
+@import "sass/layout/footer.scss";
+
+/*pages*/
+
+
+/*themes*/

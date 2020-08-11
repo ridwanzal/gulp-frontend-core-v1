@@ -1,0 +1,88 @@
+.mybadge {
+    background: $gray_color;
+    border-radius: 500px;
+    font-size: 12px;
+    color: $button_color;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.mybadge2 {
+    background: #EDFDF4;
+    border-radius: 500px;
+    font-size: 12px;
+    color: $badge_green;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.mybadge3 {
+    background: #EDF7FD;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #226FCA;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.mybadge4 {
+    background: #9CAAC4;
+    border-radius: 41px;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+    color: $color_white;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+.mybadge5 {
+    background: #9CAAC4;
+    border-radius: 41px;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+    color: $color_white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+.mybadge6 {
+    background: #9CAAC4;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+    color: $color_white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+.offering_badge {
+    position: absolute;
+    background-color: $color_orange;
+    color: $color_white;
+    font-weight: bold;
+    z-index: 2;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 9px;
+    padding: 5px 10px 5px 10px;
+}

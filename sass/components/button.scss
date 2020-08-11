@@ -1,0 +1,105 @@
+.btn_link_title {
+    position: relative;
+    &:after {
+        content: "\f107";
+        color: #333;
+        left: 312px;
+        top: 6px;
+        position: absolute;
+        font-family: "FontAwesome";
+    }
+}
+
+.btn_link_title[aria-expanded="true"]::after {
+    content: "\f106";
+}
+
+.btn_link_title_big {
+    position: relative;
+}
+
+.btn_link_title_big {
+    &:after {
+        content: "\f107";
+        color: #333;
+        left: 786px;
+        top: 6px;
+        position: absolute;
+        font-family: "FontAwesome";
+    }
+}
+
+.btn_link_title_big[aria-expanded="true"]::after {
+    content: "\f106";
+}
+
+.btn_link_title_big_modal {
+    position: relative;
+}
+
+.btn_link_title_big_modal::after {
+    content: "\f107";
+    color: #333;
+    position: absolute;
+    z-index: 100;
+    font-family: FontAwesome;
+    top: 5px;
+    left: 722px;
+}
+
+.btn_link_title_big_modal[aria-expanded="true"]::after {
+    content: "\f106";
+}
+
+.btn-link {
+    color: $link_color !important;
+    font-weight: 600 !important;
+}
+
+.button_packages {
+    width: 100%;
+    background: $button_color;
+    border-radius: 4px;
+    border: 1px solid $button_color;
+    color: $color_white;
+    font-size: 14px;
+    font-weight: 700;
+    /* margin-top: 4px; */
+    padding: 7px;
+    cursor: pointer;
+    &:hover {
+        background-color: $button_color_hover;
+    }
+}
+
+.button_packages_alt {
+    width: 100%;
+    background: $button_color_alt;
+    border-radius: 4px;
+    border: 1px solid $button_color_alt;
+    color: $button_color;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    padding: 7px;
+    cursor: pointer;
+    &:hover {
+        background-color: $button_color_alt_hover;
+    }
+}
+
+.button_packages_outline {
+    width: 100%;
+    background: $color_white;
+    border-radius: 4px;
+    border: 1px solid #E1E7F1;
+    color: $button_color;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    padding: 7px;
+    cursor: pointer;
+    &:hover {
+        background-color: $button_color_alt;
+    }
+}

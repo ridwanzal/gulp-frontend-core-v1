@@ -1,0 +1,86 @@
+.label_card_wrapper {
+    display: block;
+    margin: 15px 20px 10px 20px;
+}
+
+.label_card_wrapper2 {
+    display: block;
+    margin: 10px 20px 10px 20px;
+}
+
+.label_card_wrapper_tabs {
+    display: block;
+    margin: 8px 20px 0px 20px;
+}
+
+.label_card {
+    color: $link_color;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.label_card_24 {
+    color: $link_color;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.label_card_34 {
+    color: $link_color;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 28px;
+}
+
+.label_card_small {
+    color: $link_color;
+    font-weight: 600;
+    font-size: $main_font_size;
+    line-height: 24px;
+}
+
+.label_reset {
+    justify-content: flex-end;
+    margin-left: auto;
+    color: $button_color;
+    cursor: pointer;
+}
+
+.label_card_subheader {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $label_small_color;
+}
+
+.label_light {
+    font-weight: 300;
+    font-size: 12px;
+    color: $label_small_color;
+}
+
+.label_prices {
+    font-weight: 600;
+    font-size: 14px;
+    color: $color_orange;
+}
+
+.label_prices_light {
+    font-size: 14px;
+    color: $color_orange;
+    font-weight: 400;
+}
+
+.label_prices_medium {
+    font-weight: 700;
+    font-size: 16px;
+    color: $color_orange;
+}
+
+.label_prices_big {
+    font-weight: 700;
+    font-size: 25px;
+    color: $color_orange;
+}

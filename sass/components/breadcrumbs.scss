@@ -1,0 +1,66 @@
+.breadcrumb_wrappers {
+    margin-bottom: 20px;
+}
+
+.breadcrumbs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs {
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        float: left;
+        font-family: inherit;
+        font-size: 13px;
+        line-height: 20px;
+        color: #6B7A9C;
+        a {
+            display: block;
+            padding: 0 30px 0 0px;
+            color: #6B7A9C;
+            text-decoration: none;
+            height: 20px;
+            position: relative;
+            perspective: 700px;
+            &:after {
+                content: '';
+                top: 6px;
+                width: 8px;
+                height: 8px;
+                border-color: #6B7A9C;
+                border-style: solid;
+                border-width: 1px 1px 0 0;
+                outline: 1px solid transparent;
+                position: absolute;
+                right: 20px;
+                -webkit-transition: all .15s ease;
+                -moz-transition: all .15s ease;
+                -ms-transition: all .15s ease;
+                transition: all .15s ease;
+                -webkit-transform: rotateZ(45deg) skew(10deg, 10deg);
+                -moz-transform: rotateZ(45deg) skew(10deg, 10deg);
+                -ms-transform: rotateZ(45deg) skew(10deg, 10deg);
+                transform: rotateZ(45deg) skew(10deg, 10deg);
+            }
+        }
+        a:hover {
+            &:after {
+                right: 15px;
+                -webkit-transform: rotateZ(45deg) skew(-10deg, -10deg);
+                -moz-transform: rotateZ(45deg) skew(-10deg, -10deg);
+                -ms-transform: rotateZ(45deg) skew(-10deg, -10deg);
+                transform: rotateZ(45deg) skew(-10deg, -10deg);
+            }
+        }
+    }
+}
+
+.breadcrumbs_wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
