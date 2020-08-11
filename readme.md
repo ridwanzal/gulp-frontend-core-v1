@@ -20,10 +20,10 @@ $ npm install
 Apabila semua dependencies telah terpasang kamu dapat menjalankan task runner. Dengan beberapa
 command options berikut
 
-##Run directory listing
+## Run directory listing
 
 ```bash
 $ gulp serve
-``
+```
 
-##Thankyou
+## Thankyou
