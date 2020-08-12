@@ -1,3 +1,14 @@
+$(function() {
+    // home search
+    $('.submit_global_search').keypress(function(e) {
+        console.log('keypress');
+        if (e.which == 13) {
+            console.log('you hit enter');
+            searchModule();
+        }
+    });
+});
+
 function searchModule() {
     $('#search_result').empty();
     let arr_check = [];

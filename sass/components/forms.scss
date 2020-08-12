@@ -1,0 +1,70 @@
+.form-check {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    label {
+        color: $label_bold;
+        font-size: $main_font_size;
+    }
+}
+
+.myform {
+    background: $color_white;
+    border: $main_border;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 6px 10px 6px 12px;
+    width: 100%;
+}
+
+.form-control {
+    border: $main_border !important;
+}
+
+.chooser_select {
+    background: $color_white;
+    border: 1px solid $color_white;
+    padding: 0px;
+    position: relative;
+    left: -6px;
+    font-weight: 700;
+    color: $label_bold;
+}
+
+.chooser_select_nobackground_small {
+    background: none;
+    border: 1px solid $base_color;
+    padding: 0px;
+    position: relative;
+    font-size: 12px;
+    color: $label_bold;
+}
+
+.chooser_select_date {
+    background: $color_white;
+    border: 1px solid $color_white;
+    padding: 0px;
+    position: relative;
+    font-weight: 700;
+    left: -2px;
+    color: $label_bold;
+    width: 103px;
+}
+
+.chooser_search {
+    background: $color_white;
+    border: 1px solid $color_white;
+    padding: 0px;
+    left: -2px;
+    position: relative;
+    font-weight: 700;
+    color: $label_bold;
+    width: 238px;
+}
+
+.input_with_icon {
+    padding: 5px 5px 5px 35px;
+    background: $color_white;
+    border: $main_border;
+    box-sizing: border-box;
+    border-radius: 8px;
+}

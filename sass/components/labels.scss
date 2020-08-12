@@ -84,3 +84,75 @@
     font-size: 25px;
     color: $color_orange;
 }
+
+.label_small_widget {
+    font-size: 12px;
+    color: $label_small_color;
+    margin-bottom: 1px;
+    font-weight: 600 !important;
+}
+
+.label_small_widget_light {
+    font-size: 12px;
+    color: $label_small_color;
+    margin-bottom: 1px;
+    font-weight: 400 !important;
+}
+
+.label_smaller_widget_light {
+    font-size: 10px;
+    color: $label_small_color;
+    margin-bottom: 1px;
+    font-weight: 400 !important;
+}
+
+.label_smaller_widget {
+    font-size: 12px;
+    color: $label_small_color;
+    margin-bottom: 1px;
+    font-weight: 600 !important;
+}
+
+.label_small_widget_green {
+    font-size: 14px;
+    color: $badge_green;
+    font-weight: 700;
+    margin-bottom: 1px;
+    font-weight: light !important;
+}
+
+.label_bold_alt {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #45516D;
+}
+
+.label_small_widget {
+    font-size: 12px;
+    color: $label_small_color;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+.label_small_widget_big {
+    font-size: 12px;
+    color: $label_small_color;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.label_small_widget_underline {
+    font-size: 14px;
+    color: $label_small_color;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.label_pagination {
+    font-size: 12px;
+    color: $label_bold;
+    font-weight: 400;
+}

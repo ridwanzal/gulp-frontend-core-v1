@@ -1,0 +1,71 @@
+.text_content {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $label_small_color;
+}
+
+.text_desc {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: $label_bold;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_underline {
+    text-decoration: underline;
+}
+
+.text_overlay {
+    color: $color_white;
+    font-weight: 700;
+    text-align: center;
+    line-height: 7;
+}
+
+.jumbotext {
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 52px;
+    text-align: center;
+    color: $button_color;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text_normal {
+    font-size: 14.5px;
+}
+
+.text_color_bolder {
+    color: $link_color;
+    font-weight: 700;
+}
+
+.text_color {
+    color: $label_small_color;
+}
+
+.text_packages {
+    position: relative;
+    top: -9px;
+    right: 84px;
+}

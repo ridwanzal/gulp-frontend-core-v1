@@ -14,37 +14,10 @@ body {
     overflow-x: hidden;
 }
 
-.text_color {
-    color: $label_small_color;
-}
-
-.navbar_wrapper {
-    background: $color_white;
-    border: 1px solid $base_color;
-}
-
-.navbar_custom {
-    background: $color_white;
-}
-
 #logo {
     position: relative;
     top: -3px;
     margin-right: 25px;
-}
-
-.form-control {
-    border: $main_border !important;
-}
-
-.navbar-nav {
-    li {
-        font-size: 14.5px;
-        padding-right: 7px;
-        a {
-            color: $label_small_color !important;
-        }
-    }
 }
 
 .active {
@@ -56,34 +29,8 @@ body {
     padding-left: 6px;
 }
 
-.input_with_icon {
-    padding: 5px 5px 5px 35px;
-    background: $color_white;
-    border: $main_border;
-    box-sizing: border-box;
-    border-radius: 8px;
-}
-
 @include placeholdercolor {
     color: $color_placeholder;
-}
-
-.text_normal {
-    font-size: 14.5px;
-}
-
-.text_color_bolder {
-    color: $link_color;
-    font-weight: 700;
-}
-
-.btn-default {
-    background: $button_color !important;
-    color: $color_white !important;
-}
-
-.btn-caption {
-    font-weight: 700;
 }
 
 
@@ -102,80 +49,8 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 23, 68, 0.09);
 }
 
-.label_bold_alt {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 24px;
-    color: #45516D;
-}
-
-.label_small_widget {
-    font-size: 12px;
-    color: $label_small_color;
-    margin-bottom: 1px;
-    cursor: pointer;
-}
-
-.label_small_widget_big {
-    font-size: 12px;
-    color: $label_small_color;
-    margin-bottom: 2px;
-    cursor: pointer;
-}
-
-.label_small_widget_underline {
-    font-size: 14px;
-    color: $label_small_color;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.text_packages {
-    position: relative;
-    top: -9px;
-    right: 84px;
-}
-
 .pushright {
     float: right;
-}
-
-.label_small_widget {
-    font-size: 12px;
-    color: $label_small_color;
-    margin-bottom: 1px;
-    font-weight: 600 !important;
-}
-
-.label_small_widget_light {
-    font-size: 12px;
-    color: $label_small_color;
-    margin-bottom: 1px;
-    font-weight: 400 !important;
-}
-
-.label_smaller_widget_light {
-    font-size: 10px;
-    color: $label_small_color;
-    margin-bottom: 1px;
-    font-weight: 400 !important;
-}
-
-.label_smaller_widget {
-    font-size: 12px;
-    color: $label_small_color;
-    margin-bottom: 1px;
-    font-weight: 600 !important;
-}
-
-.label_small_widget_green {
-    font-size: 14px;
-    color: $badge_green;
-    font-weight: 700;
-    margin-bottom: 1px;
-    font-weight: light !important;
 }
 
 .widget_corner_left {
@@ -239,53 +114,6 @@ body {
         height: 100%;
         padding: 25px 5px 25px 13px;
     }
-}
-
-.chooser_select {
-    background: $color_white;
-    border: 1px solid $color_white;
-    padding: 0px;
-    position: relative;
-    left: -6px;
-    font-weight: 700;
-    color: $label_bold;
-}
-
-.chooser_select_nobackground_small {
-    background: none;
-    border: 1px solid $base_color;
-    padding: 0px;
-    position: relative;
-    font-size: 12px;
-    color: $label_bold;
-}
-
-.label_pagination {
-    font-size: 12px;
-    color: $label_bold;
-    font-weight: 400;
-}
-
-.chooser_select_date {
-    background: $color_white;
-    border: 1px solid $color_white;
-    padding: 0px;
-    position: relative;
-    font-weight: 700;
-    left: -2px;
-    color: $label_bold;
-    width: 103px;
-}
-
-.chooser_search {
-    background: $color_white;
-    border: 1px solid $color_white;
-    padding: 0px;
-    left: -2px;
-    position: relative;
-    font-weight: 700;
-    color: $label_bold;
-    width: 238px;
 }
 
 .widget_corner_content_search {

@@ -8,14 +8,6 @@
         background: $base_color;
     }
     
-    .jumbotext {
-        font-weight: bold;
-        font-size: 44px;
-        line-height: 52px;
-        text-align: center;
-        color: $button_color;
-    }
-    
     .style_content {
         font-weight: normal;
         font-size: 14px;
@@ -37,36 +29,9 @@
         color: $label_bold;
     }
     
-    .form-check {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        label {
-            color: $label_bold;
-            font-size: $main_font_size;
-        }
-    }
-    
-    .text_content {
-        font-family: Inter;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 20px;
-        color: $label_small_color;
-    }
-    
     .left_30 {
         position: relative;
         left: -30px
-    }
-    
-    .text_desc {
-        font-family: Inter;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 20px;
-        color: $label_bold;
     }
     
     .image_products {
@@ -163,15 +128,6 @@
         left: -12px;
     }
     
-    .myform {
-        background: $color_white;
-        border: $main_border;
-        box-sizing: border-box;
-        border-radius: 4px;
-        padding: 6px 10px 6px 12px;
-        width: 100%;
-    }
-    
     .slider {
         -webkit-appearance: none;
         appearance: none;
@@ -213,51 +169,6 @@
     .goright_top {
         position: relative;
         top: -33px;
-    }
-    
-    .megamenu {
-        position: static !important;
-        .dropdown-menu {
-            background: none !important;
-            width: 100% !important;
-            font-size: 12px;
-        }
-    }
-    
-    .megamenu_container {
-        background: $color_white !important;
-        border: $main_border !important;
-        border-top-left-radius: 4px !important;
-        border-top-right-radius: 4px !important;
-        width: inherit;
-    }
-    
-    .megamenu_container2 {
-        background: $color_white !important;
-        border: $main_border !important;
-        padding: 20px !important;
-        z-index: 200 !important;
-        border-bottom-left-radius: 4px !important;
-        border-bottom-right-radius: 4px !important;
-    }
-    
-    .dropdown-toggle {
-        &:after {
-            position: relative;
-            top: 2px !important;
-        }
-    }
-    
-    .megamenu_section {
-        margin-bottom: 20px !important;
-    }
-    
-    .megasize {
-        width: 920px !important;
-    }
-    
-    .megasection_size {
-        width: 300px !important;
     }
     
     .night_counter {
@@ -344,11 +255,6 @@
         top: 8px;
     }
     
-    .table_spec {
-        font-size: 13px !important;
-        padding: 0 23px 0 23px !important;
-    }
-    
     .seepackages {
         position: relative;
         right: 0px;
@@ -359,46 +265,6 @@
         background: $gray_color;
         border-radius: 4px;
         font-size: 14px;
-    }
-    
-    .table-striped>tbody>tr:nth-of-type(odd) {
-        background-color: $gray_color !important;
-        border: none !important;
-    }
-    
-    .table-striped {
-        tbody {
-            tr:nth-of-type(even) {
-                background-color: #F7FAFC !important;
-                border: none !important;
-            }
-        }
-    }
-    
-    .table {
-        td {
-            border: none !important;
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            color: $label_bold;
-            margin-top: 1px !important;
-            margin-bottom: 1px !important;
-        }
-        th {
-            border: none !important;
-            font-family: Inter;
-            font-style: normal;
-            font-weight: normal;
-            color: $label_bold;
-            margin-top: 1px !important;
-            margin-bottom: 1px !important;
-        }
-    }
-    
-    .price_tables {
-        font-size: $main_font_size;
-        font-weight: bold;
     }
     
     .divider_small {
@@ -512,10 +378,6 @@
         display: inline-block;
     }
     
-    .text_center {
-        text-align: center;
-    }
-    
     .flex {
         display: flex;
     }
@@ -526,11 +388,7 @@
         left: 213px;
     }
     
-    .text_underline {
-        text-decoration: underline;
-    }
-    
-    cursor_pointer {
+    .cursor_pointer {
         cursor: pointer;
     }
     
@@ -565,18 +423,6 @@
         background-color: #008CBA;
     }
     
-    .text {
-        color: white;
-        font-size: 20px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-    
     .overlay_after {
         background: $color_black;
         opacity: .6;
@@ -586,13 +432,6 @@
         z-index: 2;
         width: 160px;
         bottom: 10px;
-    }
-    
-    .text_overlay {
-        color: $color_white;
-        font-weight: 700;
-        text-align: center;
-        line-height: 7;
     }
     
     .pre_icon {

@@ -64,7 +64,6 @@
     color: $color_white;
     font-size: 14px;
     font-weight: 700;
-    /* margin-top: 4px; */
     padding: 7px;
     cursor: pointer;
     &:hover {
@@ -102,4 +101,13 @@
     &:hover {
         background-color: $button_color_alt;
     }
+}
+
+.btn-default {
+    background: $button_color !important;
+    color: $color_white !important;
+}
+
+.btn-caption {
+    font-weight: 700;
 }

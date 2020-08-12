@@ -1,0 +1,44 @@
+    .table-striped>tbody>tr:nth-of-type(odd) {
+        background-color: $gray_color !important;
+        border: none !important;
+    }
+    
+    .table-striped {
+        tbody {
+            tr:nth-of-type(even) {
+                background-color: #F7FAFC !important;
+                border: none !important;
+            }
+        }
+    }
+    
+    .table {
+        td {
+            border: none !important;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            color: $label_bold;
+            margin-top: 1px !important;
+            margin-bottom: 1px !important;
+        }
+        th {
+            border: none !important;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            color: $label_bold;
+            margin-top: 1px !important;
+            margin-bottom: 1px !important;
+        }
+    }
+    
+    .table_spec {
+        font-size: 13px !important;
+        padding: 0 23px 0 23px !important;
+    }
+    
+    .price_tables {
+        font-size: $main_font_size;
+        font-weight: bold;
+    }
