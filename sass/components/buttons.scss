@@ -87,6 +87,23 @@
     }
 }
 
+.button_packages_alt_small {
+    width: 50%;
+    margin: auto;
+    background: $button_color_alt;
+    border-radius: 4px;
+    border: 1px solid $button_color_alt;
+    color: $button_color;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    padding: 7px;
+    cursor: pointer;
+    &:hover {
+        background-color: $button_color_alt_hover;
+    }
+}
+
 .button_packages_outline {
     width: 100%;
     background: $color_white;

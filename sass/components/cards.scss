@@ -162,6 +162,37 @@
     margin: 0 17px 17px 17px;
 }
 
+.card_alt_notfull {
+    background: #edf7fd;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin: 0 17px 17px 17px;
+}
+
 .card_lines {
     border-bottom: $main_border;
+}
+
+.card_padding_small {
+    padding: 10px;
+}
+
+.card_padding_medium {
+    padding: 15px;
+}
+
+.card_padding_big {
+    padding: 25px;
+}
+
+.card_center {
+    text-align: center;
+}
+
+.card_left {
+    text-align: left;
+}
+
+.card_right {
+    text-align: right;
 }

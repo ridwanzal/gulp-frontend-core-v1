@@ -21,7 +21,7 @@
             border-left: none;
             border-right: none;
             color: $button_color !important;
-            border-bottom: 2px solid $button_color !important;
+            border-bottom: 2px solid $button_color;
             border-radius: 2px 2px 0px 0px !important;
         }
     }
@@ -30,7 +30,7 @@
         border-left: none;
         border-right: none;
         color: $button_color !important;
-        border-bottom: 2px solid $button_color !important;
+        border-bottom: 2px solid $button_color;
         border-radius: 2px 2px 0px 0px !important;
     }
     .nav-link {

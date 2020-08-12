@@ -1,10 +1,9 @@
 .text_content {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
-    color: $label_small_color;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: $label_small_color !important;
 }
 
 .text_desc {

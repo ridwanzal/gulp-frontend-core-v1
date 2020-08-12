@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+  {% include "../components/head.twig" %}
+</head>
+
+<body>
+  <div class="ex_wrapper">
+    {% include "../components/navbar.twig" %}
+    {% include "../components/booking_submitted_info.twig" %}
+    {% include "../components/footer.twig" %}
+    {{ block('included_content') }}
+  </div>
+</body>
+</html>
+
+{% block content %}
+{% endblock %}
+<!-- scripts -->
+{% block included_content %}
+<script src="js/index.min.js"></script>
+{% endblock %}

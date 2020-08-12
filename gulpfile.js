@@ -29,11 +29,13 @@ const port = 8000;
 
 const paths = {
     root: {
+
         css: "sass/",
         js: "js/",
         template: "templates/",
         distCss: "dist/css/",
         distJs: "dist/js/",
+        temp: ".tmp/",
         tempCss: ".tmp/css/",
         tempJs: ".tmp/js/",
     }
@@ -42,7 +44,7 @@ const paths = {
 function serveList(done) {
     browsersync.init({
         server: {
-            baseDir: ".tmp",
+            baseDir: "./.tmp",
             directory: true, //show sebagai directory listing
             proxy: "localhost:3001"
         },
@@ -123,12 +125,14 @@ function js() {
 
 function twigHtml() {
     return gulp
-        .src(paths.root.template + "layout/**/*.twig")
+        .src(paths.root.template + "layouts/**/*.twig")
+        // .src(paths.root.template + "/**/*.twig")
+        .pipe(plumber(function(error) {}))
         .pipe(twig())
         .pipe(prettyHtml()) //
         // .pipe(htmlmin({ collapseWhitespace: true }))
         // .pipe(gulp.dest("./dist"))
-        .pipe(gulp.dest(".tmp"))
+        .pipe(gulp.dest(paths.root.temp))
         .pipe(browsersync.stream());
 }
 
@@ -138,6 +142,33 @@ function twigBuild() {
         gulp.series([twigHtml], function() {
             gulp.watch(paths.root.template + "**/*.twig", browserSync.reload);
             gulp.watch("**/*.html", browserSync.reload);
+            // gulp.watch(paths.root.temp + "*.html", browserSync.reload);
+        })
+    );
+}
+
+
+function twigDevHtml() {
+    return gulp
+        .src(paths.root.template + "pages/**/*.twig")
+        // .src(paths.root.template + "/**/*.twig")
+        .pipe(plumber(function(error) {}))
+        .pipe(twig())
+        .pipe(prettyHtml()) //
+        // .pipe(htmlmin({ collapseWhitespace: true }))
+        // .pipe(gulp.dest("./dist"))
+        .pipe(gulp.dest('./dist'))
+        .pipe(browsersync.stream());
+}
+
+
+function twigDevBuild() {
+    gulp.task(
+        "reloadHtml",
+        gulp.series([twigDevHtml], function() {
+            gulp.watch(paths.root.template + "**/*.twig", browserSync.reload);
+            gulp.watch("**/*.html", browserSync.reload);
+            // gulp.watch(paths.root.temp + "*.html", browserSync.reload);
         })
     );
 }
@@ -145,12 +176,13 @@ function twigBuild() {
 function watchFiles() {
     gulp.watch([paths.root.css + "**/*"], css);
     gulp.watch([paths.root.js + "**/*"], gulp.series(js));
-
     gulp.watch([paths.root.template + "**/*"], gulp.series(twigHtml));
+    gulp.watch([paths.root.template + "**/*"], gulp.series(twigDevHtml));
     gulp.watch(
         [
             "**/*.html",
             paths.root.template + "**/*.twig",
+            paths.root.temp + "**/*.html",
             // paths.root.tempCss + "**/*.css",
             // paths.root.tempJs + "**/*.js",
             // paths.root.css + "**/*.scss",
@@ -165,22 +197,30 @@ function watchFiles() {
 }
 
 // export sebagai *.html di .tmp folder 
-function to_html() {
-    return gulp
-        .src(paths.root.template + "layouts/**/*.twig")
-        .pipe(plumber(function(error) {}))
-        .pipe(twig({
-            pretty: true
-        }))
-        .pipe(prettyHtml()) //
-        // .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest(".tmp"))
-        .pipe(browsersync.stream());
-}
+// function tmp() {
+//     return gulp
+//         .src(paths.root.template + "layouts/**/*.twig")
+//         .pipe(plumber(function(error) {}))
+//         .pipe(twig())
+//         .pipe(prettyHtml()) //
+//         // .pipe(htmlmin({ collapseWhitespace: true }))
+//         .pipe(gulp.dest(".tmp"))
+//         .pipe(browsersync.stream());
+// }
 
 
-const watch = gulp.series(gulp.parallel(to_html, watchFiles, twigBuild, serveList));
-const dev = gulp.series(gulp.parallel(watchFiles, twigBuild, serveDev));
+// function tmpBuild() {
+//     gulp.task(
+//         "reloadHtml",
+//         gulp.series([tmp], function() {
+//             gulp.watch(paths.root.template + "**/*.twig", browserSync.reload);
+//             gulp.watch("**/*.html", browserSync.reload);
+//         })
+//     );
+// }
+
+const watch = gulp.series(gulp.parallel(twigBuild, twigHtml, watchFiles, serveList));
+const dev = gulp.series(gulp.parallel(twigDevBuild, watchFiles, serveDev));
 
 exports.dev = dev;
 exports.serve = watch; // jalankan dengan command options $gul serve

@@ -25,5 +25,6 @@ $(function() {
     $('#imageGallery').lightSlider(attr_slides);
     $('#boatsGallery').lightSlider(attr_slides_thumb);
     $('#cabinGallery1').lightSlider(attr_slides_thumb);
+    $('#xds').lightSlider(attr_slides_thumb);
     $('#cabinGallery2, #cabinGallery3, #cabinGallery4').lightSlider(attr_slides_thumb);
 });
