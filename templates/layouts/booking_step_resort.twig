@@ -2,6 +2,7 @@
 <html lang="eng">
 
 <head>
+{% set head_title ='Booking Step Resort' %}
   {% include "../components/head.twig" %}
 </head>
 
@@ -10,7 +11,6 @@
     {% include "../components/navbar.twig" %}
     {% include "../components/tabs_booking_resort.twig" %}
     {% include "../components/footer.twig" %}
-    <!-- This is very important tag if you wanna use differnt JS after footer in all html check the example in: pages/index.twig -->
     {{ block('included_content') }}
   </div>
 </body>
