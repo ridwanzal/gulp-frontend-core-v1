@@ -5,6 +5,10 @@
 @import "sass/abstract/variable.scss";
 @import "sass/abstract/mixins.scss";
 
+/*base*/
+
+@import "sass/base/reset.scss";
+
 /*components*/
 
 @import "sass/components/badges.scss";

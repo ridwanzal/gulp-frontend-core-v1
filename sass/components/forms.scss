@@ -68,3 +68,11 @@
     box-sizing: border-box;
     border-radius: 8px;
 }
+
+.mandatory {
+    color: $color_red;
+}
+
+.input-group-text {
+    background: $color_white !important;
+}

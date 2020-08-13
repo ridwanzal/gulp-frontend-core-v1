@@ -38,7 +38,24 @@
         padding: 0 23px 0 23px !important;
     }
     
+    .table_spec_nopadd {
+        font-size: 13px !important;
+        padding: 0 10px 0 10px !important;
+    }
+    
     .price_tables {
         font-size: $main_font_size;
         font-weight: bold;
+    }
+    
+    .table_booking_head {
+        border: 1px solid #E1E7F1;
+    }
+    
+    .table_booking_data {
+        border-bottom: 1px solid #E1E7F1;
+    }
+    
+    .tale_booking_data_last {
+        background: #E2F5FF;
     }

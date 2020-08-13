@@ -196,3 +196,9 @@
 .card_right {
     text-align: right;
 }
+
+.select_package_wrapper {
+    &:hover {
+        border: 2px solid #37637B;
+    }
+}
