@@ -52,6 +52,7 @@
 
 .text_normal {
     font-size: 14.5px;
+    font-weight: normal;
 }
 
 .text_color_bolder {
@@ -67,4 +68,16 @@
     position: relative;
     top: -9px;
     right: 84px;
+}
+
+.weight_bold {
+    font-weight: bold;
+}
+
+.weight_normal {
+    font-weight: normal;
+}
+
+.weight_light {
+    font-weight: lighter;
 }
