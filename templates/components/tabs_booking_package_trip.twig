@@ -1,0 +1,46 @@
+<div class="main_wrapper">
+    <div class="divider_big"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <div class="nav nav-tabs nav-justified tabs_step" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                            <div class="text_content">STEP 1</div>
+                            <div>Select room</div>
+                        </a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <div class="text_content">STEP 2</div>
+                            <div>Enter your information</div>
+                        </a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                            <div class="text_content">STEP 3</div>
+                            <div>Booking confirmation</div>
+                        </a>    
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="divider_big"></div>
+    <div class="container">
+    <div class="divider_big"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    {% include "../components/search_corner_div.twig" %}
+                    {% include "../components/list_package_trip_full.twig" %}
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    {% include "../components/input_personal_info.twig" %}
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    {% include "../components/booking_confirmation.twig" %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="divider_big"></div>
+</div>
