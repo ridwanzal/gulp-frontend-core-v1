@@ -26,5 +26,6 @@ $(function() {
     $('#boatsGallery').lightSlider(attr_slides_thumb);
     $('#cabinGallery1').lightSlider(attr_slides_thumb);
     $('#xds').lightSlider(attr_slides_thumb);
-    $('#cabinGallery2, #cabinGallery3, #cabinGallery4').lightSlider(attr_slides_thumb);
+    $('#cabinGallery_selected_2, #cabinGallery_selected_1').lightSlider(attr_slides_thumb);
+    $('#cabinGallery2, #cabinGallery3, #cabinGallery4, #cabinGallery_selected_2, #cabinGallery_selected_1').lightSlider(attr_slides_thumb);
 });

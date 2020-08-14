@@ -1,8 +1,8 @@
 .tabs_step {
-    border-radius : $border_radius_size !important;
+    border-radius: $border_radius_size !important;
     a {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
+        padding-top: 15px !important;
+        padding-bottom: 0px !important;
         text-align: left !important;
         background: $color_white !important;
         border: 1px solid $main_border !important;
@@ -15,6 +15,6 @@
     }
     .active {
         border-top: 4px solid #37637b !important;
-        border-bottom: 0px solid $color_white !important
+        border-bottom: 0px solid $color_white !important;
     }
 }

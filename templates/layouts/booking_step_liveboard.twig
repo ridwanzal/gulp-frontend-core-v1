@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+  {% set head_title ='Booking Step Package Trip' %}
+  {% include "../components/head.twig" %}
+</head>
+
+<body>
+  <div class="ex_wrapper">
+    {% include "../components/navbar.twig" %}
+    {% include "../components/tabs_booking_liveboard.twig" %}
+    {% include "../components/footer.twig" %}
+    {{ block('included_content') }}
+  </div>
+</body>
+</html>
+
+{% block content %}
+{% endblock %}
+<!-- scripts -->
+{% block included_content %}
+<script src="js/index.min.js"></script>
+{% endblock %}
