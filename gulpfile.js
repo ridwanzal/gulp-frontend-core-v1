@@ -222,5 +222,5 @@ function watchFiles() {
 const watch = gulp.series(gulp.parallel(twigBuild, twigHtml, watchFiles, serveList));
 const dev = gulp.series(gulp.parallel(twigDevBuild, watchFiles, serveDev));
 
-exports.dev = dev;
-exports.serve = watch; // jalankan dengan command options $gul serve
+exports.dev = dev; // jalankan dengan command options $gulp dev -> development env
+exports.serve = watch; // jalankan dengan command options $gulp serve -> stage env
