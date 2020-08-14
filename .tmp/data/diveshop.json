@@ -1,0 +1,25 @@
+[{
+        "thumb": "1.jpg",
+        "name": "Bubbles Divers",
+        "spec": "SSI Certification",
+        "total_course": "5"
+    },
+    {
+        "thumb": "2.jpg",
+        "name": "Ody Dive Center",
+        "spec": "NAUI Certification",
+        "total_course": "3"
+    },
+    {
+        "thumb": "3.jpg",
+        "name": "Ody Dive Center",
+        "spec": "NAUI Certification",
+        "total_course": "3"
+    },
+    {
+        "thumb": "4.jpg",
+        "name": "Krystal Klear Dive",
+        "spec": "BSAC Certification",
+        "total_course": "3"
+    }
+]
